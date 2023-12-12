@@ -7,7 +7,7 @@ const createMarkupForChangableIcon = isFavorite => {
 };
 
 export const createInfoCardMarkup = (cardData, isFavorite = false) => {
-  const { name, burnedCalories, time, bodyPart, target } = cardData;
+  const { name, burnedCalories, bodyPart, target } = cardData;
 
   return `<li class="FavoriteInfoCard">
       <div class="CardHeader">
@@ -33,7 +33,7 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
       <ul class="CardInfoList">
         <li class="InfoListItem">
           <p class="ItemText">
-            Burned calories: <em class="InfoData">${burnedCalories}/${time}<strong>min</strong></em>
+            Burned calories: <em class="InfoData">${burnedCalories}/3<strong>min</strong></em>
           </p>
         </li>
         <li class="InfoListItem">
