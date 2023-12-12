@@ -1,0 +1,148 @@
+.card-title-container > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.favorite-info-card {
+  margin-bottom: 20px;
+  padding: 16px;
+
+  width: 335px;
+
+  border-radius: 15px;
+  background: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .favorite-info-card {
+    width: 344px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorite-info-card {
+    width: 405px;
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.category-and-icon {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.category-tag {
+  padding: 5px 8px;
+
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  border-radius: 15px;
+  border: 1px solid #242424;
+}
+
+.icon-rating-container {
+  display: flex;
+  gap: 2px;
+
+  padding-left: 8px;
+}
+
+.rating-info-card {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.start-btn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  padding: 0;
+  width: 58px;
+  height: 18px;
+  border: none;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+
+  background-color: inherit;
+}
+
+.card-title-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.card-info-list {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 768px) {
+  .card-info-list {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .card-info-list {
+    gap: 16px;
+  }
+}
+
+.item-text {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(36, 36, 36, 0.4);
+}
+
+.item-text > em {
+  display: inline-flex;
+
+  color: #242424;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  em > strong {
+    visibility: hidden;
+    width: 0;
+  }
+  .hidden-overflow-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hidden-overflow-text::after {
+    content: '...';
+  }
+}
