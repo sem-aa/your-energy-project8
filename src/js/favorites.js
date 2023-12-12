@@ -1,15 +1,11 @@
-import {
-  getFromLocal,
-  removeFavoriteCardFromLocal,
-  saveToLocal,
-} from '../services/local-storage';
 import { getExercises } from '../services/api';
 import { createInfoCardMarkup } from '../helpres/markup';
+import { removeFavoriteCardFromLocal } from '../helpres/functions';
 
 const favoritesList = document.getElementById('favorite-cards-list');
 
 console.log(favoritesList);
-await getExercises().then(data => {
+getExercises().then(data => {
   console.log(data.results[0]);
   const test = createInfoCardMarkup(data.results[0]);
   favoritesList.insertAdjacentHTML('beforeend', test);
