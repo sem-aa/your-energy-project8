@@ -6,7 +6,7 @@ const createMarkupForChangableIcon = isFavorite => {
   return markupForIcon;
 };
 
-const createInfoCardMarkup = (cardData, isFavorite = false) => {
+export const createInfoCardMarkup = (cardData, isFavorite = false) => {
   const { name, burnedCalories, time, bodyPart, target } = cardData;
 
   return `<li class="FavoriteInfoCard">
