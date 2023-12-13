@@ -33,4 +33,4 @@ import{a}from"./vendor-a61d8330.js";(function(){const e=document.createElement("
         </li>
       </ul>
     </li>`},f=r=>{const e=getFromLocal(KEY_STORAGE.favorites);if(!e){alert("Oops! Refresh page");return}const n=e.filter(({_id:o})=>o!==r);saveToLocal(KEY_STORAGE.favorites,n)},c=document.getElementById("favorite-cards-list");console.log(c);l().then(r=>{console.log(r.results[0]);const e=u(r.results[0]);c.insertAdjacentHTML("beforeend",e)});const g=({target:r})=>{if(!r.closest("#remove-favorite-btn"))return;const e=r.closest('[data-id="64f389465ae26083f39b17b7"]').dataset.id;console.log(e),f(e)};c.addEventListener("click",g);export{v as g,m as s};
-//# sourceMappingURL=favorites-9119eda4.js.map
+//# sourceMappingURL=favorites-21506437.js.map
