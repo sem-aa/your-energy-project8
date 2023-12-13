@@ -1,38 +1,41 @@
 import { getFilters } from '../services/api';
 
+const itemsOnPage = 12;
+
 const musclesFilterBtn = document.querySelector('button[data-muscles]');
 const bodyFilterBtn = document.querySelector('button[data-body]');
 const equipmentFilterBtn = document.querySelector('button[data-equipment]');
 const exCategoryContainer = document.querySelector('.exercises_category-list');
+const paginationContainer = document.querySelector('.exercises_pagination');
 
-getFilters({ filter: 'Muscles', page: 1, limit: 12 }).then(response => {
-  exCategoryContainer.innerHTML = renderCategoryCardListMarkup(response);
-});
+setFilteredCategoryList('Muscles');
+
+function setFilteredCategoryList(filter, page = 1) {
+  getFilters({ filter: filter, page: page, limit: itemsOnPage }).then(
+    response => {
+      console.log('response', response);
+      exCategoryContainer.innerHTML = createCategoryCardListMarkup(response);
+      paginationContainer.innerHTML = createPaginationMarkup(response, filter);
+
+      handlePagination();
+    }
+  );
+}
 
 const onMusclesFilterClick = () => {
   toggleActiveStatus(musclesFilterBtn);
-  try {
-    getFilters({ filter: 'Muscles', page: 1, limit: 12 }).then(response => {
-      console.log('response', response.results);
-      exCategoryContainer.innerHTML = renderCategoryCardListMarkup(response);
-    });
-  } catch (error) {}
+  setFilteredCategoryList('Muscles');
 };
 
 const onBodyFilterClick = () => {
   toggleActiveStatus(bodyFilterBtn);
 
-  getFilters({ filter: 'Body parts', page: 1, limit: 12 }).then(response => {
-    exCategoryContainer.innerHTML = renderCategoryCardListMarkup(response);
-  });
+  setFilteredCategoryList('Body parts');
 };
 
 const onEquipmentFilterClick = () => {
   toggleActiveStatus(equipmentFilterBtn);
-
-  getFilters({ filter: 'Equipment', page: 1, limit: 12 }).then(response => {
-    exCategoryContainer.innerHTML = renderCategoryCardListMarkup(response);
-  });
+  setFilteredCategoryList('Equipment');
 };
 
 musclesFilterBtn.addEventListener('click', onMusclesFilterClick);
@@ -49,7 +52,7 @@ function toggleActiveStatus(btn) {
   }
 }
 
-function renderCategoryCardListMarkup(data) {
+function createCategoryCardListMarkup(data) {
   return data.results
     .map(({ imgURL, name, filter }) => {
       return `            
@@ -73,4 +76,29 @@ function renderCategoryCardListMarkup(data) {
       </li>`;
     })
     .join('');
+}
+
+function createPaginationMarkup(data, filter) {
+  let pagesArray = [];
+
+  for (let page = 1; page <= data.totalPages; page++) {
+    let current = page.toString() === data.page ? 'current' : '';
+
+    pagesArray.push(` <li class="exercises_pagination-item ${current}">
+        <a class="page-num" data-page="${page}" data-filter="${filter}">${page}</a>
+      </li>`);
+  }
+
+  return pagesArray.join('');
+}
+
+function handlePagination() {
+  let elementsArray = document.querySelectorAll('a.page-num');
+
+  elementsArray.forEach(function (elem) {
+    elem.addEventListener('click', function (e) {
+      console.log('test', e.target.dataset);
+      setFilteredCategoryList(e.target.dataset.filter, e.target.dataset.page);
+    });
+  });
 }
