@@ -19,11 +19,16 @@ function setFilteredCategoryList(filter, page = 1) {
     response => {
       if (response.results.length) {
         exCategoryContainer.innerHTML = createCategoryCardListMarkup(response);
-        paginationContainer.innerHTML = createPaginationMarkup(
-          response,
-          filter
-        );
-        handlePagination();
+
+        if (response.totalPages > 1) {
+          paginationContainer.innerHTML = createPaginationMarkup(
+            response,
+            filter
+          );
+          handlePagination();
+        } else {
+          paginationContainer.innerHTML = '';
+        }
       } else {
         exCategoryContainer.innerHTML = `<li class="sorry-message"><p>Sorry, there is no exercises by your request.</p></li>`;
       }
