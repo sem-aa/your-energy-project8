@@ -3,9 +3,14 @@
   height: 24px;
 }
 
+@media screen and (min-width: 1440px) {
+  .favorites-section {
+    padding-bottom: 63px;
+  }
+}
+
 .favorite-info-card {
   padding: 16px;
-
   width: 335px;
 
   border-radius: 15px;
@@ -44,6 +49,7 @@
   font-weight: 500;
   text-transform: uppercase;
   line-height: normal;
+
   border-radius: 15px;
   border: 1px solid #242424;
 }
@@ -98,8 +104,9 @@
   display: flex;
   gap: 10px;
   justify-content: space-between;
+
   white-space: nowrap;
-  /* overflow: hidden; */
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -120,6 +127,7 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
+
   color: rgba(36, 36, 36, 0.4);
 }
 
@@ -138,6 +146,7 @@
 
   .hidden-overflow-text {
     max-width: 28px;
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -174,48 +183,45 @@
 @media screen and (min-width: 1440px) {
   .favorite-cards-list {
     width: calc(100% + 16px);
-    height: 100vh;
+    height: 100%;
+
     overflow-y: scroll;
   }
 }
 
-/*Scroll*/
-
 .scrollbar-container {
+  position: relative;
   display: flex;
   justify-content: flex-end;
-  overflow: hidden;
-  position: relative;
 
   width: 100%;
+
+  overflow: hidden;
 }
 
 .favorite-cards-list::-webkit-scrollbar {
-  width: 12px; /* ширина для вертикального скролбару */
+  width: 8px;
 }
 
-/* Стилізація треку (доріжки) скролбару */
 .favorite-cards-list::-webkit-scrollbar-track {
-  /* position: absolute;
-  right: -16px;
-  top: -50px; */
-
   border-radius: 12px;
   background: rgba(36, 36, 36, 0.1);
 }
 
-/* Стилізація рухомої частини (thumb) скролбару */
 .favorite-cards-list::-webkit-scrollbar-thumb {
+  width: 8px;
+  height: 153px;
+
   border-radius: 12px;
   background: #242424;
 }
 
-/* Quotation */
 .quotation-container {
   width: 100%;
   margin-bottom: 32px;
-  background-color: rgb(186, 186, 186);
   height: 100vh;
+
+  background-color: rgb(186, 186, 186);
 }
 
 @media screen and (min-width: 1440px) {
@@ -228,11 +234,14 @@
   .favorites-container {
     display: flex;
     gap: 32px;
+
+    height: 100vh;
   }
 }
 
 .favorites-title {
   margin-bottom: 20px;
+
   font-size: 28px;
   font-weight: 400;
   line-height: 38px; /* 135.714% */
@@ -247,4 +256,56 @@
     line-height: 48px; /* 109.091% */
     letter-spacing: -0.88px;
   }
+}
+
+.text-nocard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 318px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 46px;
+}
+
+@media screen and (min-width: 768px) {
+  .text-nocard-container {
+    max-width: 554px;
+    padding-top: 136px;
+    padding-bottom: 188px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .text-nocard-container {
+    height: 100vh;
+    padding: 0;
+  }
+}
+
+.no-cards-text {
+  align-self: center;
+  text-align: center;
+
+  width: 318px;
+  height: auto;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .no-cards-text {
+    width: 554px;
+
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.hidden {
+  display: none;
 }
