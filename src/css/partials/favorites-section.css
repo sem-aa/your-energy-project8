@@ -4,7 +4,6 @@
 }
 
 .favorite-info-card {
-  margin-bottom: 20px;
   padding: 16px;
 
   width: 335px;
@@ -136,7 +135,9 @@
     visibility: hidden;
     width: 0;
   }
+
   .hidden-overflow-text {
+    max-width: 28px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -150,4 +151,100 @@
 .remove-btn {
   border: none;
   background-color: inherit;
+}
+
+.favorite-cards-list {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .favorite-cards-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorite-cards-list {
+    width: calc(100% + 16px);
+    height: 100vh;
+    overflow-y: scroll;
+  }
+}
+
+/*Scroll*/
+
+.scrollbar-container {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  position: relative;
+
+  width: 100%;
+}
+
+.favorite-cards-list::-webkit-scrollbar {
+  width: 12px; /* ширина для вертикального скролбару */
+}
+
+/* Стилізація треку (доріжки) скролбару */
+.favorite-cards-list::-webkit-scrollbar-track {
+  /* position: absolute;
+  right: -16px;
+  top: -50px; */
+
+  border-radius: 12px;
+  background: rgba(36, 36, 36, 0.1);
+}
+
+/* Стилізація рухомої частини (thumb) скролбару */
+.favorite-cards-list::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #242424;
+}
+
+/* Quotation */
+.quotation-container {
+  width: 100%;
+  margin-bottom: 32px;
+  background-color: rgb(186, 186, 186);
+  height: 100vh;
+}
+
+@media screen and (min-width: 1440px) {
+  .quotation-container {
+    width: 494px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorites-container {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.favorites-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 38px; /* 135.714% */
+  letter-spacing: -0.56px;
+}
+
+@media screen and (min-width: 768px) {
+  .favorites-title {
+    margin-bottom: 32px;
+
+    font-size: 44px;
+    line-height: 48px; /* 109.091% */
+    letter-spacing: -0.88px;
+  }
 }
