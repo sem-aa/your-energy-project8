@@ -2,12 +2,12 @@
 @import url('./reset.css');
 @import url('./common.css');
 @import url('./container.css');
+@import url('./partials/modal-exercises.css');
 /* @import './partials/header.css';
 @import url('./partials/hero.css');
 @import url('./partials/exercises.css');
 @import url('./partials/footer.css');
 @import url('./partials/mobile-menu.css');
-@import url('./partials/modal-exercises.css');
 @import url('./partials/modal-rating.css');
 @import url('./partials/favorites-section.css');  */
 
@@ -24,6 +24,7 @@
   --primary-dark-60: rgb(36, 36, 36, 0.6);
   --primary-dark-10: rgb(36, 36, 36, 0.1);
   --bg-color-60: rgb(244, 244, 244, 0.6);
+  --bg-color-40: rgb(244, 244, 244, 0.4);
   --bg-color-20: rgb(244, 244, 244, 0.2);
   --bg-color-10: rgb(244, 244, 244, 0.1);
 
