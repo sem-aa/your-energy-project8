@@ -45,3 +45,43 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
       </ul>
     </li>`;
 };
+
+export const createCategoryCardListMarkup = data => {
+  return data.results
+    .map(({ imgURL, name, filter }) => {
+      return `            
+        <li class="exercises_category-item"
+        style="
+          background-image: linear-gradient(
+              0deg,
+              rgba(17, 17, 17, 0.5) 0%,
+              rgba(17, 17, 17, 0.5) 100%
+            ),
+            url(${imgURL});
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: cover;
+        "
+        >
+            <div class="exercises_category-descr">
+                <h3 class="exercises_category-title">${name}</h3>
+                <p class="exercises_category-text">${filter}</p>   
+            </div>
+      </li>`;
+    })
+    .join('');
+};
+
+export const createPaginationMarkup = (data, filter) => {
+  let pagesArray = [];
+
+  for (let page = 1; page <= data.totalPages; page++) {
+    let current = page.toString() === data.page ? 'current' : '';
+
+    pagesArray.push(` <li class="exercises_pagination-item ${current}">
+        <a class="page-num" data-page="${page}" data-filter="${filter}">${page}</a>
+      </li>`);
+  }
+
+  return pagesArray.join('');
+};

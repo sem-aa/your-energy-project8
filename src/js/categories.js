@@ -1,4 +1,8 @@
 import { getFilters } from '../services/api';
+import {
+  createCategoryCardListMarkup,
+  createPaginationMarkup,
+} from '../helpres/markup';
 
 const itemsOnPage = 12;
 
@@ -13,11 +17,16 @@ setFilteredCategoryList('Muscles');
 function setFilteredCategoryList(filter, page = 1) {
   getFilters({ filter: filter, page: page, limit: itemsOnPage }).then(
     response => {
-      console.log('response', response);
-      exCategoryContainer.innerHTML = createCategoryCardListMarkup(response);
-      paginationContainer.innerHTML = createPaginationMarkup(response, filter);
-
-      handlePagination();
+      if (response.results.length) {
+        exCategoryContainer.innerHTML = createCategoryCardListMarkup(response);
+        paginationContainer.innerHTML = createPaginationMarkup(
+          response,
+          filter
+        );
+        handlePagination();
+      } else {
+        exCategoryContainer.innerHTML = `<li class="sorry-message"><p>Sorry, there is no exercises by your request.</p></li>`;
+      }
     }
   );
 }
@@ -52,52 +61,11 @@ function toggleActiveStatus(btn) {
   }
 }
 
-function createCategoryCardListMarkup(data) {
-  return data.results
-    .map(({ imgURL, name, filter }) => {
-      return `            
-        <li class="exercises_category-item"
-        style="
-          background-image: linear-gradient(
-              0deg,
-              rgba(17, 17, 17, 0.5) 0%,
-              rgba(17, 17, 17, 0.5) 100%
-            ),
-            url(${imgURL});
-          background-repeat: no-repeat;
-          background-position: 50% 50%;
-          background-size: cover;
-        "
-        >
-            <div class="exercises_category-descr">
-                <h3 class="exercises_category-title">${name}</h3>
-                <p class="exercises_category-text">${filter}</p>   
-            </div>
-      </li>`;
-    })
-    .join('');
-}
-
-function createPaginationMarkup(data, filter) {
-  let pagesArray = [];
-
-  for (let page = 1; page <= data.totalPages; page++) {
-    let current = page.toString() === data.page ? 'current' : '';
-
-    pagesArray.push(` <li class="exercises_pagination-item ${current}">
-        <a class="page-num" data-page="${page}" data-filter="${filter}">${page}</a>
-      </li>`);
-  }
-
-  return pagesArray.join('');
-}
-
 function handlePagination() {
   let elementsArray = document.querySelectorAll('a.page-num');
 
   elementsArray.forEach(function (elem) {
     elem.addEventListener('click', function (e) {
-      console.log('test', e.target.dataset);
       setFilteredCategoryList(e.target.dataset.filter, e.target.dataset.page);
     });
   });
