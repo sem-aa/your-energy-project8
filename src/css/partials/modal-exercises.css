@@ -1,0 +1,211 @@
+.modal-exercises__card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 335px;
+  padding: 40px 20px;
+  border-radius: 20px;
+  background-color: var(--primary-dark);
+}
+
+.modal-exercises__image-wrapper {
+  min-width: 270px;
+  height: 260px;
+  border-radius: 12px;
+}
+
+.modal-exercises__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.modal-exercises__name {
+  color: var(--bg-color);
+  font-weight: var(--font-weight-medium);
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.modal-exercises__rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+
+.modal-exercises__rating-value {
+  color: var(--bg-color);
+  font-weight: var(--font-weight-reg);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.modal-exercises__rating-star {
+  color: var(--bg-color-20);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-exercises__partials {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-top: 1px solid var(--bg-color-20);
+  border-bottom: 1px solid var(--bg-color-20);
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.modal-exercises__partials-title {
+  color: var(--bg-color-40);
+  font-weight: var(--font-weight-reg);
+  line-height: 18px;
+  margin-bottom: 4px;
+  text-transform: capitalize;
+}
+
+.modal-exercises__partials-value {
+  color: var(--bg-color);
+  font-weight: var(--font-weight-medium);
+  line-height: 18px;
+  text-transform: capitalize;
+}
+
+.modal-exercises__text {
+  color: var(--bg-color-60);
+  font-size: 14px;
+  font-weight: var(--font-weight-reg);
+  line-height: 18px;
+  margin-bottom: 40px;
+}
+
+.modal-exercises__buttons {
+  display: flex;
+  gap: 9px;
+}
+
+.modal-exercises__button-favourites {
+  border: none;
+  width: 194px;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 30px;
+  background-color: var(--bg-color);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--font-weight-reg);
+  color: var(--primary-dark);
+  border: 1px solid var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-exercises__button-favourites:hover {
+  background-color: transparent;
+  color: var(--bg-color);
+
+  .modal-exercises__button-favourites_icon {
+    stroke: var(--bg-color);
+  }
+}
+
+.modal-exercises__button-rating {
+  border: none;
+  width: 141px;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 30px;
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--font-weight-reg);
+  color: var(--bg-color);
+  border: 1px solid var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-exercises__button-rating:hover {
+  background-color: var(--bg-color);
+  color: var(--primary-dark);
+}
+
+.modal-exercises__button-close {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-exercises__button-icon {
+  z-index: -1;
+}
+
+.modal-exercises__button-favourites_icon {
+  margin-left: 8px;
+  stroke: var(--primary-dark);
+}
+
+@media screen and (min-width: 768px) {
+  .modal-exercises__card {
+    flex-direction: row;
+    width: 704px;
+    gap: 32px;
+  }
+
+  .modal-exercises__name {
+    margin-bottom: 8px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .modal-exercises__rating {
+    margin-bottom: 16px;
+  }
+
+  .modal-exercises__partials {
+    padding: 8px 0;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .modal-exercises__text {
+    margin-bottom: 64px;
+  }
+
+  .modal-exercises__buttons {
+    gap: 9px;
+  }
+
+  .modal-exercises__button-close {
+    right: 16px;
+    top: 16px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media screen and (min-width: 1376px) {
+  .modal-exercises__card {
+    width: 708px;
+    padding: 32px;
+  }
+}
