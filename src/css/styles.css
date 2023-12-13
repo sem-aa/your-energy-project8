@@ -8,14 +8,9 @@
 @import url('./partials/exercises.css');
 @import url('./partials/footer.css');
 @import url('./partials/mobile-menu.css');
-<<<<<<< HEAD
 @import url('./partials/modal-rating.css');
 @import url('./partials/favorites-section.css');  */
-=======
-@import url('./partials/modal-exercises.css');
-@import url('./partials/modal-rating.css');*/
 @import url('./partials/favorites-section.css');
->>>>>>> 480dca9c1943f1a33a071723ac896a382abcd432
 
 :root {
   --bg-color: #f4f4f4;
