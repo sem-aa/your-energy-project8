@@ -68,8 +68,8 @@
 .exercises_category-list {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  align-items: center;
 
   gap: 20px;
 }
@@ -79,12 +79,11 @@
   align-items: center;
   justify-content: center;
 
-  width: 335px;
+  max-width: 335px;
+  width: 100%;
   height: 225px;
   background-color: var(--primary-dark-60);
   border-radius: 12px;
-
-  /* flex-basis: calc(100% - 20px); */
 }
 
 .exercises_category-descr {
@@ -130,6 +129,7 @@
   .exercises_category-list {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
 
     column-gap: 15px;
     row-gap: 32px;
@@ -137,8 +137,7 @@
 
   .exercises_category-item {
     height: 225px;
-    width: 225px;
-    /* flex-basis: calc((100% - 15px) / 3); */
+    width: 224px;
   }
   .exercises_category-title {
     font-size: 24px;
@@ -146,4 +145,13 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .exercises_category-item {
+    width: 290px;
+    height: 242px;
+  }
 }
