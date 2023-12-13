@@ -43,6 +43,8 @@
 }
 .social-item {
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 8px;
   border-radius: 10px;
   border: 1px solid var(--bg-color-10);
@@ -52,6 +54,11 @@
 .social-item:focus {
   color: var(--primary-dark);
   background-color: var(--bg-color);
+}
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .social-icon {
   fill: currentColor;
