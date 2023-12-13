@@ -1,16 +1,33 @@
 <section class="exercises section container">
-  <h2 class="section-title">Exercises</h2>
-  <ul class="exercises_filter-list">
-    <li class="exercises_filter-item">
-      <button class="exercises_filter-btn row-accent active">Muscles</button>
-    </li>
-    <li class="exercises_filter-item">
-      <button class="exercises_filter-btn row-accent">Body parts</button>
-    </li>
-    <li class="exercises_filter-item">
-      <button class="exercises_filter-btn row-accent">Equipment</button>
-    </li>
-  </ul>
+  <div class="exercises_title-wrapper">
+    <h2 class="section-title">Exercises</h2>
+    <ul class="exercises_filter-list">
+      <li class="exercises_filter-item">
+        <button
+          class="exercises_filter-btn row-accent active"
+          type="button"
+          data-muscles
+        >
+          Muscles
+        </button>
+      </li>
+      <li class="exercises_filter-item">
+        <button class="exercises_filter-btn row-accent" type="button" data-body>
+          Body parts
+        </button>
+      </li>
+      <li class="exercises_filter-item">
+        <button
+          class="exercises_filter-btn row-accent"
+          type="button"
+          data-equipment
+        >
+          Equipment
+        </button>
+      </li>
+    </ul>
+  </div>
+
   <div class="exercises_category-set">
     <ul class="exercises_category-list">
       <li class="exercises_category-item">
@@ -43,6 +60,18 @@
           <p class="exercises_category-text">Muscles</p>
         </div>
       </li>
+      <li class="exercises_category-item">
+        <div class="exercises_category-descr">
+          <h3 class="exercises_category-title">Abductors</h3>
+          <p class="exercises_category-text">Muscles</p>
+        </div>
+      </li>
+    </ul>
+    <ul class="exercises_pagination">
+      <li class="exercises_pagination-item current">
+        <span class="page-num">1</span>
+      </li>
+      <li class="exercises_pagination-item"><span class="page-num">2</span></li>
     </ul>
   </div>
 </section>
