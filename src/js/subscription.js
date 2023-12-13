@@ -1,4 +1,5 @@
 import { subscribe } from '../services/api';
+import iziToast from 'izitoast';
 
 const subscribeFormRef = document.querySelector('.footer-form');
 
@@ -13,13 +14,19 @@ function handleSubmit(e) {
   subscribe(req).then(res => {    
     switch (res.status) {
       case 201:
-        alert(res.data.message);
+        iziToast.success({
+          message: res.data.message
+        })        
         break;
       case 409:
-        alert(res.data.message);
+        iziToast.info({
+          message: res.data.message
+        })        
         break;
       default:
-        alert('Sorry, something went wrong((');
+        iziToast.warning({
+          message: 'Sorry, something went wrong'
+        })       
         break;
     }    
   });

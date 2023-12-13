@@ -1,6 +1,7 @@
 import { getExerciseId } from '../services/api';
 import { modal } from './modal';
 import { updateRating } from '../helpres/updateRating';
+import { addFavoriteCardToLocal } from '../helpres/functions';
 
 modal();
 
