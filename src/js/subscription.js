@@ -10,9 +10,17 @@ function handleSubmit(e) {
     email: e.target.elements.email.value,
   };
   subscribeFormRef.reset();
-  subscribe(req).then(res =>
-    res.status === 201
-      ? alert(res.data.message)
-      : alert('Sorry, something went wrong((')
-  );
+  subscribe(req).then(res => {    
+    switch (res.status) {
+      case 201:
+        alert(res.data.message);
+        break;
+      case 409:
+        alert(res.data.message);
+        break;
+      default:
+        alert('Sorry, something went wrong((');
+        break;
+    }    
+  });
 }

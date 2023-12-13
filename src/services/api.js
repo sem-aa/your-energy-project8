@@ -64,6 +64,6 @@ export const subscribe = async email => {
     return res;
   } catch (error) {
     console.error('Error in subscribe:', error);
-    return error;
+    return error.response;
   }
 };
