@@ -4,12 +4,11 @@ import { removeFavoriteCardFromLocal } from '../helpres/functions';
 
 const favoritesList = document.getElementById('favorite-cards-list');
 
-console.log(favoritesList);
-getExercises().then(data => {
-  console.log(data.results[0]);
-  const test = createInfoCardMarkup(data.results[0]);
-  favoritesList.insertAdjacentHTML('beforeend', test);
-});
+// await getExercises().then(data => {
+//   console.log(data.results[0]);
+//   const test = createInfoCardMarkup(data.results[0], true);
+//   favoritesList.insertAdjacentHTML('beforeend', test);
+// });
 
 const handleDeleteFavoriteCard = ({ target }) => {
   if (!target.closest('#remove-favorite-btn')) return;
@@ -17,5 +16,21 @@ const handleDeleteFavoriteCard = ({ target }) => {
   console.log(id);
   removeFavoriteCardFromLocal(id);
 };
+
+const createListOfCards = array => {
+  return array.map(item => createInfoCardMarkup(item, true)).join('');
+};
+
+const createCardsMarkupList = async list => {
+  try {
+    const { results } = await getExercises();
+    console.log(results);
+
+    list.insertAdjacentHTML('beforeend', createListOfCards(results));
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+createCardsMarkupList(favoritesList);
 
 favoritesList.addEventListener('click', handleDeleteFavoriteCard);
