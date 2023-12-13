@@ -1,1 +1,2 @@
 import './favorites';
+import './subscription';
