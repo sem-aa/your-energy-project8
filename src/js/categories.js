@@ -3,32 +3,36 @@ import { getFilters } from '../services/api';
 const musclesFilterBtn = document.querySelector('button[data-muscles]');
 const bodyFilterBtn = document.querySelector('button[data-body]');
 const equipmentFilterBtn = document.querySelector('button[data-equipment]');
+const exCategoryContainer = document.querySelector('.exercises_category-list');
+
+getFilters({ filter: 'Muscles', page: 1, limit: 12 }).then(response => {
+  exCategoryContainer.innerHTML = renderCategoryCardListMarkup(response);
+});
 
 const onMusclesFilterClick = () => {
   toggleActiveStatus(musclesFilterBtn);
-  getFilters({ filter: 'Muscles', page: 1, limit: 12 }).then(response => {
-    console.log('response', response);
-  });
+  try {
+    getFilters({ filter: 'Muscles', page: 1, limit: 12 }).then(response => {
+      console.log('response', response.results);
+      exCategoryContainer.innerHTML = renderCategoryCardListMarkup(response);
+    });
+  } catch (error) {}
 };
 
 const onBodyFilterClick = () => {
-  console.log('onBodyFilterClick', onBodyFilterClick);
   toggleActiveStatus(bodyFilterBtn);
 
   getFilters({ filter: 'Body parts', page: 1, limit: 12 }).then(response => {
-    console.log('response', response);
+    exCategoryContainer.innerHTML = renderCategoryCardListMarkup(response);
   });
 };
 
 const onEquipmentFilterClick = () => {
-  console.log('onEquipmentFilterClick', onEquipmentFilterClick);
   toggleActiveStatus(equipmentFilterBtn);
 
-  try {
-    getFilters({ filter: 'Equipment', page: 1, limit: 12 }).then(response => {
-      console.log('response', response);
-    });
-  } catch (error) {}
+  getFilters({ filter: 'Equipment', page: 1, limit: 12 }).then(response => {
+    exCategoryContainer.innerHTML = renderCategoryCardListMarkup(response);
+  });
 };
 
 musclesFilterBtn.addEventListener('click', onMusclesFilterClick);
@@ -43,4 +47,30 @@ function toggleActiveStatus(btn) {
   } else {
     btn.classList.add('active');
   }
+}
+
+function renderCategoryCardListMarkup(data) {
+  return data.results
+    .map(({ imgURL, name, filter }) => {
+      return `            
+        <li class="exercises_category-item"
+        style="
+          background-image: linear-gradient(
+              0deg,
+              rgba(17, 17, 17, 0.5) 0%,
+              rgba(17, 17, 17, 0.5) 100%
+            ),
+            url(${imgURL});
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: cover;
+        "
+        >
+            <div class="exercises_category-descr">
+                <h3 class="exercises_category-title">${name}</h3>
+                <p class="exercises_category-text">${filter}</p>   
+            </div>
+      </li>`;
+    })
+    .join('');
 }

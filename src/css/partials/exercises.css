@@ -91,9 +91,21 @@
   max-width: 335px;
   width: 100%;
   height: 225px;
-  background-color: var(--primary-dark-60);
+  background-color: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 0.5) 0%,
+    rgba(17, 17, 17, 0.5) 100%
+  );
+
   border-radius: 12px;
 }
+.exercises_category-item img {
+  object-fit: cover;
+}
+
+/* .exercises_category-item--img {
+  object-fit: cover;
+} */
 
 /* .exercises_category-descr {
 } */
@@ -106,6 +118,8 @@
 
   font-size: 20px;
   line-height: 1;
+
+  text-transform: capitalize;
 }
 
 .exercises_category-text {
