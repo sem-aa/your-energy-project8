@@ -21,6 +21,7 @@
 .modal-exercises__image {
   width: 100%;
   height: 100%;
+  border-radius: 12px;
 }
 
 .modal-exercises__name {
@@ -68,12 +69,14 @@
   font-weight: var(--font-weight-reg);
   line-height: 18px;
   margin-bottom: 4px;
+  text-transform: capitalize;
 }
 
 .modal-exercises__partials-value {
   color: var(--bg-color);
   font-weight: var(--font-weight-medium);
   line-height: 18px;
+  text-transform: capitalize;
 }
 
 .modal-exercises__text {
@@ -104,11 +107,16 @@
   font-weight: var(--font-weight-reg);
   color: var(--primary-dark);
   border: 1px solid var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .modal-exercises__button-favourites:hover {
   background-color: transparent;
   color: var(--bg-color);
+
+  .modal-exercises__button-favourites_icon {
+    stroke: var(--bg-color);
+  }
 }
 
 .modal-exercises__button-rating {
@@ -126,6 +134,7 @@
   font-weight: var(--font-weight-reg);
   color: var(--bg-color);
   border: 1px solid var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .modal-exercises__button-rating:hover {
@@ -152,6 +161,7 @@
 
 .modal-exercises__button-favourites_icon {
   margin-left: 8px;
+  stroke: var(--primary-dark);
 }
 
 @media screen and (min-width: 768px) {

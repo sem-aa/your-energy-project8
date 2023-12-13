@@ -1,5 +1,7 @@
-function updateRating(value) {
-  const stars = document.querySelectorAll('#rating .star');
+export function updateRating(value) {
+  const stars = document.querySelectorAll(
+    '#rating .modal-exercises__rating-star'
+  );
   stars.forEach(star => {
     const starValue = parseInt(star.dataset.value, 10);
     let percentFilled = 0;
@@ -15,5 +17,3 @@ function updateRating(value) {
     star.style.color = 'transparent';
   });
 }
-
-export default updateRating;

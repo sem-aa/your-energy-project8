@@ -1,2 +1,4 @@
 import './favorites';
-import './modal-exercises';
+import { modalExercises } from './modal-exercises';
+
+modalExercises();
