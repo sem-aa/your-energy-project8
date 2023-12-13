@@ -13,6 +13,7 @@ export const getFilters = async ({
   limit = 12,
 } = {}) => {
   try {
+    console.log('filter', filter);
     const res = await axios.get(
       `filters?filter=${filter}&page=${page}&limit=${limit}`
     );
