@@ -22,12 +22,6 @@ function handleClickFavoritesBtn() {
   return;
 }
 
-document.addEventListener('click', event => {
-  if (event.target.matches('.modal-exercises__button-favourites')) {
-    //here
-  }
-});
-
 export async function modalExercises() {
   try {
     cardData = await getExerciseId('64f389465ae26083f39b17a2');

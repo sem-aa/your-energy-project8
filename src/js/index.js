@@ -1,4 +1,9 @@
+import './to-top';
 import './categories';
-// import './favorites';
+import './favorites';
+import './sorted-selected';
+import './searchParams';
+import './share-button';
 import './subscription';
+import './favorites';
 import './modal-exercises';
