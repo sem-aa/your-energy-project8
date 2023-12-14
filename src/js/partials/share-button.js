@@ -1,4 +1,4 @@
-import { getFullUrl } from './searchParams';
+import { getFullUrl } from './search-params';
 
 const shareButtonRef = document.querySelector('.share-button');
 const shareButtonHintRef = document.querySelector('.share-button-hint');

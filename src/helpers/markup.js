@@ -1,4 +1,4 @@
-import { createShortStringFavorites, createShortTitle } from '../js/favorites';
+import { createShortStringFavorites, createShortTitle } from '../js/partials/favorites';
 
 const createMarkupForChangableIcon = isFavorite => {
   const markupForIcon = isFavorite

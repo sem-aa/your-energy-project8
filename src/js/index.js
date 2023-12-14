@@ -1,9 +1,10 @@
-import './to-top';
-import './categories';
-import './exercises';
-import './favorites';
-import './sorted-selected';
-import './searchParams';
-import './share-button';
-import './subscription';
-import './modal-exercises';
+
+import './partials/to-top';
+import './partials/categories';
+import './partials/exercises';
+import './partials/favorites';
+import './partials/sorted-selected';
+import './partials/search-params';
+import './partials/share-button';
+import './partials/subscription';
+import './partials/modal-exercises';

@@ -1,8 +1,8 @@
-import { getExercises } from '../services/api';
+import { getExercises } from '../../services/api';
 import {
   createInfoCardMarkup,
   createPaginationMarkup,
-} from '../helpers/markup';
+} from '../../helpers/markup';
 
 const categoryContainer = document.querySelector('#category-list-container');
 const exercisesContainer = document.querySelector('#exercises-list-container');
