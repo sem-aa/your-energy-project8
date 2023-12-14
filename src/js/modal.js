@@ -35,4 +35,12 @@ export function modal() {
       elements.modalExercises.classList.add('visually-hidden');
     }
   }
+
+  function removeListeners() {
+    elements.openModalButton.removeEventListener('click', openModal);
+    elements.modalExercises.removeEventListener('click', handleModalClick);
+    document.removeEventListener('keydown', handleKeyDown);
+  }
+
+  return removeListeners;
 }

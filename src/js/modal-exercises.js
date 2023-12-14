@@ -1,31 +1,45 @@
 import { getExerciseId } from '../services/api';
 import { modal } from './modal';
-import { updateRating } from '../helpres/updateRating';
+import { updateRating } from '../helpers/update-rating';
+import { getFromLocal } from '../services/local-storage';
+import {
+  addFavoriteCardToLocal,
+  removeFavoriteCardFromLocal,
+} from '../helpers/functions';
 
 modal();
 
 const card = document.querySelector('.modal-exercises');
-const buttonFavourite = document.querySelector(
-  '.modal-exercises__button-favourites'
-);
 
 let cardData;
 
-buttonFavourite?.addEventListener('click', handlerClick);
-
-function handlerClick() {
-  console.log(cardData);
+function handleClickFavoritesBtn() {
+  if (!getFromLocal('favorites')) {
+    addFavoriteCardToLocal(cardData);
+    return;
+  }
+  removeFavoriteCardFromLocal(cardData._id);
+  return;
 }
 
-console.log(buttonFavourite);
+document.addEventListener('click', event => {
+  if (event.target.matches('.modal-exercises__button-favourites')) {
+    //here
+  }
+});
 
 export async function modalExercises() {
   try {
     cardData = await getExerciseId('64f389465ae26083f39b17a2');
-
     card.innerHTML = createModalExercisesMarkup(cardData);
-
     updateRating(cardData.rating);
+
+    document.addEventListener('click', event => {
+      if (event.target.matches('.modal-exercises__button-favourites')) {
+        console.log('Button clicked!');
+        handleClickFavoritesBtn(cardData);
+      }
+    });
   } catch (error) {
     console.error(error);
   }
@@ -53,7 +67,9 @@ export function createModalExercisesMarkup(cardData) {
       </svg>
     </button>
     <div class="modal-exercises__image-wrapper">
-      <img class="modal-exercises__image" src="${gifUrl}" alt="${name}" />
+      <img class="modal-exercises__image" src="${
+        gifUrl !== null ? gifUrl : '../images/no-image.png'
+      }" alt="${name}" />
     </div>
     <div class="modal-exercises__description">
       <p class="modal-exercises__name">${name}</p>
@@ -84,7 +100,9 @@ export function createModalExercisesMarkup(cardData) {
         </div>
         <div class="modal-exercises__partials-item">
           <p class="modal-exercises__partials-title">Burned calories</p>
-          <p class="modal-exercises__partials-value">${burnedCalories}/${time} min</p>
+          <p class="modal-exercises__partials-value">${burnedCalories}/${time} 
+            <span class="modal-exercises__partials-value_span">min</span>
+          </p>
         </div>
       </div>
       <p class="modal-exercises__text">
@@ -106,3 +124,5 @@ export function createModalExercisesMarkup(cardData) {
     </div>
   </div>`;
 }
+
+modalExercises();

@@ -2,15 +2,15 @@
 @import url('./reset.css');
 @import url('./common.css');
 @import url('./container.css');
-@import url('./partials/modal-exercises.css');
-/* @import './partials/header.css';
-@import url('./partials/hero.css');
-@import url('./partials/exercises.css');
-@import url('./partials/footer.css');
-@import url('./partials/mobile-menu.css');
-@import url('./partials/modal-rating.css');
-@import url('./partials/favorites-section.css');  */
 @import url('./partials/favorites-section.css');
+@import url('./partials/footer.css');
+@import url('./partials/modal-exercises.css');
+
+/* @import './partials/header.css'; */
+/* @import url('./partials/hero.css'); */
+@import url('./partials/exercises.css');
+/* @import url('./partials/mobile-menu.css'); */
+/* @import url('./partials/modal-rating.css'); */
 
 :root {
   --bg-color: #f4f4f4;
@@ -58,7 +58,7 @@
 
 @font-face {
   font-family: 'DMSans';
-  src: url('../../assets/fonts/DMSans/DMSans-Italic.ttff');
+  src: url('../../assets/fonts/DMSans/DMSans-Italic.ttf');
   font-display: swap;
   font-weight: 400;
   font-style: italic;
