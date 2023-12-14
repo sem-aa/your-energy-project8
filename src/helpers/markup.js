@@ -35,7 +35,7 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
       <ul class="card-info-list">
         <li>
           <p class="item-text">
-            Burned ccal: <em class="hidden-overflow-text">${createShortString(
+            Burned kcal: <em class="hidden-overflow-text">${createShortString(
               `${burnedCalories}/${time}`
             )}<strong>min</strong></em>
           </p>
