@@ -1,4 +1,5 @@
 import { getExercises } from '../../services/api';
+import { getFromLocal } from '../../services/local-storage';
 import { createInfoCardMarkup } from '../../helpers/markup';
 import { removeFavoriteCardFromLocal } from '../../helpers/functions';
 
@@ -8,7 +9,7 @@ const containerForList = document.querySelector('.scrollbar-container');
 
 const handleDeleteFavoriteCard = ({ target }) => {
   if (!target.closest('#remove-favorite-btn')) return;
-  const id = target.closest('[data-id="64f389465ae26083f39b17b7"]').dataset.id;
+  const id = target.closest('[data-id]').dataset.id;
   console.log(id);
   removeFavoriteCardFromLocal(id);
 };
@@ -35,7 +36,7 @@ export const createShortTitle = (title = '') => {
 
 const createCardsMarkupList = async list => {
   try {
-    const { results } = await getExercises();
+    const results = await getFromLocal('favorites');
 
     if (results.length === 0) {
       containerForList?.classList.add('hidden');
