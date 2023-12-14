@@ -17,17 +17,25 @@ const createListOfCards = array => {
   return array.map(item => createInfoCardMarkup(item, true)).join('');
 };
 
-export const createShortString = (string = '') => {
-  if (string.length > 5 && window.innerWidth < 1440) {
-    return `${string.slice(0, 4)}...`;
+export const createShortStringFavorites = (string = '') => {
+  if (string.length > 4 && window.innerWidth < 1440) {
+    return `${string.slice(0, 4)} ...`;
   }
   return string;
+};
+
+export const createShortTitle = (title = '') => {
+  const arrayOfWords = title.split(' ');
+
+  if (title !== '' && arrayOfWords.length > 3) {
+    return arrayOfWords.splice(0, 3).join(' ') + ' ...';
+  }
+  return title;
 };
 
 const createCardsMarkupList = async list => {
   try {
     const { results } = await getExercises();
-    // const results = [];
 
     console.log(results);
 

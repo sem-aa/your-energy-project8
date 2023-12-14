@@ -10,6 +10,7 @@
 }
 
 .favorite-info-card {
+  position: relative;
   padding: 16px;
   width: 335px;
 
@@ -103,7 +104,7 @@
 .card-info-list {
   display: flex;
   gap: 10px;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   white-space: nowrap;
   overflow: hidden;
@@ -112,7 +113,7 @@
 
 @media screen and (min-width: 768px) {
   .card-info-list {
-    justify-content: flex-start;
+    justify-content: space-around;
   }
 }
 
@@ -138,8 +139,8 @@
   font-style: normal;
 }
 
-@media screen and (max-width: 768px) {
-  em > strong {
+@media screen and (max-width: 1440px) {
+  .item-text > em > strong {
     visibility: hidden;
     width: 0;
   }
@@ -152,9 +153,11 @@
     text-overflow: ellipsis;
   }
 
-  .hidden-overflow-text::after {
+ */
+
+  /* .hidden-overflow-text::after {
     content: '...';
-  }*/
+  } */
 }
 
 .remove-btn {
@@ -303,6 +306,39 @@
 
     font-size: 18px;
     line-height: 24px;
+  }
+}
+
+.gif-container {
+  position: absolute;
+
+  top: 28%;
+  right: 16px;
+  width: 72px;
+  height: auto;
+}
+
+.gif-container > img {
+  opacity: 0;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 1440px) {
+  .gif-container {
+    top: 0;
+    right: 112px;
+  }
+  .gif-container > img {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorite-info-card:hover .gif-container > img {
+    transition-duration: 1250ms;
+    transition-timing-function: ease-in-out;
+    opacity: 1;
   }
 }
 
