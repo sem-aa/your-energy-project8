@@ -1,6 +1,8 @@
 import { getExercises } from '../services/api';
 import { createInfoCardMarkup } from '../helpers/markup';
 import { removeFavoriteCardFromLocal } from '../helpers/functions';
+import './header';
+import './modal-rating';
 
 const favoritesList = document.getElementById('favorite-cards-list');
 const noCardsText = document.querySelector('.text-nocard-container');
