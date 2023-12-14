@@ -113,10 +113,11 @@
 .modal-exercises__button-favourites:hover {
   background-color: transparent;
   color: var(--bg-color);
+}
 
+.modal-exercises__button-favourites:hover
   .modal-exercises__button-favourites_icon {
-    stroke: var(--bg-color);
-  }
+  stroke: var(--bg-color);
 }
 
 .modal-exercises__button-rating {
