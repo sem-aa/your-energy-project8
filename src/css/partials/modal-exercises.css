@@ -79,6 +79,10 @@
   text-transform: capitalize;
 }
 
+.modal-exercises__partials-value_span {
+  text-transform: lowercase;
+}
+
 .modal-exercises__text {
   color: var(--bg-color-60);
   font-size: 14px;
