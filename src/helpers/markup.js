@@ -1,4 +1,7 @@
-import { createShortStringFavorites, createShortTitle } from '../js/partials/favorites';
+import {
+  createShortStringFavorites,
+  createShortTitle,
+} from '../js/partials/favorites';
 
 const createMarkupForChangableIcon = isFavorite => {
   const markupForIcon = isFavorite
@@ -61,6 +64,9 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
 export const createCategoryCardListMarkup = data => {
   return data.results
     .map(({ imgURL, name, filter }) => {
+      if (!imgURL) {
+        imgURL = '/images/no-image.png';
+      }
       return `            
         <li class="exercises_category-item" data-category="${name}" data-filter="${filter}"
         style="

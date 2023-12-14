@@ -33,6 +33,7 @@
 }
 
 .search-input {
+  position: relative;
   width: 100%;
   max-width: 335px;
   height: 44px;
@@ -43,6 +44,14 @@
   border: 1px solid var(--primary-dark);
 
   background-color: var(--bg-color);
+}
+
+.search-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  fill: var(--primary-dark);
 }
 
 .exercises_filter-list {

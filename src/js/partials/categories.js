@@ -6,6 +6,7 @@ import {
 
 const itemsOnPage = 12;
 
+const inputRef = document.querySelector('.search-box');
 const musclesFilterBtn = document.querySelector('button[data-muscles]');
 const bodyFilterBtn = document.querySelector('button[data-body]');
 const equipmentFilterBtn = document.querySelector('button[data-equipment]');
@@ -21,6 +22,8 @@ function setFilteredCategoryList(filter, page = 1) {
     response => {
       categoryContainer?.classList?.remove('visually-hidden');
       exercisesContainer?.classList?.add('visually-hidden');
+      inputRef?.classList?.add('visually-hidden');
+
       if (response.results.length) {
         categoryContainer.innerHTML = createCategoryCardListMarkup(response);
 
