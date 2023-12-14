@@ -1,6 +1,6 @@
 import { getExercises } from '../services/api';
-import { createInfoCardMarkup } from '../helpres/markup';
-import { removeFavoriteCardFromLocal } from '../helpres/functions';
+import { createInfoCardMarkup } from '../helpers/markup';
+import { removeFavoriteCardFromLocal } from '../helpers/functions';
 
 const favoritesList = document.getElementById('favorite-cards-list');
 const noCardsText = document.querySelector('.text-nocard-container');

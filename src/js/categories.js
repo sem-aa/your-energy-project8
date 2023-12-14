@@ -2,7 +2,7 @@ import { getFilters } from '../services/api';
 import {
   createCategoryCardListMarkup,
   createPaginationMarkup,
-} from '../helpres/markup';
+} from '../helpers/markup';
 
 const itemsOnPage = 12;
 
