@@ -10,6 +10,7 @@
 @import url('./partials/modal-exercises.css');
 @import url('./partials/modal-rating.css');*/
 @import url('./partials/favorites-section.css');
+@import url('./partials//sorted-selected.css');
 
 :root {
   --bg-color: #f4f4f4;
