@@ -12,15 +12,87 @@
     
     <script type="module" crossorigin src="/your-energy-project8/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/vendor-85278fa1.js">
-    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/favorites-84bf87a1.js">
-    <link rel="stylesheet" href="/your-energy-project8/assets/favorites-7c4b77ff.css">
+    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/favorites-b79cc47c.js">
+    <link rel="stylesheet" href="/your-energy-project8/assets/favorites-a345d33d.css">
   </head>
 
   <body>
     <header></header>
 
     <main>
-      <section></section>
+      <section class="hero">
+  <div class="hero-container container">
+    <div class="hero-desktop">
+      <div class="hero-content-container">
+        <div class="hero-main-heading">
+          <h1 class="hero-heading">
+            <svg class="hero-logo" width="38" height="38">
+              <use
+                href="../images/svg.icons/symbol-defs.svg#icon-sun-logo"
+              ></use>
+            </svg>
+            Get <span class="italic">Body</span> in<br />
+            shape, Stay healthy
+          </h1>
+        </div>
+        <div class="hero-main-text">
+          <p class="hero-text">
+            Transform your physique and embrace a healthier <br />
+            lifestyle with our comprehensive fitness and nutrition <br />
+            support.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-side-content-container">
+        <div class="hero-side-img-descktop">
+          <picture>
+            <source
+              srcset="
+                ../images/young-women-doing-fitness-outdoors-together@1x.jpg
+              "
+              media="(max-width: 767px)"
+            />
+            <!-- Для зображення Retina (2x) -->
+            <source
+              srcset="
+                ../images/young-women-doing-fitness-outdoors-together@2x.jpg
+              "
+              media="(min-width: 768px)"
+            />
+
+            <!-- Тег img для стандартних екранів -->
+            <img
+              class="hero-img cropped-image"
+              src="../images/young-women-doing-fitness-outdoors-together@1x.jpg"
+              alt="women-sportswear-working-out-outdoors"
+            />
+          </picture>
+        </div>
+        <div class="hero-hashtags-desktop">
+          <ul class="hero-hashtags-desktop-list">
+            <li class="hashtag-desktop">&num;Sport</li>
+            <li class="hashtag-desktop">&num;Healthy</li>
+            <li class="hashtag-desktop">&num;Workout</li>
+            <li class="hashtag-desktop">&num;Diet</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-img-container"></div>
+
+    <div class="hero-hashtags">
+      <ul>
+        <li class="hashtag">&num;Sport</li>
+        <li class="hashtag">&num;Healthy</li>
+        <li class="hashtag">&num;Workout</li>
+        <li class="hashtag">&num;Diet</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<script src="../js/hero.js"></script>
 
       <section class="exercises section container">
   <div class="exercises_title-wrapper">
