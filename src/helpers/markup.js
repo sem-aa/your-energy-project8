@@ -62,7 +62,7 @@ export const createCategoryCardListMarkup = data => {
   return data.results
     .map(({ imgURL, name, filter }) => {
       return `            
-        <li class="exercises_category-item"
+        <li class="exercises_category-item" data-category="${name}" data-filter="${filter}"
         style="
           background-image: linear-gradient(
               0deg,
@@ -88,7 +88,7 @@ export const createPaginationMarkup = (data, filter) => {
   let pagesArray = [];
 
   for (let page = 1; page <= data.totalPages; page++) {
-    let current = page.toString() === data.page ? 'current' : '';
+    let current = page.toString() === data.page.toString() ? 'current' : '';
 
     pagesArray.push(` <li class="exercises_pagination-item ${current}">
         <a class="page-num" data-page="${page}" data-filter="${filter}">${page}</a>
