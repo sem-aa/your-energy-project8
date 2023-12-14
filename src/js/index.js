@@ -5,5 +5,4 @@ import './sorted-selected';
 import './searchParams';
 import './share-button';
 import './subscription';
-import './favorites';
 import './modal-exercises';
