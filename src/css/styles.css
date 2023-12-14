@@ -16,7 +16,6 @@
 @import url('./partials/modal-exercises.css');
 @import url('./partials/to-top.css');
 
-
 :root {
   --bg-color: #f4f4f4;
   --primary-dark: #242424;
@@ -28,6 +27,7 @@
 
   --black-50: rgb(17, 17, 17, 0.5);
   --primary-dark-60: rgb(36, 36, 36, 0.6);
+  --primary-dark-50: rgb(36, 36, 36, 0.5);
   --primary-dark-10: rgb(36, 36, 36, 0.1);
   --bg-color-60: rgb(244, 244, 244, 0.6);
   --bg-color-40: rgb(244, 244, 244, 0.4);

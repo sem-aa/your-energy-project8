@@ -3,18 +3,33 @@
   padding-bottom: 40px;
 }
 
-.exercises_title-wrapper {
+.exercises_title-row-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
+.exercises_title-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: baseline;
+}
+
 .section-title {
   color: var(--primary-dark);
-  font-size: 44px;
-  line-height: 1.09;
+  font-size: 28px;
+  line-height: 1.35;
   letter-spacing: -0.035em;
+  margin-right: 8px;
   margin-bottom: 20px;
+}
+
+.section-title_additional {
+  color: var(--primary-dark-50);
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-left: 4px;
 }
 
 .exercises_filter-list {
@@ -164,9 +179,6 @@
   justify-content: center;
   align-items: center;
 
-  /* width: 32px;
-  height: 32px; */
-
   color: var(--primary-dark);
 
   border: 1px solid var(--primary-dark);
@@ -194,8 +206,18 @@
   }
 
   .section-title {
-    letter-spacing: -0.05em;
+    font-size: 44px;
+    line-height: 1.09;
+    letter-spacing: -0.055em;
+    margin-right: 8px;
+
     margin-bottom: 32px;
+  }
+
+  .section-title_additional {
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: -0.03em;
   }
 
   .exercises_filter-list {
