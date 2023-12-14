@@ -1,6 +1,6 @@
-import { getExercises } from '../services/api';
-import { createInfoCardMarkup } from '../helpers/markup';
-import { removeFavoriteCardFromLocal } from '../helpers/functions';
+import { getExercises } from '../../services/api';
+import { createInfoCardMarkup } from '../../helpers/markup';
+import { removeFavoriteCardFromLocal } from '../../helpers/functions';
 
 const favoritesList = document.getElementById('favorite-cards-list');
 const noCardsText = document.querySelector('.text-nocard-container');
@@ -36,8 +36,6 @@ export const createShortTitle = (title = '') => {
 const createCardsMarkupList = async list => {
   try {
     const { results } = await getExercises();
-
-    console.log(results);
 
     if (results.length === 0) {
       containerForList?.classList.add('hidden');
