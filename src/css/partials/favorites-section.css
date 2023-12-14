@@ -144,7 +144,7 @@
     width: 0;
   }
 
-  .hidden-overflow-text {
+  /* .hidden-overflow-text {
     max-width: 28px;
 
     white-space: nowrap;
@@ -154,7 +154,7 @@
 
   .hidden-overflow-text::after {
     content: '...';
-  }
+  }*/
 }
 
 .remove-btn {
