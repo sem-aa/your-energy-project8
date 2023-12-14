@@ -7,6 +7,7 @@ import {
 const categoryContainer = document.querySelector('#category-list-container');
 const exercisesContainer = document.querySelector('#exercises-list-container');
 const paginationContainer = document.querySelector('.exercises_pagination');
+const topOfSectionExercises = document.querySelector('#exercises');
 
 const itemsOnPage = 10;
 
@@ -85,7 +86,10 @@ function handlePagination() {
 
   elementsArray.forEach(function (elem) {
     elem.addEventListener('click', function (e) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      topOfSectionExercises.scrollIntoView({
+        block: 'start',
+        behavior: 'smooth',
+      });
       renderExercises(
         e.target.dataset.filter,
         query.category,
