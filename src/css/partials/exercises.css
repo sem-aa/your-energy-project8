@@ -34,6 +34,13 @@
   color: var(--primary-dark-60);
   font-size: 14px;
   line-height: 1.43;
+
+  transition: color var(--transition-dur-func);
+}
+
+.exercises_filter-btn:hover,
+.exercises_filter-btn:focus {
+  color: var(--primary-dark);
 }
 
 .active {
@@ -86,6 +93,7 @@
 
   max-width: 335px;
   width: 100%;
+
   height: 225px;
   background-color: linear-gradient(
     0deg,
@@ -94,6 +102,14 @@
   );
 
   border-radius: 12px;
+
+  transition: scale var(--transition-dur-func);
+}
+
+.exercises_category-item:hover,
+.exercises_category-item:focus {
+  cursor: pointer;
+  scale: 1.05;
 }
 
 .exercises_category-title {
@@ -188,7 +204,7 @@
   .exercises_category-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 
     column-gap: 15px;
     row-gap: 32px;
@@ -198,7 +214,7 @@
 
   .exercises_category-item {
     height: 225px;
-    width: 224px;
+    width: calc((100% - 2 * 15px) / 3);
   }
   .exercises_category-title {
     font-size: 24px;
@@ -234,7 +250,6 @@
   }
 
   .exercises_category-item {
-    width: 290px;
     height: 242px;
   }
 }

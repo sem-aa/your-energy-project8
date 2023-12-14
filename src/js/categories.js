@@ -9,7 +9,8 @@ const itemsOnPage = 12;
 const musclesFilterBtn = document.querySelector('button[data-muscles]');
 const bodyFilterBtn = document.querySelector('button[data-body]');
 const equipmentFilterBtn = document.querySelector('button[data-equipment]');
-const exCategoryContainer = document.querySelector('.exercises_category-list');
+const categoryContainer = document.querySelector('#category-list-container');
+const exercisesContainer = document.querySelector('#exercises-list-container');
 const paginationContainer = document.querySelector('.exercises_pagination');
 
 setFilteredCategoryList('Muscles');
@@ -17,8 +18,10 @@ setFilteredCategoryList('Muscles');
 function setFilteredCategoryList(filter, page = 1) {
   getFilters({ filter: filter, page: page, limit: itemsOnPage }).then(
     response => {
+      categoryContainer.classList.remove('visually-hidden');
+      exercisesContainer.classList.add('visually-hidden');
       if (response.results.length) {
-        exCategoryContainer.innerHTML = createCategoryCardListMarkup(response);
+        categoryContainer.innerHTML = createCategoryCardListMarkup(response);
 
         if (response.totalPages > 1) {
           paginationContainer.innerHTML = createPaginationMarkup(
@@ -30,7 +33,7 @@ function setFilteredCategoryList(filter, page = 1) {
           paginationContainer.innerHTML = '';
         }
       } else {
-        exCategoryContainer.innerHTML = `<li class="sorry-message"><p>Sorry, there is no exercises by your request.</p></li>`;
+        categoryContainer.innerHTML = `<li class="sorry-message"><p>Sorry, there are no exercises by your request.</p></li>`;
       }
     }
   );

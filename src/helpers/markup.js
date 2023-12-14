@@ -50,7 +50,7 @@ export const createCategoryCardListMarkup = data => {
   return data.results
     .map(({ imgURL, name, filter }) => {
       return `            
-        <li class="exercises_category-item"
+        <li class="exercises_category-item" data-category="${name}" data-filter="${filter}"
         style="
           background-image: linear-gradient(
               0deg,
