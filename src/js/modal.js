@@ -3,6 +3,15 @@ const elements = {
   modalExercises: document.querySelector('.modal-exercises'),
 };
 
+const exercisesListRef = document.getElementById('exercises-list-container');
+exercisesListRef.addEventListener('click', onExerciseListClick);
+
+function onExerciseListClick(event) {
+  if (!event.target.closest('[data-id]')) {
+    return;
+  }
+}
+
 export function modal() {
   if (elements.openModalButton && elements.modalExercises) {
     document.addEventListener('DOMContentLoaded', function () {

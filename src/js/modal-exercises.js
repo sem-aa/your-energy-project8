@@ -22,9 +22,9 @@ function handleClickFavoritesBtn() {
   return;
 }
 
-export async function modalExercises() {
+export async function modalExercises(id) {
   try {
-    cardData = await getExerciseId('64f389465ae26083f39b17a2');
+    cardData = await getExerciseId(id);
     card.innerHTML = createModalExercisesMarkup(cardData);
     updateRating(cardData.rating);
 
@@ -118,5 +118,3 @@ export function createModalExercisesMarkup(cardData) {
     </div>
   </div>`;
 }
-
-modalExercises();
