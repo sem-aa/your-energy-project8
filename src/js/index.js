@@ -1,3 +1,4 @@
+import './categories';
 import './favorites';
 
 import './subscription';
