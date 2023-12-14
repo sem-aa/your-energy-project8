@@ -20,15 +20,15 @@
 
 @media screen and (min-width: 768px) {
   .favorite-info-card {
-    /* width: 344px; */
-    width: calc((100% - 1 * 16px) / 2);
+    width: 344px;
+    /* width: calc((100% - 1 * 16px) / 2); */
   }
 }
 
 @media screen and (min-width: 1440px) {
   .favorite-info-card {
-    /* width: 405px; */
-    width: calc((100% - 1 * 16px) / 2);
+    width: 442px;
+    /* width: calc((100% - 1 * 16px) / 2); */
   }
 }
 
@@ -115,15 +115,16 @@
 
 @media screen and (min-width: 768px) {
   .card-info-list {
-    justify-content: space-around;
+    gap: 16px;
+    /* justify-content: space-around; */
   }
 }
 
-@media screen and (min-width: 1440px) {
+/* @media screen and (min-width: 1440px) {
   .card-info-list {
     gap: 16px;
   }
-}
+} */
 
 .item-text {
   font-feature-settings: 'clig' off, 'liga' off;
@@ -146,20 +147,6 @@
     visibility: hidden;
     width: 0;
   }
-
-  /* .hidden-overflow-text {
-    max-width: 28px;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
- */
-
-  /* .hidden-overflow-text::after {
-    content: '...';
-  } */
 }
 
 .remove-btn {

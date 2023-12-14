@@ -41,7 +41,7 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
           <p class="item-text">
             Burned kcal: <em class="hidden-overflow-text">${createShortStringFavorites(
               `${burnedCalories}/${time}`
-            )}<strong>min</strong></em>
+            )}<strong>&nbspmin</strong></em>
           </p>
         </li>
         <li>
