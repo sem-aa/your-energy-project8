@@ -1,4 +1,4 @@
-import { createShortString } from '../js/favorites';
+import { createShortStringFavorites, createShortTitle } from '../js/favorites';
 
 const createMarkupForChangableIcon = isFavorite => {
   const markupForIcon = isFavorite
@@ -9,9 +9,11 @@ const createMarkupForChangableIcon = isFavorite => {
 };
 
 export const createInfoCardMarkup = (cardData, isFavorite = false) => {
-  const { name, burnedCalories, bodyPart, target, _id, time } = cardData;
+  const { name, burnedCalories, bodyPart, target, _id, time, gifUrl } =
+    cardData;
 
   return `<li class="favorite-info-card" data-id=${_id}>
+  
       <div class="card-header">
         <div class="category-and-icon">
           <div class="category-tag"><p>Workout</p></div>
@@ -30,23 +32,25 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
          <svg width="24" height="24">
           <use href="/oleksii-symbol-defs.svg#icon-man"></use>
         </svg>
-        <h3 class="card-title">${name}</h3>
+        <h3 class="card-title">${createShortTitle(`${name}`)}</h3>
       </div>
+<div class="gif-container"><img src='${gifUrl}' alt="${name} gif"/>
+  </div>
       <ul class="card-info-list">
         <li>
           <p class="item-text">
-            Burned kcal: <em class="hidden-overflow-text">${createShortString(
+            Burned kcal: <em class="hidden-overflow-text">${createShortStringFavorites(
               `${burnedCalories}/${time}`
             )}<strong>min</strong></em>
           </p>
         </li>
         <li>
-          <p class="item-text">Body part: <em class="hidden-overflow-text">${createShortString(
+          <p class="item-text">Body part: <em class="hidden-overflow-text">${createShortStringFavorites(
             `${bodyPart}`
           )}</em></p>
         </li>
         <li>
-          <p class="item-text" id="exercise-info-text">Target: <em class="hidden-overflow-text">${createShortString(
+          <p class="item-text" id="exercise-info-text">Target: <em class="hidden-overflow-text">${createShortStringFavorites(
             `${target}`
           )}</em></p>
         </li>
