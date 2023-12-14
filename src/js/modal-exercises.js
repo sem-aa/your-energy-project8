@@ -1,18 +1,39 @@
 import { getExerciseId } from '../services/api';
 import { modal } from './modal';
-import { updateRating } from '../helpers/updateRating';
-import { addFavoriteCardToLocal } from '../helpers/functions';
+import { updateRating } from '../helpers/update-rating';
+import { getFromLocal } from '../services/local-storage';
+import {
+  addFavoriteCardToLocal,
+  removeFavoriteCardFromLocal,
+} from '../helpers/functions';
 
 modal();
 
 const card = document.querySelector('.modal-exercises');
 
+let cardData;
+
+function handleClickFavoritesBtn() {
+  if (!getFromLocal('favorites')) {
+    addFavoriteCardToLocal(cardData);
+    return;
+  }
+  removeFavoriteCardFromLocal(cardData._id);
+  return;
+}
+
 export async function modalExercises() {
   try {
-    const cardData = await getExerciseId('64f389465ae26083f39b17a2');
+    cardData = await getExerciseId('64f389465ae26083f39b17a2');
     card.innerHTML = createModalExercisesMarkup(cardData);
-
     updateRating(cardData.rating);
+
+    document.addEventListener('click', event => {
+      if (event.target.matches('.modal-exercises__button-favourites')) {
+        console.log('Button clicked!');
+        handleClickFavoritesBtn(cardData);
+      }
+    });
   } catch (error) {
     console.error(error);
   }
@@ -40,7 +61,9 @@ export function createModalExercisesMarkup(cardData) {
       </svg>
     </button>
     <div class="modal-exercises__image-wrapper">
-      <img class="modal-exercises__image" src="${gifUrl}" alt="${name}" />
+      <img class="modal-exercises__image" src="${
+        gifUrl !== null ? gifUrl : '../images/no-image.png'
+      }" alt="${name}" />
     </div>
     <div class="modal-exercises__description">
       <p class="modal-exercises__name">${name}</p>
@@ -71,14 +94,16 @@ export function createModalExercisesMarkup(cardData) {
         </div>
         <div class="modal-exercises__partials-item">
           <p class="modal-exercises__partials-title">Burned calories</p>
-          <p class="modal-exercises__partials-value">${burnedCalories}/${time} min</p>
+          <p class="modal-exercises__partials-value">${burnedCalories}/${time} 
+            <span class="modal-exercises__partials-value_span">min</span>
+          </p>
         </div>
       </div>
       <p class="modal-exercises__text">
         ${description}
       </p>
       <div class="modal-exercises__buttons">
-        <button type="submit" class="modal-exercises__button-favourites">
+        <button type="button" class="modal-exercises__button-favourites">
           Add to favorites
           <svg
             class="modal-exercises__button-favourites_icon"
@@ -93,3 +118,5 @@ export function createModalExercisesMarkup(cardData) {
     </div>
   </div>`;
 }
+
+modalExercises();
