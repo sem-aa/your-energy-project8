@@ -7,3 +7,4 @@ import { modalExercises } from './modal-exercises';
 
 modalExercises();
 
+import './to-top';
