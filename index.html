@@ -12,8 +12,8 @@
     
     <script type="module" crossorigin src="/your-energy-project8/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/vendor-85278fa1.js">
-    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/favorites-30726cae.js">
-    <link rel="stylesheet" href="/your-energy-project8/assets/favorites-51ade721.css">
+    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/favorites-983ba4c9.js">
+    <link rel="stylesheet" href="/your-energy-project8/assets/favorites-aee1f186.css">
   </head>
 
   <body>
@@ -94,7 +94,7 @@
 </section>
 <script src="../js/hero.js"></script>
 
-      <section class="exercises section container">
+      <section class="exercises section container" id="exercises">
   <div class="exercises_title-wrapper">
     <h2 class="section-title">Exercises</h2>
     <ul class="exercises_filter-list">
@@ -132,8 +132,11 @@
   </div>
 
   <div class="exercises_category-set">
-    <ul class="exercises_category-list">
+    <ul class="exercises_category-list" id="category-list-container">
       <!-- createCategoryCardListMarkup(data) -->
+    </ul>
+    <ul class="exercises_category-list" id="exercises-list-container">
+      <!-- map createInfoCardMarkup(result) -->
     </ul>
     <ul class="exercises_pagination">
       <!-- createPaginationMarkup(data) -->
