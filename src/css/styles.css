@@ -12,6 +12,7 @@
 @import url('./partials/exercises.css');
 /* @import url('./partials/mobile-menu.css'); */
 /* @import url('./partials/modal-rating.css'); */
+@import url('./partials/to-top.css');
 
 :root {
   --bg-color: #f4f4f4;

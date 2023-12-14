@@ -32,17 +32,17 @@ const createCardsMarkupList = async list => {
     console.log(results);
 
     if (results.length === 0) {
-      containerForList.classList.add('hidden');
-      noCardsText.classList.remove('hidden');
+      containerForList?.classList.add('hidden');
+      noCardsText?.classList.remove('hidden');
 
       return;
     }
-    noCardsText.classList.add('hidden');
-    containerForList.classList.remove('hidden');
+    noCardsText?.classList.add('hidden');
+    containerForList?.classList.remove('hidden');
 
     const exerciseCardInfoText = document.getElementById('exercise-info-text');
 
-    list.insertAdjacentHTML('beforeend', createListOfCards(results));
+    list?.insertAdjacentHTML('beforeend', createListOfCards(results));
   } catch (error) {
     console.log(error.message);
   }
@@ -50,4 +50,4 @@ const createCardsMarkupList = async list => {
 
 createCardsMarkupList(favoritesList);
 
-favoritesList.addEventListener('click', handleDeleteFavoriteCard);
+favoritesList?.addEventListener('click', handleDeleteFavoriteCard);

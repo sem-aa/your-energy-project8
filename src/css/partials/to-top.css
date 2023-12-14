@@ -1,0 +1,43 @@
+.btn-up {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+}
+
+.btn-up-wrapper__btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: var(--primary-dark-60);
+  border-radius: 50px;
+  transition: background-color var(--transition-dur-func);
+  cursor: pointer;
+}
+
+.btn-up-wrapper__btn:hover,
+.btn-up-wrapper__btn:active {
+  background-color: var(--primary-dark);
+}
+
+.icon-arrow {
+  fill: var(--bg-color);
+  width: 13px;
+  height: 13px;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-up-wrapper__btn {
+    width: 100px;
+    height: 100px;
+  }
+  .icon-arrow {
+    width: 33px;
+    height: 33px;
+  }
+}
