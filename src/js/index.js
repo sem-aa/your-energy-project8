@@ -1,10 +1,9 @@
-import './categories';
-import './favorites';
-
+import './to-top';
 import './subscription';
 
 import { modalExercises } from './modal-exercises';
 
 modalExercises();
 
-import './to-top';
+import './categories';
+import './favorites';
