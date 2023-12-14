@@ -1,12 +1,20 @@
 import { getExercises } from '../services/api';
-import { createInfoCardMarkup } from '../helpers/markup'; //   createInfoCardListMarkup,
+import {
+  createInfoCardMarkup,
+  createPaginationMarkup,
+} from '../helpers/markup';
 
 const categoryContainer = document.querySelector('#category-list-container');
 const exercisesContainer = document.querySelector('#exercises-list-container');
+const paginationContainer = document.querySelector('.exercises_pagination');
+
+const itemsOnPage = 10;
+
+let query = {};
+
 categoryContainer.addEventListener('click', onCategoryCardClick);
 
 async function onCategoryCardClick(e) {
-  console.log('e', e);
   const categoryItem = e.target.closest('.exercises_category-item');
 
   if (!categoryItem) {
@@ -20,18 +28,36 @@ async function onCategoryCardClick(e) {
   categoryContainer.classList.add('visually-hidden');
   exercisesContainer.classList.remove('visually-hidden');
 
-  let query = {};
-  switch (categoryItem.dataset.filter) {
+  renderExercises(categoryItem.dataset.filter, categoryItem.dataset.category);
+}
+
+async function renderExercises(filter, category, pageNum = 1) {
+  switch (filter) {
     case 'Muscles':
-      query = { muscles: categoryItem.dataset.category };
+      query = {
+        muscles: category,
+        category: category,
+        limit: itemsOnPage,
+        page: pageNum,
+      };
       break;
 
     case 'Equipment':
-      query = { equipment: categoryItem.dataset.category };
+      query = {
+        equipment: category,
+        category: category,
+        limit: itemsOnPage,
+        page: pageNum,
+      };
       break;
 
     case 'Body parts':
-      query = { bodypart: categoryItem.dataset.category };
+      query = {
+        bodypart: category,
+        category: category,
+        limit: itemsOnPage,
+        page: pageNum,
+      };
       break;
 
     default:
@@ -39,11 +65,31 @@ async function onCategoryCardClick(e) {
   }
 
   getExercises(query).then(response => {
-    console.log('response', response);
     exercisesContainer.innerHTML = response.results
       .map(result => {
         return createInfoCardMarkup(result);
       })
       .join('');
+
+    if (response.totalPages > 1) {
+      paginationContainer.innerHTML = createPaginationMarkup(response, filter);
+      handlePagination();
+    } else {
+      paginationContainer.innerHTML = '';
+    }
+  });
+}
+
+function handlePagination() {
+  let elementsArray = document.querySelectorAll('a.page-num');
+
+  elementsArray.forEach(function (elem) {
+    elem.addEventListener('click', function (e) {
+      renderExercises(
+        e.target.dataset.filter,
+        query.category,
+        e.target.dataset.page
+      );
+    });
   });
 }

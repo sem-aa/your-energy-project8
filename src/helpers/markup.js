@@ -84,7 +84,7 @@ export const createPaginationMarkup = (data, filter) => {
   let pagesArray = [];
 
   for (let page = 1; page <= data.totalPages; page++) {
-    let current = page.toString() === data.page ? 'current' : '';
+    let current = page.toString() === data.page.toString() ? 'current' : '';
 
     pagesArray.push(` <li class="exercises_pagination-item ${current}">
         <a class="page-num" data-page="${page}" data-filter="${filter}">${page}</a>
