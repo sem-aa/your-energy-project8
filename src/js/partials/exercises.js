@@ -4,6 +4,9 @@ import {
   createPaginationMarkup,
 } from '../../helpers/markup';
 
+const inputRef = document.querySelector('.search-input');
+const titleAdditionalRef = document.querySelector('.section-title_additional');
+const titleCategoryRef = document.querySelector('#title-category');
 const categoryContainer = document.querySelector('#category-list-container');
 const exercisesContainer = document.querySelector('#exercises-list-container');
 const paginationContainer = document.querySelector('.exercises_pagination');
@@ -28,6 +31,8 @@ async function onCategoryCardClick(e) {
 
   categoryContainer.classList.add('visually-hidden');
   exercisesContainer.classList.remove('visually-hidden');
+  inputRef.classList.remove('visually-hidden');
+  titleAdditionalRef.classList.remove('visually-hidden');
 
   renderExercises(categoryItem.dataset.filter, categoryItem.dataset.category);
 }
@@ -64,6 +69,8 @@ async function renderExercises(filter, category, pageNum = 1) {
     default:
       break;
   }
+
+  titleCategoryRef.innerHTML = category;
 
   getExercises(query).then(response => {
     exercisesContainer.innerHTML = response.results
