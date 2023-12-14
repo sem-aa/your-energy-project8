@@ -13,6 +13,7 @@ export const getFilters = async ({
   limit = 12,
 } = {}) => {
   try {
+    console.log('filter', filter);
     const res = await axios.get(
       `filters?filter=${filter}&page=${page}&limit=${limit}`
     );
@@ -60,9 +61,10 @@ export const updateRaring = async exerciseId => {
 
 export const subscribe = async email => {
   try {
-    const res = await axios.post('subscription', { email });
-    return res.data;
+    const res = await axios.post('subscription', email);
+    return res;
   } catch (error) {
-    console.error('Error in getExerciseId:', error);
+    console.error('Error in subscribe:', error);
+    return error.response;
   }
 };
