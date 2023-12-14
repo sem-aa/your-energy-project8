@@ -8,6 +8,7 @@ export function modal() {
     document.addEventListener('DOMContentLoaded', function () {
       elements.openModalButton.addEventListener('click', openModal);
       elements.modalExercises.addEventListener('click', handleModalClick);
+      document.addEventListener('keydown', handleKeyDown);
     });
   } else {
     console.error(
@@ -25,6 +26,12 @@ export function modal() {
     if (closeButton) {
       elements.modalExercises.classList.add('visually-hidden');
     } else if (event.target === elements.modalExercises) {
+      elements.modalExercises.classList.add('visually-hidden');
+    }
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === 'Escape') {
       elements.modalExercises.classList.add('visually-hidden');
     }
   }

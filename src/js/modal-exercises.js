@@ -5,10 +5,24 @@ import { updateRating } from '../helpres/updateRating';
 modal();
 
 const card = document.querySelector('.modal-exercises');
+const buttonFavourite = document.querySelector(
+  '.modal-exercises__button-favourites'
+);
+
+let cardData;
+
+buttonFavourite?.addEventListener('click', handlerClick);
+
+function handlerClick() {
+  console.log(cardData);
+}
+
+console.log(buttonFavourite);
 
 export async function modalExercises() {
   try {
-    const cardData = await getExerciseId('64f389465ae26083f39b17a2');
+    cardData = await getExerciseId('64f389465ae26083f39b17a2');
+
     card.innerHTML = createModalExercisesMarkup(cardData);
 
     updateRating(cardData.rating);
@@ -77,7 +91,7 @@ export function createModalExercisesMarkup(cardData) {
         ${description}
       </p>
       <div class="modal-exercises__buttons">
-        <button type="submit" class="modal-exercises__button-favourites">
+        <button type="button" class="modal-exercises__button-favourites">
           Add to favorites
           <svg
             class="modal-exercises__button-favourites_icon"
