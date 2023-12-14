@@ -6,11 +6,11 @@
 @import url('./partials/footer.css');
 @import url('./partials/modal-exercises.css');
 
-/* @import './partials/header.css'; */
+@import './partials/header.css';
 /* @import url('./partials/hero.css'); */
 @import url('./partials/exercises.css');
-/* @import url('./partials/mobile-menu.css'); */
-/* @import url('./partials/modal-rating.css'); */
+@import url('./partials/mobile-menu.css');
+@import url('./partials/modal-rating.css');
 
 :root {
   --bg-color: #f4f4f4;
