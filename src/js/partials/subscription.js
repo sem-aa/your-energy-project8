@@ -1,4 +1,4 @@
-import { subscribe } from '../services/api';
+import { subscribe } from '../../services/api';
 import iziToast from 'izitoast';
 
 const subscribeFormRef = document.querySelector('.footer-form');

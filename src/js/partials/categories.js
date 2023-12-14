@@ -1,8 +1,8 @@
-import { getFilters } from '../services/api';
+import { getFilters } from '../../services/api';
 import {
   createCategoryCardListMarkup,
   createPaginationMarkup,
-} from '../helpers/markup';
+} from '../../helpers/markup';
 
 const itemsOnPage = 12;
 
@@ -19,8 +19,8 @@ setFilteredCategoryList('Muscles');
 function setFilteredCategoryList(filter, page = 1) {
   getFilters({ filter: filter, page: page, limit: itemsOnPage }).then(
     response => {
-      categoryContainer.classList.remove('visually-hidden');
-      exercisesContainer.classList.add('visually-hidden');
+      categoryContainer?.classList?.remove('visually-hidden');
+      exercisesContainer?.classList?.add('visually-hidden');
       if (response.results.length) {
         categoryContainer.innerHTML = createCategoryCardListMarkup(response);
 
@@ -56,9 +56,9 @@ const onEquipmentFilterClick = () => {
   setFilteredCategoryList('Equipment');
 };
 
-musclesFilterBtn.addEventListener('click', onMusclesFilterClick);
-bodyFilterBtn.addEventListener('click', onBodyFilterClick);
-equipmentFilterBtn.addEventListener('click', onEquipmentFilterClick);
+musclesFilterBtn?.addEventListener('click', onMusclesFilterClick);
+bodyFilterBtn?.addEventListener('click', onBodyFilterClick);
+equipmentFilterBtn?.addEventListener('click', onEquipmentFilterClick);
 
 function toggleActiveStatus(btn) {
   const activeBtn = document.querySelector('.active');
@@ -74,8 +74,8 @@ function handlePagination() {
   let elementsArray = document.querySelectorAll('a.page-num');
 
   elementsArray.forEach(function (elem) {
-    elem.addEventListener('click', function (e) {
-      topOfSectionExercises.scrollIntoView({
+    elem?.addEventListener('click', function (e) {
+      topOfSectionExercises?.scrollIntoView({
         block: 'start',
         behavior: 'smooth',
       });

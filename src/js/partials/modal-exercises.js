@@ -1,11 +1,11 @@
-import { getExerciseId } from '../services/api';
+import { getExerciseId } from '../../services/api';
 import { modal } from './modal';
-import { updateRating } from '../helpers/update-rating';
-import { getFromLocal } from '../services/local-storage';
+import { updateRating } from '../../helpers/update-rating';
+import { getFromLocal } from '../../services/local-storage';
 import {
   addFavoriteCardToLocal,
   removeFavoriteCardFromLocal,
-} from '../helpers/functions';
+} from '../../helpers/functions';
 
 modal();
 
