@@ -134,8 +134,9 @@
 
 .exercises_pagination {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .exercises_pagination-item {
@@ -144,6 +145,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: 32px;
+  height: 32px;
 
   font-size: 20px;
   line-height: 1;
@@ -160,8 +164,8 @@
   justify-content: center;
   align-items: center;
 
-  width: 32px;
-  height: 32px;
+  /* width: 32px;
+  height: 32px; */
 
   color: var(--primary-dark);
 
@@ -174,6 +178,7 @@
   top: 50%;
   transform: translate(0, -50%);
   cursor: pointer;
+  width: 100%;
 }
 
 .sorry-message {
@@ -221,7 +226,7 @@
   }
 
   .exercises_pagination-item {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.33;
     letter-spacing: 0.06em;
   }

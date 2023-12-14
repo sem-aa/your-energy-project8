@@ -74,6 +74,7 @@ function handlePagination() {
 
   elementsArray.forEach(function (elem) {
     elem.addEventListener('click', function (e) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       setFilteredCategoryList(e.target.dataset.filter, e.target.dataset.page);
     });
   });

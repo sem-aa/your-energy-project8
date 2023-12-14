@@ -85,6 +85,7 @@ function handlePagination() {
 
   elementsArray.forEach(function (elem) {
     elem.addEventListener('click', function (e) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       renderExercises(
         e.target.dataset.filter,
         query.category,
