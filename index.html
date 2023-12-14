@@ -12,8 +12,8 @@
     
     <script type="module" crossorigin src="/your-energy-project8/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/vendor-6d0036ef.js">
-    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/favorites-e33c056c.js">
-    <link rel="stylesheet" href="/your-energy-project8/assets/favorites-9ade0727.css">
+    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/favorites-f2b42373.js">
+    <link rel="stylesheet" href="/your-energy-project8/assets/favorites-fb98c4d8.css">
   </head>
   <body>
     <header></header>
@@ -22,7 +22,53 @@
     <main>
       <section></section>
 
-      
+      <section class="exercises section container">
+  <div class="exercises_title-wrapper">
+    <h2 class="section-title">Exercises</h2>
+    <ul class="exercises_filter-list">
+      <li class="exercises_filter-item">
+        <button
+          class="exercises_filter-btn row-accent active"
+          type="button"
+          data-exercises
+          data-muscles
+        >
+          Muscles
+        </button>
+      </li>
+      <li class="exercises_filter-item">
+        <button
+          class="exercises_filter-btn row-accent"
+          type="button"
+          data-exercises
+          data-body
+        >
+          Body parts
+        </button>
+      </li>
+      <li class="exercises_filter-item">
+        <button
+          class="exercises_filter-btn row-accent"
+          type="button"
+          data-exercises
+          data-equipment
+        >
+          Equipment
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="exercises_category-set">
+    <ul class="exercises_category-list">
+      <!-- createCategoryCardListMarkup(data) -->
+    </ul>
+    <ul class="exercises_pagination">
+      <!-- createPaginationMarkup(data) -->
+    </ul>
+  </div>
+</section>
+
     </main>
 
     <footer class="footer">
