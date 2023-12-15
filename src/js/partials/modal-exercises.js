@@ -9,35 +9,41 @@ import {
 
 const card = document.querySelector('.modal-exercises');
 
+const checkLocation = window.location.href
+  .split('/')
+  .includes('favorites.html');
+
 let cardData;
+
+const checkIsFavourite = (data = getFromLocal('favorites') || []) => {
+  return data.find(item => item?._id === cardData._id);
+};
 
 export const handleClickFavoritesBtn = cardData => {
   const favoriteButton = document.querySelector(
     '.modal-exercises__button-favourites'
   );
   console.log(cardData);
-  const data = getFromLocal('favorites') || [];
 
-  const isFavoriteCheck = data.find(item => item?._id === cardData._id);
-
-  if (!isFavoriteCheck) {
+  if (!checkIsFavourite()) {
     addFavoriteCardToLocal(cardData);
     favoriteButton.innerHTML = `Unfavorite
     <svg
-            class="modal-exercises__button-favourites_icon"
+            class="modal-exercises__button-favourites_icon unfavorite-btn"
             aria-label='heart'
             width="20"
             height="20"
           >
             <use href="./oleksii-symbol-defs.svg#icon-trash-dark"></use>
           </svg>`;
+
     return;
   }
 
   removeFavoriteCardFromLocal(cardData._id);
   favoriteButton.innerHTML = `Add to favorites
           <svg
-            class="modal-exercises__button-favourites_icon"
+            class="modal-exercises__button-favourites_icon add-to-favorites-btn"
             aria-label='heart'
             width="20"
             height="20"
@@ -53,9 +59,10 @@ export async function modalExercises(id) {
   try {
     cardData = await getExerciseId(id);
     card.innerHTML = createModalExercisesMarkup(cardData);
+
     updateRatingStar(cardData.rating);
     modal();
-    console.log(123);
+
     const modalRef = document.querySelector('.modal-exercises__card');
     modalRef.addEventListener('click', event => {
       if (event.target.closest('.modal-exercises__button-favourites')) {
@@ -132,8 +139,18 @@ export function createModalExercisesMarkup(cardData) {
       <p class="modal-exercises__text">
         ${description}
       </p>
-      <div class="modal-exercises__buttons">
-        <button type="button" class="modal-exercises__button-favourites">
+      <div class="modal-exercises__buttons">${
+        checkLocation || checkIsFavourite()
+          ? `<button type="button" class="modal-exercises__button-favourites unfavorite-btn" style='background-color=#242424'>Unfavorite
+    <svg
+            class="modal-exercises__button-favourites_icon"
+            aria-label='heart'
+            width="20"
+            height="20"
+          >
+            <use href="./oleksii-symbol-defs.svg#icon-trash-dark"></use>
+          </svg>`
+          : `<button type="button" class="modal-exercises__button-favourites add-to-favorites-btn">
           Add to favorites
           <svg
             class="modal-exercises__button-favourites_icon"
@@ -142,7 +159,9 @@ export function createModalExercisesMarkup(cardData) {
             height="20"
           >
             <use href="./images/icons.svg#icon-heart"></use>
-          </svg>
+          </svg>`
+      }
+        
         </button>
         <button class="modal-exercises__button-rating">Give a rating</button>
       </div>
