@@ -3,3 +3,4 @@ import './partials/header';
 import './partials/quote';
 
 
+import './partials/loader';
