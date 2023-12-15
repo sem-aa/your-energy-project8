@@ -1,6 +1,6 @@
 export const KEY_STORAGE = {
   favorites: 'favorites',
-  phrase: 'frase',
+  phrase: 'phrase',
 };
 
 export const FILTER_EXERCISES = {
