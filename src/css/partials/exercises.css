@@ -3,18 +3,98 @@
   padding-bottom: 40px;
 }
 
-.exercises_title-wrapper {
+.exercises_title-row-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
+.exercises_title-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: baseline;
+}
+
 .section-title {
   color: var(--primary-dark);
-  font-size: 44px;
-  line-height: 1.09;
+  font-size: 28px;
+  line-height: 1.35;
   letter-spacing: -0.035em;
+  margin-right: 8px;
   margin-bottom: 20px;
+}
+
+.section-title_additional {
+  color: var(--primary-dark-50);
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-left: 4px;
+
+  text-transform: capitalize;
+}
+
+.search-box {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  width: 100%;
+  max-width: 335px;
+}
+
+.search-input {
+  width: 100%;
+  height: 44px;
+
+  padding: 12px 46px 12px 14px;
+
+  border-radius: 30px;
+  border: 1px solid var(--primary-dark);
+
+  background-color: transparent;
+  outline: transparent;
+}
+
+.search-input::placeholder {
+  font-size: 14px;
+  line-height: 1.42;
+  color: var(--primary-dark);
+}
+
+.search-btn {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 18px;
+  height: 18px;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+}
+
+.search-icon {
+  fill: var(--primary-dark);
+}
+
+.visually-hidden-ext {
+  position: absolute;
+  width: 1px;
+  height: 0px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .exercises_filter-list {
@@ -34,6 +114,13 @@
   color: var(--primary-dark-60);
   font-size: 14px;
   line-height: 1.43;
+
+  transition: color var(--transition-dur-func);
+}
+
+.exercises_filter-btn:hover,
+.exercises_filter-btn:focus {
+  color: var(--primary-dark);
 }
 
 .active {
@@ -86,6 +173,7 @@
 
   max-width: 335px;
   width: 100%;
+
   height: 225px;
   background-color: linear-gradient(
     0deg,
@@ -94,6 +182,14 @@
   );
 
   border-radius: 12px;
+
+  transition: scale var(--transition-dur-func);
+}
+
+.exercises_category-item:hover,
+.exercises_category-item:focus {
+  cursor: pointer;
+  scale: 1.05;
 }
 
 .exercises_category-title {
@@ -118,8 +214,9 @@
 
 .exercises_pagination {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  gap: 8px;
 }
 
 .exercises_pagination-item {
@@ -128,6 +225,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: 32px;
+  height: 32px;
 
   font-size: 20px;
   line-height: 1;
@@ -144,9 +244,6 @@
   justify-content: center;
   align-items: center;
 
-  width: 32px;
-  height: 32px;
-
   color: var(--primary-dark);
 
   border: 1px solid var(--primary-dark);
@@ -158,9 +255,13 @@
   top: 50%;
   transform: translate(0, -50%);
   cursor: pointer;
+  width: 100%;
 }
 
 .sorry-message {
+  margin-top: 40px;
+  text-align: center;
+
   font-size: 24px;
   font-weight: 500;
   line-height: 1.33;
@@ -173,12 +274,50 @@
   }
 
   .section-title {
-    letter-spacing: -0.05em;
+    font-size: 44px;
+    line-height: 1.09;
+    letter-spacing: -0.055em;
+    margin-right: 8px;
+
     margin-bottom: 32px;
   }
 
-  .exercises_filter-list {
+  .section-title_additional {
+    font-size: 24px;
+    line-height: 1.33;
+    letter-spacing: -0.03em;
+  }
+
+  .exercises_tab-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 32px;
+  }
+
+  .search-box {
+    margin: 0;
+    width: 273px;
+  }
+
+  .search-input {
+    width: 273px;
+    height: 48px;
+    padding: 12px 46px 12px 14px;
+
+    border-radius: 30px;
+    border: 1px solid var(--primary-dark);
+
+    background-color: var(--bg-color);
+  }
+
+  .search-input::placeholder {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .exercises_filter-list {
+    margin-bottom: 0;
   }
   .exercises_filter-btn {
     font-size: 16px;
@@ -188,7 +327,7 @@
   .exercises_category-list {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 
     column-gap: 15px;
     row-gap: 32px;
@@ -198,14 +337,14 @@
 
   .exercises_category-item {
     height: 225px;
-    width: 224px;
+    width: calc((100% - 2 * 15px) / 3);
   }
   .exercises_category-title {
     font-size: 24px;
   }
 
   .exercises_pagination-item {
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1.33;
     letter-spacing: 0.06em;
   }
@@ -217,11 +356,18 @@
     padding-bottom: 64px;
   }
 
-  .exercises_title-wrapper {
-    display: flex;
+  .exercises_title-row-container {
     flex-direction: row;
     justify-content: space-between;
-    align-items: end;
+  }
+
+  .exercises_tab-wrapper {
+    width: 566px;
+    justify-content: flex-end;
+  }
+
+  .exercises_filter-list {
+    margin-left: 30px;
   }
 
   .exercises_category-set {
@@ -234,7 +380,6 @@
   }
 
   .exercises_category-item {
-    width: 290px;
     height: 242px;
   }
 }

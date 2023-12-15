@@ -1,9 +1,12 @@
-import './categories';
-import './favorites';
+import './partials/to-top';
+import './partials/loader';
+import './partials/categories';
+import './partials/exercises';
+import './partials/favorites';
+import './partials/sorted-selected';
+import './partials/search-params';
+import './partials/share-button';
+import './partials/subscription';
+import './partials/modal-exercises';
 import './header';
 import './modal-rating';
-import './subscription';
-
-import { modalExercises } from './modal-exercises';
-
-modalExercises();
