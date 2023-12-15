@@ -3,7 +3,7 @@
 @import url('./common.css');
 @import url('./container.css');
 
-/* @import url('./partials/header.css'); */
+@import url('./partials/header.css');
 @import url('./partials/hero.css');
 @import url('./partials/exercises.css');
 @import url('./partials/favorites-section.css');
@@ -11,9 +11,9 @@
 @import url('./partials/footer.css');
 
 @import url('./partials/share-button.css');
-/* @import url('./partials/mobile-menu.css'); */
-/* @import url('./partials/modal-rating.css'); */
-@import url('./partials/modal-exercises.css');
+@import url('./partials/mobile-menu.css');
+@import url('./partials/modal-rating.css');
+
 @import url('./partials/to-top.css');
 @import url('./partials/loader.css');
 
@@ -27,6 +27,7 @@
   --black: #111111;
 
   --black-50: rgb(17, 17, 17, 0.5);
+  --primary-dark-80: rgba(36, 36, 36, 0.8);
   --primary-dark-60: rgb(36, 36, 36, 0.6);
   --primary-dark-50: rgb(36, 36, 36, 0.5);
   --primary-dark-10: rgb(36, 36, 36, 0.1);
