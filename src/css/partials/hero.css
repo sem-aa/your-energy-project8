@@ -223,6 +223,167 @@ screen and (min-resolution: 2dppx) {
 
 /* MOBILE */
 .quote-container {
-    
+    max-width: 355px;
+    margin: 0 auto;
 }
+
+.quote-of-the-day{
+    position: relative;
+    padding: 20px 20px 20px 72px ;
+    width: 100%;
+    height:fit-content;
+    background-color: var(--primary-dark);
+    color: var(--bg-color) ;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.quote-icon {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.invert-coma-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.quote-heading {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.quote-text {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.quote-image {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.recomendation-container {
+    position: relative;
+    width: 100%;
+    padding: 20px 20px 20px 70px;
+}
+
+.recoendation-icon{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.recomendation-heading{
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.recomendation-subheading {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    color: var(--primary-dark-60);
+    margin-bottom: 16px;
+}
+
+.recomendation-text-container {
+    max-width: 245px;
+    height: 105px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.recomendation-text {
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+/* TABLET */
+
+@media (min-width: 768px) {
+    .quote-container{
+        max-width: 704px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px 16px;
+        margin-bottom: 20px;
+    }
+
+    .quote-of-the-day{
+        max-width: 400px;
+        margin: 0;
+    }
+
+    .quote-image{
+        max-width: 288px;
+        margin: 0 auto;
+    }
+
+    .quote-image img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      /* Зберігає співвідношення сторін для картинки */
+      border-radius: 20px;
+      overflow: hidden;
+   }
+
+    .recomendation-container {
+        max-width: 400px;
+        margin: 0;
+    }
+
+}
+
+/* DESKTOP */
+
+@media (min-width: 1200px) {
+
+ .quote-container {
+    max-width: 444px;  
+    }
+
+   .quote-icon {
+    left: 40px;
+    top: 40px;
+    }
+
+    .quote-of-the-day {
+    max-width: 100%;
+    padding: 40px 40px 40px 90px;
+    }
+
+    .invert-coma-icon {
+     right: 40px;
+     top: 40px;
+    }
+
+    .quote-image{
+      max-width: 100%;
+    }
+
+    .recomendation-container {
+      max-width: 100%;
+    }
+
+    .recomendation-text-container {
+            max-width: 314px;
+            height: fit-content;
+        }
+
+
+}
+
 
