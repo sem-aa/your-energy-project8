@@ -3,6 +3,7 @@ import {
   createCategoryCardListMarkup,
   createPaginationMarkup,
 } from '../../helpers/markup';
+//import { showLoader, hideLoader } from './loader';
 
 const itemsOnPage = 12;
 
