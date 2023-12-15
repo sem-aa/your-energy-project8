@@ -15,6 +15,7 @@
 /* @import url('./partials/modal-rating.css'); */
 @import url('./partials/modal-exercises.css');
 @import url('./partials/to-top.css');
+@import url('./partials/loader.css');
 
 :root {
   --bg-color: #f4f4f4;
