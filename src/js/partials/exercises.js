@@ -3,6 +3,7 @@ import {
   createInfoCardMarkup,
   createPaginationMarkup,
 } from '../../helpers/markup';
+import { removeAllSearchParams, setSearchParams } from './search-params';
 
 const categoryContainer = document.querySelector('#category-list-container');
 const exercisesContainer = document.querySelector('#exercises-list-container');
@@ -30,6 +31,11 @@ async function onCategoryCardClick(e) {
   exercisesContainer.classList.remove('visually-hidden');
 
   renderExercises(categoryItem.dataset.filter, categoryItem.dataset.category);
+  removeAllSearchParams();
+  setSearchParams(
+    `${categoryItem.dataset.filter.toLowerCase().split(' ').join('')}`,
+    `${categoryItem.dataset.category}`
+  );
 }
 
 async function renderExercises(filter, category, pageNum = 1) {

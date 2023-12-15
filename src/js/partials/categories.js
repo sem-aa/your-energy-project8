@@ -3,6 +3,7 @@ import {
   createCategoryCardListMarkup,
   createPaginationMarkup,
 } from '../../helpers/markup';
+import { removeAllSearchParams, setSearchParams } from './search-params';
 
 const itemsOnPage = 12;
 
@@ -41,17 +42,24 @@ function setFilteredCategoryList(filter, page = 1) {
 }
 
 const onMusclesFilterClick = () => {
+  removeAllSearchParams();
+  setSearchParams('filter', 'Muscles');
+
   toggleActiveStatus(musclesFilterBtn);
   setFilteredCategoryList('Muscles');
 };
 
 const onBodyFilterClick = () => {
+  removeAllSearchParams();
+  setSearchParams('filter', 'Body parts');
   toggleActiveStatus(bodyFilterBtn);
 
   setFilteredCategoryList('Body parts');
 };
 
 const onEquipmentFilterClick = () => {
+  removeAllSearchParams();
+  setSearchParams('filter', 'Equipment');
   toggleActiveStatus(equipmentFilterBtn);
   setFilteredCategoryList('Equipment');
 };
