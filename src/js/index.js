@@ -10,3 +10,4 @@ import './partials/subscription';
 import './partials/modal-exercises';
 import './partials/header';
 import './partials/modal-rating';
+import './partials/hero';
