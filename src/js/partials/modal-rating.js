@@ -2,7 +2,7 @@ import { updateRaring } from '../../services/api';
 
 const formRating = document.querySelector('#ratingForm');
 const btnCloseModal = document.querySelector('.close-rating');
-// const btnOpenModal = document.querySelector('');
+const btnOpenModal = document.querySelector('.modal-exercises__button-rating');
 const ratingModal = document.querySelector('#ratingModal');
 
 const idExercises = '64f389465ae26083f39b17a4';
@@ -22,12 +22,12 @@ function sendRating(event) {
 
 formRating.addEventListener('submit', sendRating);
 
-// btnOpenModal.addEventListener('click', function () {
-//   ratingModal.style.display = 'block';
-//   body.classList.add('modal-open');
-// });
+btnOpenModal.addEventListener('click', function () {
+  ratingModal.style.display = 'block';
+  body.classList.add('modal-open');
+});
 
 btnCloseModal.addEventListener('click', () => {
   ratingModal.style.display = 'none';
-  // body.classList.remove('modal-open');
+  body.classList.remove('modal-open');
 });
