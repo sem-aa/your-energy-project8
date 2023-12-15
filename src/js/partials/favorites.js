@@ -48,7 +48,7 @@ const createCardsMarkupList = async list => {
 
     const exerciseCardInfoText = document.getElementById('exercise-info-text');
 
-    list.insertAdjacentHTML('beforeend', createListOfCards(results));
+    list?.insertAdjacentHTML('beforeend', createListOfCards(results));
   } catch (error) {
     console.log(error.message);
   }
