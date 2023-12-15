@@ -48,23 +48,19 @@
     justify-content: center;
     align-items: center;
     gap: 18px;
-  }
-
-  .nav_link_home {
-    color: var(--primary-dark);
-    line-height: 1.5;
-  }
-  .nav_link_favorites {
     color: var(--bg-color);
-    line-height: 1.5;
   }
 
-  .nav_item_home {
-    display: inline-flex;
+  .nav_list a {
+    line-height: 1.5;
     padding: 6px 12px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+  }
+
+  nav .nav_item_active {
+    color: var(--primary-dark);
+    display: inline-flex;
     border-radius: 30px;
     background: var(--bg-color);
   }
@@ -89,7 +85,7 @@
   .social_list svg:hover,
   .social_list svg:focus {
     fill: var(--bg-color);
-    background: rgba(36, 36, 36, 0.8);
+    background: var(--primary-dark-80);
   }
 }
 
