@@ -16,10 +16,8 @@ closeBtn.addEventListener('click', function () {
 // Add class active in nav
 document.addEventListener('DOMContentLoaded', function () {
   const currentUrl = window.location.pathname;
-  console.log(currentUrl);
 
   const navItems = document.querySelectorAll('.nav_list li');
-  console.log(navItems);
 
   navItems.forEach(function (item) {
     const link = item.querySelector('a').getAttribute('href');
