@@ -49,9 +49,9 @@ export const getExerciseId = async exerciseId => {
   }
 };
 
-export const updateRaring = async exerciseId => {
+export const updateRaring = async (exerciseId, obj) => {
   try {
-    const res = await axios.patch(`exercises/${exerciseId}/rating`);
+    const res = await axios.patch(`exercises/${exerciseId}/rating`, obj);
     return res.data;
   } catch (error) {
     console.error('Error in getExerciseId:', error);
@@ -60,9 +60,10 @@ export const updateRaring = async exerciseId => {
 
 export const subscribe = async email => {
   try {
-    const res = await axios.post('subscription', { email });
-    return res.data;
+    const res = await axios.post('subscription', email);
+    return res;
   } catch (error) {
-    console.error('Error in getExerciseId:', error);
+    console.error('Error in subscribe:', error);
+    return error.response;
   }
 };

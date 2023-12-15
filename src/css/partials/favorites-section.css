@@ -1,0 +1,351 @@
+.card-title-container > svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (min-width: 1440px) {
+  .favorites-section {
+    padding-bottom: 63px;
+  }
+}
+
+.favorite-info-card {
+  position: relative;
+  padding: 16px;
+  width: 335px;
+  height: 141px;
+
+  border-radius: 15px;
+  background: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .favorite-info-card {
+    width: 344px;
+    /* width: calc((100% - 1 * 16px) / 2); */
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorite-info-card {
+    width: 442px;
+    /* width: calc((100% - 1 * 16px) / 2); */
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.category-and-icon {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.category-tag {
+  padding: 5px 8px;
+
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: normal;
+
+  border-radius: 15px;
+  border: 1px solid #242424;
+}
+
+.icon-rating-container {
+  display: flex;
+  gap: 2px;
+
+  padding-left: 8px;
+}
+
+.rating-info-card {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.start-btn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  padding: 0;
+  width: 58px;
+  height: 18px;
+  border: none;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+
+  background-color: inherit;
+}
+
+.card-title-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.card-info-list {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 768px) {
+  .card-info-list {
+    gap: 16px;
+    /* justify-content: space-around; */
+  }
+}
+
+/* @media screen and (min-width: 1440px) {
+  .card-info-list {
+    gap: 16px;
+  }
+} */
+
+.item-text {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+
+  color: rgba(36, 36, 36, 0.4);
+}
+
+.item-text > em {
+  display: inline-flex;
+
+  color: #242424;
+  font-style: normal;
+}
+
+@media screen and (max-width: 1440px) {
+  .item-text > em > strong {
+    visibility: hidden;
+    width: 0;
+  }
+}
+
+.remove-btn {
+  border: none;
+  background-color: inherit;
+}
+
+.list-thumb {
+  position: relative;
+}
+
+@media screen and (min-width: 1440px) {
+  .list-thumb {
+    width: calc(100% + 16px);
+    height: 100%;
+
+    overflow-y: scroll;
+  }
+}
+
+.favorite-cards-list {
+  display: flex;
+  gap: 20px;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media screen and (min-width: 768px) {
+  .favorite-cards-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorite-cards-list {
+    /* width: calc(100% + 16px); */
+
+    justify-content: flex-start;
+    align-self: flex-start;
+    /* overflow-y: scroll; */
+  }
+}
+
+.scrollbar-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.list-thumb::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list-thumb::-webkit-scrollbar-track {
+  border-radius: 12px;
+  background: rgba(36, 36, 36, 0.1);
+}
+
+.list-thumb::-webkit-scrollbar-thumb {
+  width: 8px;
+  height: 153px;
+
+  border-radius: 12px;
+  background: #242424;
+}
+
+.quotation-container {
+  width: 100%;
+  margin-bottom: 32px;
+  height: 100vh;
+
+  background-color: rgb(186, 186, 186);
+}
+
+@media screen and (min-width: 1440px) {
+  .quotation-container {
+    width: 494px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorites-container {
+    display: flex;
+    gap: 32px;
+
+    height: 100vh;
+  }
+}
+
+.favorites-title {
+  margin-bottom: 20px;
+
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 38px; /* 135.714% */
+  letter-spacing: -0.56px;
+}
+
+@media screen and (min-width: 768px) {
+  .favorites-title {
+    margin-bottom: 32px;
+
+    font-size: 44px;
+    line-height: 48px; /* 109.091% */
+    letter-spacing: -0.88px;
+  }
+}
+
+.text-nocard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 318px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 46px;
+}
+
+@media screen and (min-width: 768px) {
+  .text-nocard-container {
+    max-width: 554px;
+    padding-top: 136px;
+    padding-bottom: 188px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .text-nocard-container {
+    height: 100vh;
+    padding: 0;
+  }
+}
+
+.no-cards-text {
+  align-self: center;
+  text-align: center;
+
+  width: 318px;
+  height: auto;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .no-cards-text {
+    width: 554px;
+
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.gif-container {
+  position: absolute;
+
+  top: 28%;
+  right: 16px;
+  width: 72px;
+  height: auto;
+}
+
+.gif-container > img {
+  opacity: 0;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 1440px) {
+  .gif-container {
+    top: 0;
+    right: 112px;
+  }
+  .gif-container > img {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .favorite-info-card:hover .gif-container > img {
+    transition-duration: 1250ms;
+    transition-timing-function: ease-in-out;
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
+}
