@@ -1,5 +1,6 @@
 import './partials/to-top';
 import './partials/loader';
+import './partials/modal-terms';
 import './partials/categories';
 import './partials/exercises';
 import './partials/favorites';
@@ -10,4 +11,3 @@ import './partials/subscription';
 import './partials/modal-exercises';
 import './partials/header';
 import './partials/modal-rating';
-
