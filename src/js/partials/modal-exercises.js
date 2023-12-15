@@ -1,6 +1,6 @@
 import { getExerciseId } from '../../services/api';
 import { modal } from './modal';
-import { updateRating } from '../../helpers/update-rating';
+import { updateRatingStar } from '../../helpers/update-rating';
 import { getFromLocal, saveToLocal } from '../../services/local-storage';
 import {
   addFavoriteCardToLocal,
@@ -53,7 +53,7 @@ export async function modalExercises(id) {
   try {
     cardData = await getExerciseId(id);
     card.innerHTML = createModalExercisesMarkup(cardData);
-    updateRating(cardData.rating);
+    updateRatingStar(cardData.rating);
     modal();
     console.log(123);
     const modalRef = document.querySelector('.modal-exercises__card');
