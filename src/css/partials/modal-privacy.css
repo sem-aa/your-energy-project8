@@ -1,4 +1,4 @@
-.license-backdrop {
+.privacy-backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,20 +11,19 @@
     visibility var(--transition-dur-func);
 }
 
-.license-modal {
+.privacy-modal {
   position: absolute;
   width: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--bg-color);
-  padding: 40px;
   border-radius: 16px;
   margin-right: auto;
   margin-left: auto;
+  padding: 40px;
 }
-
-.license-modal-btn-close {
+.privacy-modal-btn-close {
   border: none;
   background-color: transparent;
 
@@ -37,8 +36,8 @@
   transition: stroke var(--transition-dur-func);
 }
 
-.license-modal-btn-close:hover,
-.license-modal-btn-close:focus {
+.privacy-modal-btn-close:hover,
+.privacy-modal-btn-close:focus {
   stroke: var(--black);
 }
 
@@ -50,41 +49,19 @@
   text-align: center;
 }
 
-.modal-license-scroll {
+.modal-privacy-scroll {
   overflow-y: scroll;
-  height: 90%;
+  height: 70%;
 }
 
-.modal-license-scroll::-webkit-scrollbar {
+.modal-privacy-scroll::-webkit-scrollbar {
   width: 0;
 }
 
-.modal-license-list {
-  counter-reset: list1;
-}
-.modal-license-list > li {
-  display: block;
-  position: relative;
-  margin: 0 0 5px 1.7em;
+.modal-privacy-list-item {
+  margin-bottom: 8px;
 }
 
-.modal-license-list > li::before {
-  position: absolute;
-  left: -1.7em;
-  counter-increment: list1;
-  content: counter(list1) '.';
-  font-weight: 600;
-}
-
-.modal-license-list > li > ol {
-  counter-reset: list2;
-}
-.modal-license-list > li > ol > li {
-  margin-left: 2.5em;
-}
-.modal-license-list > li > ol > li::before {
-  left: -2.5em;
-  font-weight: 600;
-  counter-increment: list2;
-  content: counter(list1) '.' counter(list2) '.';
+.modal-privacy-paragraph {
+  text-indent: 20px;
 }

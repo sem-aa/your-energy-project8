@@ -14,3 +14,4 @@ import './partials/modal-rating';
 import './partials/hero';
 import './partials/quote';
 import './partials/modal-terms';
+import './partials/modal-privasy';
