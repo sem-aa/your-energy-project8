@@ -1,7 +1,11 @@
+import { getFullUrl } from "./search-params";
+
 const modal = document.getElementById('myModal');
 const openBtn = document.getElementById('openModalBtn');
 const closeBtn = document.getElementById('closeModalBtn');
 const body = document.querySelector('body');
+ const navFav = document.querySelector('.nav_link_favorites')
+ const navHome = document.querySelector('.nav_link_home')
 
 openBtn.addEventListener('click', function () {
   modal.style.display = 'block';
@@ -13,16 +17,10 @@ closeBtn.addEventListener('click', function () {
   body.classList.remove('modal-open');
 });
 
-// Add class active in nav
-document.addEventListener('DOMContentLoaded', function () {
-  const currentUrl = window.location.pathname;
-
-  const navItems = document.querySelectorAll('.nav_list li');
-
-  navItems.forEach(function (item) {
-    const link = item.querySelector('a').getAttribute('href');
-    if (link === currentUrl) {
-      item.classList.add('nav_item_active');
-    }
-  });
-});
+if (getFullUrl().includes('favorites')) {
+  navHome?.classList.remove('nav_item_active')
+  navFav?.classList.add('nav_item_active')
+} else {
+   navHome?.classList.add('nav_item_active')
+   navFav?.classList.remove('nav_item_active')
+}

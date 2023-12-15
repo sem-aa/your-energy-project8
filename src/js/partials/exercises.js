@@ -2,6 +2,8 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import { getExercises } from '../../services/api';
+import { getFromLocal } from '../../services/local-storage';
+//import { showLoader, hideLoader } from './loader';
 import {
   createInfoCardMarkup,
   createPaginationMarkup,
@@ -121,11 +123,17 @@ async function renderExercises(
 
   titleCategoryRef.innerHTML = category;
 
+  const favFromLocalArr = getFromLocal('favorites').map(fav => fav._id);
+
   getExercises(query).then(response => {
     if (response.results.length) {
       exercisesContainer.innerHTML = response.results
         .map(result => {
-          return createInfoCardMarkup(result);
+          let isFavorite = false;
+          if (favFromLocalArr.includes(result._id)) {
+            isFavorite = true;
+          }
+          return createInfoCardMarkup(result, isFavorite);
         })
         .join('');
     } else {
