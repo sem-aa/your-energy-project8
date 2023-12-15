@@ -1,4 +1,5 @@
 import { getFromLocal, saveToLocal } from '../services/local-storage';
+import { KEY_STORAGE } from '../helpers/constant';
 
 export const removeFavoriteCardFromLocal = removedId => {
   const prevFavoriteCards = getFromLocal(KEY_STORAGE.favorites);
@@ -13,15 +14,19 @@ export const removeFavoriteCardFromLocal = removedId => {
   saveToLocal(KEY_STORAGE.favorites, newFavoriteCards);
 };
 
-export const handleClickFavoritesBtn = cardData => {
-  if (!getFromLocal('favorites')) {
-    addFavoriteCardToLocal(cardData);
-    return;
-  }
+// export const handleClickFavoritesBtn = cardData => {
+//   console.log(cardData);
+//   const isFavoriteCheck = getFromLocal('favorites').find(
+//     ({ _id }) => _id === cardData._id
+//   );
+//   if (!isFavoriteCheck) {
+//     addFavoriteCardToLocal(cardData);
+//     return;
+//   }
 
-  removeFavoriteCardFromLocal(cardData._id);
-  return;
-};
+//   removeFavoriteCardFromLocal(cardData._id);
+//   return;
+// };
 
 export const addFavoriteCardToLocal = ({
   name,
@@ -33,7 +38,7 @@ export const addFavoriteCardToLocal = ({
   gifUrl,
 }) => {
   const prevFavoriteCards = getFromLocal(KEY_STORAGE.favorites) || [];
-
+  console.log(prevFavoriteCards);
   const newFavoriteCards = [
     ...prevFavoriteCards,
     {

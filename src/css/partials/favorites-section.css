@@ -13,6 +13,7 @@
   position: relative;
   padding: 16px;
   width: 335px;
+  height: 141px;
 
   border-radius: 15px;
   background: #fff;
@@ -20,15 +21,15 @@
 
 @media screen and (min-width: 768px) {
   .favorite-info-card {
-    /* width: 344px; */
-    width: calc((100% - 1 * 16px) / 2);
+    width: 344px;
+    /* width: calc((100% - 1 * 16px) / 2); */
   }
 }
 
 @media screen and (min-width: 1440px) {
   .favorite-info-card {
-    /* width: 405px; */
-    width: calc((100% - 1 * 16px) / 2);
+    width: 442px;
+    /* width: calc((100% - 1 * 16px) / 2); */
   }
 }
 
@@ -115,15 +116,16 @@
 
 @media screen and (min-width: 768px) {
   .card-info-list {
-    justify-content: space-around;
+    gap: 16px;
+    /* justify-content: space-around; */
   }
 }
 
-@media screen and (min-width: 1440px) {
+/* @media screen and (min-width: 1440px) {
   .card-info-list {
     gap: 16px;
   }
-}
+} */
 
 .item-text {
   font-feature-settings: 'clig' off, 'liga' off;
@@ -146,20 +148,6 @@
     visibility: hidden;
     width: 0;
   }
-
-  /* .hidden-overflow-text {
-    max-width: 28px;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
- */
-
-  /* .hidden-overflow-text::after {
-    content: '...';
-  } */
 }
 
 .remove-btn {
@@ -167,13 +155,26 @@
   background-color: inherit;
 }
 
+.list-thumb {
+  position: relative;
+}
+
+@media screen and (min-width: 1440px) {
+  .list-thumb {
+    width: calc(100% + 16px);
+    height: 100%;
+
+    overflow-y: scroll;
+  }
+}
+
 .favorite-cards-list {
   display: flex;
   gap: 20px;
+
   flex-direction: column;
   justify-content: center;
-
-  position: relative;
+  align-items: flex-start;
 }
 
 @media screen and (min-width: 768px) {
@@ -187,10 +188,11 @@
 
 @media screen and (min-width: 1440px) {
   .favorite-cards-list {
-    width: calc(100% + 16px);
-    height: 100%;
+    /* width: calc(100% + 16px); */
 
-    overflow-y: scroll;
+    justify-content: flex-start;
+    align-self: flex-start;
+    /* overflow-y: scroll; */
   }
 }
 
@@ -204,16 +206,16 @@
   overflow: hidden;
 }
 
-.favorite-cards-list::-webkit-scrollbar {
+.list-thumb::-webkit-scrollbar {
   width: 8px;
 }
 
-.favorite-cards-list::-webkit-scrollbar-track {
+.list-thumb::-webkit-scrollbar-track {
   border-radius: 12px;
   background: rgba(36, 36, 36, 0.1);
 }
 
-.favorite-cards-list::-webkit-scrollbar-thumb {
+.list-thumb::-webkit-scrollbar-thumb {
   width: 8px;
   height: 153px;
 

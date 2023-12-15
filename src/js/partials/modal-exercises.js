@@ -1,35 +1,64 @@
 import { getExerciseId } from '../../services/api';
 import { modal } from './modal';
 import { updateRating } from '../../helpers/update-rating';
-import { getFromLocal } from '../../services/local-storage';
+import { getFromLocal, saveToLocal } from '../../services/local-storage';
 import {
   addFavoriteCardToLocal,
   removeFavoriteCardFromLocal,
 } from '../../helpers/functions';
 
-modal();
-
 const card = document.querySelector('.modal-exercises');
 
 let cardData;
 
-function handleClickFavoritesBtn() {
-  if (!getFromLocal('favorites')) {
+export const handleClickFavoritesBtn = cardData => {
+  const favoriteButton = document.querySelector(
+    '.modal-exercises__button-favourites'
+  );
+  console.log(cardData);
+  const data = getFromLocal('favorites') || [];
+
+  const isFavoriteCheck = data.find(item => item?._id === cardData._id);
+
+  if (!isFavoriteCheck) {
     addFavoriteCardToLocal(cardData);
+    favoriteButton.innerHTML = `Unfavorite
+    <svg
+            class="modal-exercises__button-favourites_icon"
+            aria-label='heart'
+            width="20"
+            height="20"
+          >
+            <use href="./oleksii-symbol-defs.svg#icon-trash-dark"></use>
+          </svg>`;
     return;
   }
-  removeFavoriteCardFromLocal(cardData._id);
-  return;
-}
 
-export async function modalExercises() {
+  removeFavoriteCardFromLocal(cardData._id);
+  favoriteButton.innerHTML = `Add to favorites
+          <svg
+            class="modal-exercises__button-favourites_icon"
+            aria-label='heart'
+            width="20"
+            height="20"
+
+          >
+            <use href="./images/icons.svg#icon-heart"></use>
+          </svg>`;
+
+  return;
+};
+
+export async function modalExercises(id) {
   try {
-    cardData = await getExerciseId('64f389465ae26083f39b17a2');
+    cardData = await getExerciseId(id);
     card.innerHTML = createModalExercisesMarkup(cardData);
     updateRating(cardData.rating);
-
-    document.addEventListener('click', event => {
-      if (event.target.matches('.modal-exercises__button-favourites')) {
+    modal();
+    console.log(123);
+    const modalRef = document.querySelector('.modal-exercises__card');
+    modalRef.addEventListener('click', event => {
+      if (event.target.closest('.modal-exercises__button-favourites')) {
         console.log('Button clicked!');
         handleClickFavoritesBtn(cardData);
       }
@@ -107,6 +136,7 @@ export function createModalExercisesMarkup(cardData) {
           Add to favorites
           <svg
             class="modal-exercises__button-favourites_icon"
+            aria-label='heart'
             width="20"
             height="20"
           >
@@ -118,5 +148,3 @@ export function createModalExercisesMarkup(cardData) {
     </div>
   </div>`;
 }
-
-modalExercises();
