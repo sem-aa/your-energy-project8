@@ -5,7 +5,7 @@
     background-color: transparent;
     max-width: 355px;
     margin: 0 auto;
-    padding: 0;
+    padding: 80px 0;
 }
 
  .hero-side-img-descktop,
@@ -97,7 +97,8 @@ screen and (min-resolution: 2dppx) {
 
 
     .hero-container {
-     max-width: 704px;   
+     max-width: 704px;
+     padding-top: 100px;   
     }
 
 
@@ -144,11 +145,21 @@ screen and (min-resolution: 2dppx) {
 
 /* DESKTOP */
 
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
+
+.hero-img-container{
+    max-width: 1376px;
+    max-height: 350px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 100% 27%;
+    border-radius: 60px;
+}    
 .hero-container {
-        max-width: 1440px;
-        padding: 0 32px;
+        max-width: 1376px;
+        padding: 96 32px;
     }
+
 .hero-hashtags {
     display: none;
 }
@@ -162,7 +173,7 @@ screen and (min-resolution: 2dppx) {
 } 
 
 .hero-hashtags-desktop {
-    max-width: 200px;
+    max-width: 202px;
 }
 
 .hero-hashtags-desktop-list {
@@ -219,10 +230,6 @@ screen and (min-resolution: 2dppx) {
 
 }
 
-/* QUOTE 0F THE DAY SECTION */
 
-/* MOBILE */
-.quote-container {
-    
-}
+
 
