@@ -1,3 +1,6 @@
+/* HERO SECTION */
+
+/* MOBILE */
 .hero-container {
     background-color: transparent;
     max-width: 355px;
@@ -83,6 +86,8 @@ screen and (min-resolution: 2dppx) {
     line-height: 18px;
 }
 
+/* TABLET */
+
 @media (min-width: 768px) {
 
     .hero-side-img-descktop, .hero-hashtags-desktop {
@@ -136,6 +141,8 @@ screen and (min-resolution: 2dppx) {
 
 
 }
+
+/* DESKTOP */
 
 @media (min-width: 1200px) {
 .hero-container {
@@ -210,5 +217,12 @@ screen and (min-resolution: 2dppx) {
     align-items: center;
  }
 
+}
+
+/* QUOTE 0F THE DAY SECTION */
+
+/* MOBILE */
+.quote-container {
+    
 }
 
