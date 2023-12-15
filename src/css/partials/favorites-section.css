@@ -3,8 +3,21 @@
   height: 24px;
 }
 
+.favorites-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .favorites-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .favorites-section {
+    padding-top: 90px;
     padding-bottom: 63px;
   }
 }
@@ -17,19 +30,18 @@
 
   border-radius: 15px;
   background: #fff;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
   .favorite-info-card {
     width: 344px;
-    /* width: calc((100% - 1 * 16px) / 2); */
   }
 }
 
 @media screen and (min-width: 1440px) {
   .favorite-info-card {
     width: 442px;
-    /* width: calc((100% - 1 * 16px) / 2); */
   }
 }
 
@@ -102,6 +114,8 @@
   font-size: 20px;
   font-weight: 400;
   line-height: 20px;
+
+  text-wrap: nowrap;
 }
 
 .card-info-list {
@@ -117,15 +131,8 @@
 @media screen and (min-width: 768px) {
   .card-info-list {
     gap: 16px;
-    /* justify-content: space-around; */
   }
 }
-
-/* @media screen and (min-width: 1440px) {
-  .card-info-list {
-    gap: 16px;
-  }
-} */
 
 .item-text {
   font-feature-settings: 'clig' off, 'liga' off;
@@ -180,6 +187,7 @@
 @media screen and (min-width: 768px) {
   .favorite-cards-list {
     flex-direction: row;
+    justify-content: flex-start;
     flex-wrap: wrap;
     row-gap: 32px;
     column-gap: 16px;
@@ -189,8 +197,6 @@
 @media screen and (min-width: 1440px) {
   .favorite-cards-list {
     /* width: calc(100% + 16px); */
-
-    justify-content: flex-start;
     align-self: flex-start;
     /* overflow-y: scroll; */
   }
@@ -201,9 +207,16 @@
   display: flex;
   justify-content: flex-end;
 
+  margin-bottom: 20px;
   width: 100%;
 
   overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .scrollbar-container {
+    margin-bottom: 32px;
+  }
 }
 
 .list-thumb::-webkit-scrollbar {
@@ -346,6 +359,41 @@
   }
 }
 
+.pagination-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
 .hidden {
   display: none;
+}
+
+.page-number {
+  color: #d4d4d4;
+}
+
+.current a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  color: var(--primary-dark);
+
+  border: 1px solid var(--primary-dark);
+  border-radius: 50%;
+}
+
+.modal-exercises__button-favourites.unfavorite-btn {
+  background-color: var(--primary-dark);
+  color: var(--bg-color);
+}
+
+.modal-exercises__button-favourites.add-to-favorites-btn {
+  background-color: var(--bg-color);
+  color: var(--primary-dark);
 }
