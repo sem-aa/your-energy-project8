@@ -16,7 +16,6 @@ closeBtn.addEventListener('click', function () {
 // Add class active in nav
 document.addEventListener('DOMContentLoaded', function () {
   const currentUrl = window.location.pathname;
-
   const navItems = document.querySelectorAll('.nav_list li');
 
   navItems.forEach(function (item) {
@@ -25,4 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
       item.classList.add('nav_item_active');
     }
   });
+
+  if (!document.querySelector('.nav_list li.nav_item_active')) {
+    navItems[0].classList.add('nav_item_active');
+  }
 });
