@@ -62,6 +62,7 @@ export async function modalExercises(id) {
         console.log('Button clicked!');
         handleClickFavoritesBtn(cardData);
       }
+
     });
   } catch (error) {
     console.error(error);
