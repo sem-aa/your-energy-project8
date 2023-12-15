@@ -41,7 +41,7 @@
 
 @media screen and (min-width: 1440px) {
   .favorite-info-card {
-    width: 442px;
+    width: 416px;
   }
 }
 
@@ -244,17 +244,12 @@
   background-color: rgb(186, 186, 186);
 }
 
-@media screen and (min-width: 1440px) {
-  .quotation-container {
-    width: 494px;
-  }
-}
 
 @media screen and (min-width: 1440px) {
   .favorites-container {
     display: flex;
     gap: 32px;
-
+    
     height: 100vh;
   }
 }
