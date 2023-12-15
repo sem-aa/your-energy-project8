@@ -1,1 +1,3 @@
-import '../js/partials/favorites';
+import './partials/favorites';
+import './partials/header';
+

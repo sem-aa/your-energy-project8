@@ -8,5 +8,5 @@ import './partials/search-params';
 import './partials/share-button';
 import './partials/subscription';
 import './partials/modal-exercises';
-import './header';
-import './modal-rating';
+import './partials/header';
+import './partials/modal-rating';

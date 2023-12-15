@@ -1,4 +1,3 @@
-import { getExercises } from '../../services/api';
 import { getFromLocal } from '../../services/local-storage';
 import { createInfoCardMarkup } from '../../helpers/markup';
 import { removeFavoriteCardFromLocal } from '../../helpers/functions';
@@ -39,13 +38,13 @@ const createCardsMarkupList = async list => {
     const results = await getFromLocal('favorites');
 
     if (!results) {
-      containerForList.classList.add('hidden');
-      noCardsText.classList.remove('hidden');
+      containerForList?.classList.add('hidden');
+      noCardsText?.classList.remove('hidden');
 
       return;
     }
-    noCardsText.classList.add('hidden');
-    containerForList.classList.remove('hidden');
+    noCardsText?.classList.add('hidden');
+    containerForList?.classList.remove('hidden');
 
     const exerciseCardInfoText = document.getElementById('exercise-info-text');
 
