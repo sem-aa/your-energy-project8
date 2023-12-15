@@ -13,7 +13,6 @@ export const getFilters = async ({
   limit = 12,
 } = {}) => {
   try {
-    console.log('filter', filter);
     const res = await axios.get(
       `filters?filter=${filter}&page=${page}&limit=${limit}`
     );
@@ -50,9 +49,9 @@ export const getExerciseId = async exerciseId => {
   }
 };
 
-export const updateRaring = async exerciseId => {
+export const updateRaring = async (exerciseId, obj) => {
   try {
-    const res = await axios.patch(`exercises/${exerciseId}/rating`);
+    const res = await axios.patch(`exercises/${exerciseId}/rating`, obj);
     return res.data;
   } catch (error) {
     console.error('Error in getExerciseId:', error);

@@ -79,6 +79,10 @@
   text-transform: capitalize;
 }
 
+.modal-exercises__partials-value_span {
+  text-transform: lowercase;
+}
+
 .modal-exercises__text {
   color: var(--bg-color-60);
   font-size: 14px;
@@ -113,10 +117,11 @@
 .modal-exercises__button-favourites:hover {
   background-color: transparent;
   color: var(--bg-color);
+}
 
+.modal-exercises__button-favourites:hover
   .modal-exercises__button-favourites_icon {
-    stroke: var(--bg-color);
-  }
+  stroke: var(--bg-color);
 }
 
 .modal-exercises__button-rating {

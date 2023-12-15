@@ -1,4 +1,4 @@
-import { updateRaring } from '../services/api';
+import { updateRaring } from '../../services/api';
 
 const formRating = document.querySelector('#ratingForm');
 const btnCloseModal = document.querySelector('.close-rating');
