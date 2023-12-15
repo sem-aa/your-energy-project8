@@ -52,16 +52,10 @@
 
   .nav_link_home {
     color: var(--primary-dark);
-    font-family: DM Sans;
-    font-size: 16px;
-    font-weight: 400;
     line-height: 1.5;
   }
   .nav_link_favorites {
     color: var(--bg-color);
-    font-family: DM Sans;
-    font-size: 16px;
-    font-weight: 400;
     line-height: 1.5;
   }
 
