@@ -11,9 +11,10 @@
     <title>Your energy</title>
     
     <script type="module" crossorigin src="/your-energy-project8/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/vendor-85278fa1.js">
-    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/favorites-a8ff7538.js">
-    <link rel="stylesheet" href="/your-energy-project8/assets/favorites-5ae7068f.css">
+    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/vendor-916d32b4.js">
+    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/favorites-050e1dc4.js">
+    <link rel="stylesheet" href="/your-energy-project8/assets/favorites-ef7e54d8.css">
+    <link rel="stylesheet" href="/your-energy-project8/assets/vendor-e5212ee8.css">
   </head>
 
   <body>
@@ -106,40 +107,55 @@
 <script src="../js/hero.js"></script>
 
       <section class="exercises section container" id="exercises">
-  <div class="exercises_title-wrapper">
-    <h2 class="section-title">Exercises</h2>
-    <ul class="exercises_filter-list">
-      <li class="exercises_filter-item">
-        <button
-          class="exercises_filter-btn row-accent active"
-          type="button"
-          data-exercises
-          data-muscles
-        >
-          Muscles
+  <div class="exercises_title-row-container">
+    <div class="exercises_title-wrapper">
+      <h2 class="section-title">Exercises</h2>
+      <p class="section-title_additional visually-hidden">
+        <span class="section-title">/</span><span id="title-category"></span>
+      </p>
+    </div>
+    <div class="exercises_tab-wrapper">
+      <div class="search-box visually-hidden-ext">
+        <input type="text" class="search-input" placeholder="Search" />
+        <button type="button" class="search-btn" id="search-button">
+          <svg class="search-icon" width="18" height="18">
+            <use href="../images/searchIcon.svg#icon-search"></use>
+          </svg>
         </button>
-      </li>
-      <li class="exercises_filter-item">
-        <button
-          class="exercises_filter-btn row-accent"
-          type="button"
-          data-exercises
-          data-body
-        >
-          Body parts
-        </button>
-      </li>
-      <li class="exercises_filter-item">
-        <button
-          class="exercises_filter-btn row-accent"
-          type="button"
-          data-exercises
-          data-equipment
-        >
-          Equipment
-        </button>
-      </li>
-    </ul>
+      </div>
+      <ul class="exercises_filter-list">
+        <li class="exercises_filter-item">
+          <button
+            class="exercises_filter-btn row-accent active"
+            type="button"
+            data-exercises
+            data-muscles
+          >
+            Muscles
+          </button>
+        </li>
+        <li class="exercises_filter-item">
+          <button
+            class="exercises_filter-btn row-accent"
+            type="button"
+            data-exercises
+            data-body
+          >
+            Body parts
+          </button>
+        </li>
+        <li class="exercises_filter-item">
+          <button
+            class="exercises_filter-btn row-accent"
+            type="button"
+            data-exercises
+            data-equipment
+          >
+            Equipment
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <div class="exercises_category-set">
