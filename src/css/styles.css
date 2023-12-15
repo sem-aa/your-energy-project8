@@ -18,6 +18,7 @@
 
 @import url('./partials/to-top.css');
 @import url('./partials/loader.css');
+@import url('./partials/modal-terms.css');
 
 :root {
   --bg-color: #f4f4f4;
