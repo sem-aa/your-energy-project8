@@ -16,11 +16,9 @@ export const handleClickFavoritesBtn = cardData => {
     '.modal-exercises__button-favourites'
   );
   console.log(cardData);
-  getFromLocal('favorites') ?? saveToLocal('favorites', []);
+  const data = getFromLocal('favorites') || [];
 
-  const isFavoriteCheck = getFromLocal('favorites').find(
-    ({ _id }) => _id === cardData._id
-  );
+  const isFavoriteCheck = data.find(item => item?._id === cardData._id);
 
   if (!isFavoriteCheck) {
     addFavoriteCardToLocal(cardData);
@@ -58,7 +56,8 @@ export async function modalExercises(id) {
     updateRating(cardData.rating);
     modal();
     console.log(123);
-    document.addEventListener('click', event => {
+    const modalRef = document.querySelector('.modal-exercises__card');
+    modalRef.addEventListener('click', event => {
       if (event.target.closest('.modal-exercises__button-favourites')) {
         console.log('Button clicked!');
         handleClickFavoritesBtn(cardData);

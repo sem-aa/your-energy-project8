@@ -4,8 +4,6 @@ import { createInfoCardMarkup } from '../../helpers/markup';
 import { removeFavoriteCardFromLocal } from '../../helpers/functions';
 
 const favoritesList = document.getElementById('favorite-cards-list');
-const noCardsText = document.querySelector('.text-nocard-container');
-const containerForList = document.querySelector('.scrollbar-container');
 
 const handleDeleteFavoriteCard = ({ target }) => {
   if (!target.closest('#remove-favorite-btn')) return;
@@ -35,21 +33,23 @@ export const createShortTitle = (title = '') => {
 };
 
 const createCardsMarkupList = async list => {
+  const containerForList = document.querySelector('.scrollbar-container');
+  const noCardsText = document.querySelector('.text-nocard-container');
   try {
     const results = await getFromLocal('favorites');
 
-    if (results.length === 0) {
-      containerForList?.classList.add('hidden');
-      noCardsText?.classList.remove('hidden');
+    if (!results) {
+      containerForList.classList.add('hidden');
+      noCardsText.classList.remove('hidden');
 
       return;
     }
-    noCardsText?.classList.add('hidden');
-    containerForList?.classList.remove('hidden');
+    noCardsText.classList.add('hidden');
+    containerForList.classList.remove('hidden');
 
     const exerciseCardInfoText = document.getElementById('exercise-info-text');
 
-    list?.insertAdjacentHTML('beforeend', createListOfCards(results));
+    list.insertAdjacentHTML('beforeend', createListOfCards(results));
   } catch (error) {
     console.log(error.message);
   }

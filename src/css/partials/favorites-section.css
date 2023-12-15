@@ -155,13 +155,26 @@
   background-color: inherit;
 }
 
+.list-thumb {
+  position: relative;
+}
+
+@media screen and (min-width: 1440px) {
+  .list-thumb {
+    width: calc(100% + 16px);
+    height: 100%;
+
+    overflow-y: scroll;
+  }
+}
+
 .favorite-cards-list {
   display: flex;
   gap: 20px;
+
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  position: relative;
 }
 
 @media screen and (min-width: 768px) {
@@ -175,10 +188,11 @@
 
 @media screen and (min-width: 1440px) {
   .favorite-cards-list {
-    width: calc(100% + 16px);
-    height: 100%;
+    /* width: calc(100% + 16px); */
 
-    overflow-y: scroll;
+    justify-content: flex-start;
+    align-self: flex-start;
+    /* overflow-y: scroll; */
   }
 }
 
@@ -192,16 +206,16 @@
   overflow: hidden;
 }
 
-.favorite-cards-list::-webkit-scrollbar {
+.list-thumb::-webkit-scrollbar {
   width: 8px;
 }
 
-.favorite-cards-list::-webkit-scrollbar-track {
+.list-thumb::-webkit-scrollbar-track {
   border-radius: 12px;
   background: rgba(36, 36, 36, 0.1);
 }
 
-.favorite-cards-list::-webkit-scrollbar-thumb {
+.list-thumb::-webkit-scrollbar-thumb {
   width: 8px;
   height: 153px;
 
