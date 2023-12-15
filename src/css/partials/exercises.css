@@ -21,7 +21,7 @@
   line-height: 1.35;
   letter-spacing: -0.035em;
   margin-right: 8px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .section-title_additional {
@@ -30,28 +30,71 @@
   line-height: 1;
   letter-spacing: -0.025em;
   margin-left: 4px;
+
+  text-transform: capitalize;
+}
+
+.search-box {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  width: 100%;
+  max-width: 335px;
 }
 
 .search-input {
-  position: relative;
   width: 100%;
-  max-width: 335px;
   height: 44px;
-  margin-bottom: 20px;
+
   padding: 12px 46px 12px 14px;
 
   border-radius: 30px;
   border: 1px solid var(--primary-dark);
 
-  background-color: var(--bg-color);
+  background-color: transparent;
+  outline: transparent;
+}
+
+.search-input::placeholder {
+  font-size: 14px;
+  line-height: 1.42;
+  color: var(--primary-dark);
 }
 
 .search-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  left: 16px;
+  transform: translate(0, -50%);
+  right: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 18px;
+  height: 18px;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+}
+
+.search-icon {
   fill: var(--primary-dark);
+}
+
+.visually-hidden-ext {
+  position: absolute;
+  width: 1px;
+  height: 0px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .exercises_filter-list {
@@ -216,6 +259,9 @@
 }
 
 .sorry-message {
+  margin-top: 40px;
+  text-align: center;
+
   font-size: 24px;
   font-weight: 500;
   line-height: 1.33;
@@ -240,13 +286,23 @@
     font-size: 24px;
     line-height: 1.33;
     letter-spacing: -0.03em;
-    text-transform: capitalize;
+  }
+
+  .exercises_tab-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .search-box {
+    margin: 0;
+    width: 273px;
   }
 
   .search-input {
     width: 273px;
     height: 48px;
-    margin-bottom: 20px;
     padding: 12px 46px 12px 14px;
 
     border-radius: 30px;
@@ -255,8 +311,13 @@
     background-color: var(--bg-color);
   }
 
+  .search-input::placeholder {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
   .exercises_filter-list {
-    margin-bottom: 32px;
+    margin-bottom: 0;
   }
   .exercises_filter-btn {
     font-size: 16px;
@@ -295,11 +356,18 @@
     padding-bottom: 64px;
   }
 
-  .exercises_title-wrapper {
-    display: flex;
+  .exercises_title-row-container {
     flex-direction: row;
     justify-content: space-between;
-    align-items: end;
+  }
+
+  .exercises_tab-wrapper {
+    width: 566px;
+    justify-content: flex-end;
+  }
+
+  .exercises_filter-list {
+    margin-left: 30px;
   }
 
   .exercises_category-set {
