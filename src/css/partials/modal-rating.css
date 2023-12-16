@@ -48,6 +48,7 @@
   width: 295px;
   border-radius: 30px;
   border: 1px solid var(--bg-color);
+  color: var(--bg-color);
   background: var(--primary-dark);
 }
 .rating-input-comment {
@@ -58,6 +59,7 @@
   width: 295px;
   border-radius: 15px;
   border: 1px solid var(--bg-color);
+  color: var(--bg-color);
   background: var(--primary-dark);
   margin-top: 16px;
   margin-bottom: 32px;
@@ -100,11 +102,9 @@
 
   .rating-input-email {
     width: 350px;
-    color: var(--bg-color);
   }
   .rating-input-comment {
     width: 350px;
-    color: var(--bg-color);
   }
   .rating-btn-submit {
     width: 350px;
