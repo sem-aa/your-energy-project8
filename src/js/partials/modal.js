@@ -1,4 +1,9 @@
 import { modalExercises } from './modal-exercises';
+import {
+  getValueParameterByName,
+  removeSearchParamsByName,
+  setSearchParams,
+} from './search-params';
 
 const elements = {
   openModalButton: document.querySelector('.open-modal'),
@@ -16,7 +21,7 @@ export function onExerciseListClick(event) {
     return;
   }
   const id = event.target.closest('[data-id]').dataset.id;
-
+  setSearchParams('modalOpen', id);
   modalExercises(id);
 }
 
@@ -34,14 +39,17 @@ export function modal() {
 
     if (closeButton) {
       elements.modalExercises.classList.add('visually-hidden');
+      removeSearchParamsByName('modalOpen');
     } else if (event.target === elements.modalExercises) {
       elements.modalExercises.classList.add('visually-hidden');
+      removeSearchParamsByName('modalOpen');
     }
   }
 
   function handleKeyDown(event) {
     if (event.key === 'Escape') {
       elements.modalExercises.classList.add('visually-hidden');
+      removeSearchParamsByName('modalOpen');
     }
   }
 
@@ -53,3 +61,10 @@ export function modal() {
 
   return removeListeners;
 }
+
+function onLoadPage() {
+  const id = getValueParameterByName('modalOpen');
+  if (!id) return;
+  modalExercises(id);
+}
+onLoadPage();
