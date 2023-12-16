@@ -2,6 +2,8 @@ import { getPhraseDay } from '../../services/api';
 import { getFromLocal, saveToLocal } from '../../services/local-storage';
 import { KEY_STORAGE } from '../../helpers/constant';
 import spriteUrl from '../../images/svg.icons/symbol-defs.svg';
+import quoteHomeDesk1xUrl from '../../images/quote-home-desk@1x.jpg';
+import quoteHomeDesk2xUrl from '../../images/quote-home-desk@2x.jpg';
 
 const quoteSectionRef = document.querySelector('.quote');
 
@@ -23,24 +25,24 @@ function createQuoteMarkup(quote) {
     <div class="quote-image">
       <picture>
         <source
-          srcset="./images/quote-home-desk@1x.jpg"
+          srcset=${quoteHomeDesk1xUrl}
           media="(max-width: 767px)"
         />
         <source
-          srcset="./images/quote-home-desk@2x.jpg"
+          srcset=${quoteHomeDesk2xUrl}
           media="(min-width: 768px)"
         />
 
         <img
           class="hero-img cropped-image"
-          src="./images/quote-home-desk@1x.jpg"
+          src=${quoteHomeDesk1xUrl}
           alt="women-sportswear-taking-break-from-workout"
         />
       </picture>
     </div>
     <div class="recomendation-container">
       <svg class="recoendation-icon" width="34" height="32">
-        <use href="./images/svg.icons/symbol-defs.svg#icon-dumb-bell"></use>
+        <use href=${spriteUrl}#icon-dumb-bell"></use>
       </svg>
       <h3 class="recomendation-heading">110 min</h3>
       <h4 class="recomendation-subheading">Daily norm of sports</h4>
