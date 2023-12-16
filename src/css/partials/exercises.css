@@ -1,5 +1,5 @@
 .section {
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 40px;
 }
 
@@ -19,7 +19,7 @@
   color: var(--primary-dark);
   font-size: 28px;
   line-height: 1.35;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   margin-right: 8px;
   margin-bottom: 20px;
 }
@@ -28,7 +28,7 @@
   color: var(--primary-dark-50);
   font-size: 20px;
   line-height: 1;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   margin-left: 4px;
 
   text-transform: capitalize;
@@ -155,6 +155,10 @@
   opacity: 1;
 }
 
+.exercises_category-set {
+  margin-bottom: 80px;
+}
+
 .exercises_category-list {
   display: flex;
   flex-direction: column;
@@ -231,7 +235,7 @@
 
   font-size: 20px;
   line-height: 1;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-align: center;
 
   color: var(--grey-page-num);
@@ -281,13 +285,12 @@
 @media screen and (min-width: 768px) {
   .section {
     padding-top: 32px;
-    padding-bottom: 32px;
+    padding-bottom: 36px;
   }
 
   .section-title {
     font-size: 44px;
     line-height: 1.09;
-    letter-spacing: -0.055em;
     margin-right: 8px;
 
     margin-bottom: 32px;
@@ -296,7 +299,6 @@
   .section-title_additional {
     font-size: 24px;
     line-height: 1.33;
-    letter-spacing: -0.03em;
   }
 
   .exercises_tab-wrapper {
@@ -335,6 +337,10 @@
     line-height: 1.5;
   }
 
+  .exercises_category-set {
+    margin-bottom: 64px;
+  }
+
   .exercises_category-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -357,7 +363,6 @@
   .exercises_pagination-item {
     font-size: 20px;
     line-height: 1.33;
-    letter-spacing: 0.06em;
   }
 
   .exercises_sorted-box {
@@ -368,8 +373,8 @@
 
 @media screen and (min-width: 1440px) {
   .section {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 32px;
+    padding-bottom: 132px;
   }
 
   .exercises_title-row-container {
@@ -395,6 +400,11 @@
   .exercises_category-set {
     width: 900px;
     margin-left: auto;
+    margin-bottom: 0;
+  }
+
+  .exercises_category-list .favorite-info-card {
+    width: calc((100% - 1 * 16px) / 2);
   }
 
   .exercises_category-list {

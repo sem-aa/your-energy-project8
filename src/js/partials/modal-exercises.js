@@ -8,6 +8,10 @@ import {
   removeFavoriteCardFromLocal,
 } from '../../helpers/functions';
 
+import spriteUrl from '../../images/svg.icons/icons.svg';
+import noImageUrl from '../../images/no-image.png';
+import spriteWithShareUrl from '../../images/valkoSprite.svg';
+
 const card = document.querySelector('.modal-exercises');
 
 const checkLocation = window.location.href
@@ -24,7 +28,6 @@ export const handleClickFavoritesBtn = cardData => {
   const favoriteButton = document.querySelector(
     '.modal-exercises__button-favourites'
   );
-  console.log(cardData);
 
   if (!checkIsFavourite()) {
     addFavoriteCardToLocal(cardData);
@@ -35,7 +38,7 @@ export const handleClickFavoritesBtn = cardData => {
             width="20"
             height="20"
           >
-            <use href="./oleksii-symbol-defs.svg#icon-trash-dark"></use>
+            <use href=${spriteUrl}#icon-trash></use>
           </svg>`;
 
     return;
@@ -48,9 +51,8 @@ export const handleClickFavoritesBtn = cardData => {
             aria-label='heart'
             width="20"
             height="20"
-
           >
-            <use href="./images/icons.svg#icon-heart"></use>
+            <use href=${spriteUrl}#icon-heart></use>
           </svg>`;
 
   return;
@@ -70,8 +72,6 @@ export async function modalExercises(id) {
         handleClickFavoritesBtn(cardData);
       }
       if (event.target.closest('.modal-exercises__button-rating')) {
-        console.log('Button cliced!', id);
-
         const ratingModal = document.querySelector('#ratingModal');
 
         ratingModal.style.display = 'block';
@@ -120,18 +120,18 @@ export function createModalExercisesMarkup(cardData) {
   return `<div class="modal-exercises__card">
     <button type="button" class="modal-exercises__button-close">
       <svg class="modal-exercises__button-icon" width="12" height="12">
-        <use href="./images/icons.svg#icon-button-close"></use>
+        <use href=${spriteUrl}#icon-button-close></use>
       </svg>
     </button>
     <div class="modal-exercises__image-wrapper">
       <img class="modal-exercises__image" src="${
-        gifUrl !== null ? gifUrl : '../images/no-image.png'
+        gifUrl !== null ? gifUrl : noImageUrl
       }" alt="${name}" />
     </div>
     <div class="modal-exercises__description">
       <button class="share-button-modal" type="button">
         <svg class="share-icon">
-          <use href="../images/valkoSprite.svg#icon-share-light"></use>
+          <use href=${spriteWithShareUrl}#icon-share-light></use>
         </svg>
         <span class="share-button-hint-modal">Share exercises</span>
       </button>
@@ -171,18 +171,26 @@ export function createModalExercisesMarkup(cardData) {
       <p class="modal-exercises__text">
         ${description}
       </p>
-      <div class="modal-exercises__buttons">${
+      <div class="modal-exercises__buttons">
+      ${
         checkLocation || checkIsFavourite()
-          ? `<button type="button" class="modal-exercises__button-favourites unfavorite-btn" style='background-color=#242424'>Unfavorite
-    <svg
+          ? `<button 
+          type="button"
+          class="modal-exercises__button-favourites unfavorite-btn"
+          style='background-color=#242424'>
+          Unfavorite
+          <svg
             class="modal-exercises__button-favourites_icon"
             aria-label='heart'
             width="20"
             height="20"
           >
-            <use href="./oleksii-symbol-defs.svg#icon-trash-dark"></use>
+            <use href=${spriteUrl}#icon-trash></use>
           </svg>`
-          : `<button type="button" class="modal-exercises__button-favourites add-to-favorites-btn">
+          : `<button 
+          type="button"
+          class="modal-exercises__button-favourites
+          add-to-favorites-btn">
           Add to favorites
           <svg
             class="modal-exercises__button-favourites_icon"
@@ -190,10 +198,9 @@ export function createModalExercisesMarkup(cardData) {
             width="20"
             height="20"
           >
-            <use href="./images/icons.svg#icon-heart"></use>
+            <use href=${spriteUrl}#icon-heart></use>
           </svg>`
       }
-        
         </button>
         <button class="modal-exercises__button-rating" data-value="${_id}">Give a rating</button>
       </div>

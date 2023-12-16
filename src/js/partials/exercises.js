@@ -57,22 +57,21 @@ function onLoadPage() {
     sortedSelectRef.classList.remove('visually-hidden-ext');
     setActiveButton('Body parts');
     query.filter = 'Body parts';
-    console.log(getValueParameterByName('bodyparts'));
     query.category = getValueParameterByName('bodyparts');
   }
 
   if (exercisesName.keyword) {
     searchInput.value = query.keyword = getValueParameterByName('keyword');
-    console.log(exercisesName);
     const { keyword, modalOpen, ...category } = exercisesName;
     query.category = Object.values(category)[0];
+    query.keywordsQuery = keyword;
   }
 
   renderExercises({
     filter: query.filter,
     category: query.category,
     pageNum: 1,
-    keyword: searchInput.value,
+    keywordsQuery: query.keywordsQuery,
   });
 }
 onLoadPage();
@@ -147,6 +146,10 @@ async function renderExercises({
   pageNum = 1,
   keywordsQuery = '',
 }) {
+  if (!filter || !category) {
+    return;
+  }
+
   let keywords = keywordsQuery.trim().toLowerCase();
   switch (filter) {
     case 'Muscles':
@@ -186,9 +189,10 @@ async function renderExercises({
       break;
   }
   let arrayExercises;
-  sortedSelectRef.addEventListener('change', e =>
-    onSortedSelectChange(e, arrayExercises)
-  );
+  sortedSelectRef.addEventListener('change', e => {
+    if (!arrayExercises) return;
+    onSortedSelectChange(e, arrayExercises);
+  });
 
   titleCategoryRef.innerHTML = category;
 

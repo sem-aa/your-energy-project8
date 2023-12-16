@@ -4,7 +4,8 @@
 .quote-container {
   max-width: 355px;
   margin: 0 auto;
-  padding: 80px 0;
+  /* padding: 80px 0; */
+  padding: 0 0 40px 0;
 }
 
 .quote-of-the-day {
@@ -99,8 +100,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 32px 16px;
-    margin-bottom: 20px;
-    padding: 64px 0 100px;
+    /* margin-bottom: 20px; */
+    padding: 0 0 64px 0;
   }
 
   .quote-of-the-day {

@@ -11,7 +11,6 @@ let itemsPerPage = window.innerWidth < 768 ? 8 : 10;
 const handleDeleteFavoriteCard = ({ target }) => {
   if (!target.closest('#remove-favorite-btn')) return;
   const id = target.closest('[data-id]').dataset.id;
-  console.log(id);
   removeFavoriteCardFromLocal(id);
   createCardsMarkupList(favoritesList);
 };
@@ -44,11 +43,11 @@ export const createShortTitle = (title = '') => {
   return title;
 };
 
-async function createCardsMarkupList(list) {
+function createCardsMarkupList(list) {
   const containerForList = document.querySelector('.scrollbar-container');
   const noCardsText = document.querySelector('.text-nocard-container');
   try {
-    const results = await getFromLocal('favorites');
+    const results = getFromLocal('favorites');
 
     if (!results) {
       containerForList?.classList.add('hidden');
@@ -66,14 +65,6 @@ async function createCardsMarkupList(list) {
 
     if (window.innerWidth < 1440) {
       createPaginationMarkup(results.length);
-    }
-
-    if (favoritesList) {
-      favoritesList.scrollTop = 0;
-      favoritesList.scrollIntoView({
-        block: 'start',
-        behavior: 'smooth',
-      });
     }
   } catch (error) {
     console.log(error.message);
@@ -108,6 +99,13 @@ if (paginationContainer) {
       currentPage = parseInt(event.target.dataset.page, 10);
 
       createCardsMarkupList(favoritesList);
+    }
+    if (favoritesList) {
+      favoritesList.scrollTop = 0;
+      favoritesList.scrollIntoView({
+        block: 'start',
+        behavior: 'smooth',
+      });
     }
   });
 }
