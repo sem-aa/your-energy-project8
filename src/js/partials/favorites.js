@@ -5,6 +5,12 @@ import { onExerciseListClick } from './modal';
 
 const favoritesList = document.getElementById('favorite-cards-list');
 const paginationContainer = document.getElementById('pagination-container');
+// const quoteContainer = document.querySelector('.quote');
+
+// const checkLocation = window.location.href
+//   .split('/')
+//   .includes('favorites.html');
+
 let currentPage = 1;
 let itemsPerPage = window.innerWidth < 768 ? 8 : 10;
 
@@ -43,7 +49,7 @@ export const createShortTitle = (title = '') => {
   return title;
 };
 
-function createCardsMarkupList(list) {
+export function createCardsMarkupList(list) {
   const containerForList = document.querySelector('.scrollbar-container');
   const noCardsText = document.querySelector('.text-nocard-container');
   try {

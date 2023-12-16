@@ -7,12 +7,14 @@ import {
   addFavoriteCardToLocal,
   removeFavoriteCardFromLocal,
 } from '../../helpers/functions';
+import { createCardsMarkupList } from './favorites';
 
 import spriteUrl from '../../images/svg.icons/icons.svg';
 import noImageUrl from '../../images/no-image.png';
 import spriteWithShareUrl from '../../images/valkoSprite.svg';
 
 const card = document.querySelector('.modal-exercises');
+const favoritesList = document.getElementById('favorite-cards-list');
 
 const checkLocation = window.location.href
   .split('/')
@@ -31,6 +33,7 @@ export const handleClickFavoritesBtn = cardData => {
 
   if (!checkIsFavourite()) {
     addFavoriteCardToLocal(cardData);
+
     favoriteButton.innerHTML = `Unfavorite
     <svg
             class="modal-exercises__button-favourites_icon unfavorite-btn"
@@ -40,11 +43,13 @@ export const handleClickFavoritesBtn = cardData => {
           >
             <use href=${spriteUrl}#icon-trash></use>
           </svg>`;
+    createCardsMarkupList(favoritesList);
 
     return;
   }
 
   removeFavoriteCardFromLocal(cardData._id);
+
   favoriteButton.innerHTML = `Add to favorites
           <svg
             class="modal-exercises__button-favourites_icon add-to-favorites-btn"
@@ -54,6 +59,7 @@ export const handleClickFavoritesBtn = cardData => {
           >
             <use href=${spriteUrl}#icon-heart></use>
           </svg>`;
+  createCardsMarkupList(favoritesList);
 
   return;
 };
