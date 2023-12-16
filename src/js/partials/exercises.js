@@ -66,13 +66,14 @@ function onLoadPage() {
     console.log(exercisesName);
     const { keyword, modalOpen, ...category } = exercisesName;
     query.category = Object.values(category)[0];
+    query.keywordsQuery = keyword;
   }
 
   renderExercises({
     filter: query.filter,
     category: query.category,
     pageNum: 1,
-    keyword: searchInput.value,
+    keywordsQuery: query.keywordsQuery,
   });
 }
 onLoadPage();
