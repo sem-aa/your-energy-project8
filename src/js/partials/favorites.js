@@ -66,14 +66,6 @@ function createCardsMarkupList(list) {
     if (window.innerWidth < 1440) {
       createPaginationMarkup(results.length);
     }
-
-    if (favoritesList) {
-      favoritesList.scrollTop = 0;
-      favoritesList.scrollIntoView({
-        block: 'start',
-        behavior: 'smooth',
-      });
-    }
   } catch (error) {
     console.log(error.message);
   }
@@ -107,6 +99,13 @@ if (paginationContainer) {
       currentPage = parseInt(event.target.dataset.page, 10);
 
       createCardsMarkupList(favoritesList);
+    }
+    if (favoritesList) {
+      favoritesList.scrollTop = 0;
+      favoritesList.scrollIntoView({
+        block: 'start',
+        behavior: 'smooth',
+      });
     }
   });
 }
