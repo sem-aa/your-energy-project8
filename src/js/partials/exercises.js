@@ -147,6 +147,10 @@ async function renderExercises({
   pageNum = 1,
   keywordsQuery = '',
 }) {
+  if (!filter || !category) {
+    return;
+  }
+
   let keywords = keywordsQuery.trim().toLowerCase();
   switch (filter) {
     case 'Muscles':
