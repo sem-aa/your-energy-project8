@@ -24,7 +24,7 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
         </div>
         <div>
           <button type="button" class="start-btn">
-            <p>Start</p>
+            <span aria-label='Start'>Start</span>
             <svg width="16" height="16">
               <use href="./oleksii-symbol-defs.svg#icon-arrow"></use>
             </svg>
