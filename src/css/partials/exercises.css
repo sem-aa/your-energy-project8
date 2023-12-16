@@ -354,6 +354,10 @@
     margin-bottom: 32px;
   }
 
+  #exercises-list-container {
+    justify-content: flex-end;
+  }
+
   .exercises_category-item {
     height: 225px;
     width: calc((100% - 2 * 15px) / 3);
@@ -377,7 +381,7 @@
 @media screen and (min-width: 1440px) {
   .section {
     padding-top: 32px;
-    padding-bottom: 64px;
+    padding-bottom: 132px;
   }
 
   .exercises_title-row-container {

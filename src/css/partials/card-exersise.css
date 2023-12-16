@@ -22,6 +22,7 @@
 @media screen and (min-width: 1440px) {
   .favorite-info-card {
     width: 405px;
+    /* width: calc((100% - 2 * 15px) / 3); */
   }
 }
 

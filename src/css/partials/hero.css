@@ -151,7 +151,7 @@
 
 @media (min-width: 1440px) {
   .hero-img-container {
-    max-width: 1376px;
+    max-width: 1440px;
     max-height: 350px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -159,7 +159,7 @@
     border-radius: 60px;
   }
   .hero-container {
-    max-width: 1376px;
+    max-width: 1440px;
     padding: 96 32px;
   }
 
