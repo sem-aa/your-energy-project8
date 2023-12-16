@@ -4,27 +4,12 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const formRating = document.querySelector('#ratingForm');
 const btnCloseModal = document.querySelector('.close-rating');
-
-const btnOpenModalRating = document.querySelector(
-  '.modal-exercises__button-rating'
-);
-const modalExercises = document.querySelector('.modal-exercises');
-
 const ratingModal = document.querySelector('#ratingModal');
 
-let idExercises = '64f389465ae26083f39b17a4';
-// Open modal window
-// btnOpenModalRating.addEventListener('click', () => {
-//   modalExercises.style.display = 'none';
-
-//   console.log('Click in button open rating window');
-// });
-
-// Open modal window end
-
-async function sendRating(event) {
+export async function handleSubmit(event) {
   event.preventDefault();
-
+  const btnRating = document.querySelector('.modal-exercises__button-rating');
+  const id = btnRating.getAttribute('data-value');
   const formData = new FormData(formRating);
 
   const jsonData = {};
@@ -33,10 +18,8 @@ async function sendRating(event) {
       jsonData[key] = Number(value);
     } else jsonData[key] = value;
   });
-
   try {
-    const res = await updateRaring(idExercises, jsonData);
-    console.log(res);
+    const res = await updateRaring(id, jsonData);
     if (res) {
       iziToast.success({
         title: 'OK',
@@ -48,28 +31,15 @@ async function sendRating(event) {
         message: 'There was an error',
       });
     }
-  } catch (error) {
-    // console.log('shpm');
-    // console.log(error.message);
-  }
+  } catch (error) {}
 }
 
-formRating.addEventListener('submit', sendRating);
+formRating.addEventListener('submit', handleSubmit);
 
-// btnOpenModal?.addEventListener('click', function () {
-//   ratingModal.style.display = 'block';
-//   body.classList.add('modal-open');
-// });
+btnCloseModal.addEventListener('click', () => {
+  const modalExercises = document.querySelector('.modal-exercises');
+  const modalRef = document.querySelector('.modal-exercises__card');
 
-// btnCloseModal.addEventListener('click', () => {
-//   ratingModal.style.display = 'none';
-//   // body.classList.remove('modal-open');
-// });
-
-btnCloseModal.addEventListener('click', event => {
-  if (event.target.closest('.modal-exercises__button-favourites')) {
-    console.log('Button clicked!');
-
-    // handleClickFavoritesBtn(cardData);
-  }
+  modalExercises.classList.remove('visually-hidden');
+  ratingModal.style.display = 'none';
 });
