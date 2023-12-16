@@ -78,12 +78,12 @@ import{a as u,i as $}from"./vendor-916d32b4.js";(function(){const t=document.cre
       </svg>
     </button>
     <div class="modal-exercises__image-wrapper">
-      <img class="modal-exercises__image" src="${n!==null?n:"../images/no-image.png"}" alt="${t}" />
+      <img class="modal-exercises__image" src="${n!==null?n:"./images/no-image.png"}" alt="${t}" />
     </div>
     <div class="modal-exercises__description">
       <button class="share-button-modal" type="button">
         <svg class="share-icon">
-          <use href="../images/valkoSprite.svg#icon-share-light"></use>
+          <use href="./images/valkoSprite.svg#icon-share-light"></use>
         </svg>
         <span class="share-button-hint-modal">Share exercises</span>
       </button>
@@ -206,4 +206,4 @@ import{a as u,i as $}from"./vendor-916d32b4.js";(function(){const t=document.cre
       </div>
     </div>
   </div>`}const f=new Date;function ce(e){return e?f.getDate()===e.getDate()&&f.getMonth()===e.getMonth()&&f.getFullYear()===e.getFullYear():!1}async function le(){const e=d(p.phrase);if(!e||!ce(new Date(e.date))){const s=await A();w(p.phrase,{...s,date:f})}const t=d(p.phrase);ie.innerHTML=ne(t)}le();document.querySelector(".js-loader");const O=document.querySelector("#ratingForm"),de=document.querySelector(".close-rating"),ue=document.querySelector("#ratingModal");async function me(e){e.preventDefault();const s=document.querySelector(".modal-exercises__button-rating").getAttribute("data-value"),a=new FormData(O),r={};a.forEach((o,i)=>{i==="rate"?r[i]=Number(o):r[i]=o});try{await W(s,r)?$.success({title:"OK",message:"Successfully sent rating!"}):$.error({title:"Error",message:"There was an error"})}catch{}}O.addEventListener("submit",me);de.addEventListener("click",()=>{const e=document.querySelector(".modal-exercises");document.querySelector(".modal-exercises__card"),e.classList.remove("visually-hidden"),ue.style.display="none"});export{z as a,ve as b,pe as c,he as d,d as e,fe as f,K as g,S as h,P as i,ye as j,_e as r,V as s};
-//# sourceMappingURL=modal-rating-784f36eb.js.map
+//# sourceMappingURL=modal-rating-6cc11f5b.js.map
