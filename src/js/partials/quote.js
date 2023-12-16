@@ -15,14 +15,6 @@ const addPaddingForQuoteSection = () => {
     quoteSectionRef.style.paddingBottom = '40px';
   }
 
-  // if (!checkLocation && window.innerWidth < 768) {
-  //   quoteSectionRef.style.paddingBottom = '40px';
-  // }
-
-  // if (checkLocation && window.innerWidth > 768 && window.innerWidth < 1440) {
-  //   quoteSectionRef.style.paddingBottom = '0';
-  // }
-
   if (window.innerWidth > 768 && window.innerWidth < 1440) {
     quoteSectionRef.style.paddingBottom = '0';
   }
