@@ -189,9 +189,10 @@ async function renderExercises({
       break;
   }
   let arrayExercises;
-  sortedSelectRef.addEventListener('change', e =>
-    onSortedSelectChange(e, arrayExercises)
-  );
+  sortedSelectRef.addEventListener('change', e => {
+    if (!arrayExercises) return;
+    onSortedSelectChange(e, arrayExercises);
+  });
 
   titleCategoryRef.innerHTML = category;
 

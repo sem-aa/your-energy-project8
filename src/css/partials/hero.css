@@ -5,10 +5,10 @@
   background-color: transparent;
   max-width: 355px;
   margin: 0 auto;
-  /* padding: 80px 0; */
+
   padding-top: 80px;
   padding-bottom: 20px;
-}
+
 
 .hero-side-img-descktop,
 .hero-hashtags-desktop {
@@ -70,7 +70,9 @@
   justify-content: space-between;
   gap: 10px;
   list-style: none;
-  /* margin-bottom: 40px; */
+
+  margin-bottom: 40px;
+
 }
 
 .hashtag {
@@ -94,6 +96,7 @@
     max-width: 704px;
     padding-top: 100px;
     padding-bottom: 32px;
+
   }
 
   .hero-heading {
@@ -123,8 +126,9 @@
     justify-content: flex-end;
     gap: 8px;
     list-style: none;
+
     /* margin-bottom: 40px; */
-  }
+
 
   .hashtag {
     font-size: 16px;
@@ -137,7 +141,9 @@
 
 @media (min-width: 1440px) {
   .hero-img-container {
+
     max-width: 1440px;
+
     max-height: 350px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -145,7 +151,9 @@
     border-radius: 60px;
   }
   .hero-container {
+
     max-width: 1440px;
+
     padding: 96 32px;
   }
 
