@@ -65,19 +65,12 @@
   }
 }
 
-/* .hero-hashtags ul {
+.hero-hashtags ul {
   display: flex;
   justify-content: space-between;
   gap: 10px;
   list-style: none;
-  margin-bottom: 40px;
-} */
-
-.hero-hashtags-list {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  list-style: none;
+  /* margin-bottom: 40px; */
 }
 
 .hashtag {
@@ -125,19 +118,12 @@
     height: 550px;
   }
 
-  /* .hero-hashtags ul {
+  .hero-hashtags ul {
     display: flex;
     justify-content: flex-end;
     gap: 8px;
     list-style: none;
-    margin-bottom: 40px;
-  } */
-
-  .hero-hashtags-list {
-    display: flex;
-    justify-content: flex-end;
-    gap: 8px;
-    list-style: none;
+    /* margin-bottom: 40px; */
   }
 
   .hashtag {
