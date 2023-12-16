@@ -19,7 +19,7 @@
   color: var(--primary-dark);
   font-size: 28px;
   line-height: 1.35;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   margin-right: 8px;
   margin-bottom: 20px;
 }
@@ -28,7 +28,7 @@
   color: var(--primary-dark-50);
   font-size: 20px;
   line-height: 1;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   margin-left: 4px;
 
   text-transform: capitalize;
@@ -235,7 +235,7 @@
 
   font-size: 20px;
   line-height: 1;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-align: center;
 
   color: var(--grey-page-num);
@@ -291,7 +291,6 @@
   .section-title {
     font-size: 44px;
     line-height: 1.09;
-    letter-spacing: -0.055em;
     margin-right: 8px;
 
     margin-bottom: 32px;
@@ -300,7 +299,6 @@
   .section-title_additional {
     font-size: 24px;
     line-height: 1.33;
-    letter-spacing: -0.03em;
   }
 
   .exercises_tab-wrapper {
@@ -365,7 +363,6 @@
   .exercises_pagination-item {
     font-size: 20px;
     line-height: 1.33;
-    letter-spacing: 0.06em;
   }
 
   .exercises_sorted-box {

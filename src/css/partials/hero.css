@@ -8,12 +8,13 @@
 
   padding-top: 80px;
   padding-bottom: 20px;
-
-  .hero-side-img-descktop,
-  .hero-hashtags-desktop {
-    display: none;
-  }
 }
+
+.hero-side-img-descktop,
+.hero-hashtags-desktop {
+  display: none;
+}
+
 .hero-logo {
   fill: var(--primary-dark);
   vertical-align: middle;
