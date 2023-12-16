@@ -25,21 +25,23 @@ export async function handleSubmit(event) {
         title: 'OK',
         message: 'Successfully sent rating!',
       });
+      closeRatingWindow();
     } else {
       iziToast.error({
         title: 'Error',
         message: 'There was an error',
       });
     }
+    event.target.reset();
   } catch (error) {}
 }
 
 formRating.addEventListener('submit', handleSubmit);
 
-btnCloseModal.addEventListener('click', () => {
-  const modalExercises = document.querySelector('.modal-exercises');
-  const modalRef = document.querySelector('.modal-exercises__card');
+btnCloseModal.addEventListener('click', closeRatingWindow);
 
+function closeRatingWindow() {
+  const modalExercises = document.querySelector('.modal-exercises');
   modalExercises.classList.remove('visually-hidden');
   ratingModal.style.display = 'none';
-});
+}
