@@ -61,9 +61,7 @@ function createQuoteMarkup(quote) {
 const today = new Date();
 
 function checkDateIsNow(checkedDate) {
-  console.log('checkedDate:', checkedDate);
   if (!checkedDate) return false;
-  console.log('123', today.getDate());
   return (
     today.getDate() === checkedDate.getDate() &&
     today.getMonth() === checkedDate.getMonth() &&

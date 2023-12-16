@@ -3,7 +3,13 @@ import {
   createCategoryCardListMarkup,
   createPaginationMarkup,
 } from '../../helpers/markup';
-import { removeAllSearchParams, setSearchParams } from './search-params';
+import {
+  getAllParameters,
+  getValueParameterByName,
+  removeAllSearchParams,
+  setSearchParams,
+} from './search-params';
+import { sortedSelectInstance } from './sorted-selected';
 //import { showLoader, hideLoader } from './loader';
 
 const itemsOnPage = 12;
@@ -17,8 +23,37 @@ const categoryContainer = document.querySelector('#category-list-container');
 const exercisesContainer = document.querySelector('#exercises-list-container');
 const paginationContainer = document.querySelector('.exercises_pagination');
 const topOfSectionExercises = document.querySelector('#exercises');
+const sortedSelectRef = document.querySelector('#sorted-select');
 
-setFilteredCategoryList('Muscles');
+const allParams = getAllParameters();
+let filterName;
+if (!Object.keys(allParams).length) {
+  filterName = 'Muscles';
+  setSearchParams('filter', 'Muscles');
+}
+
+filterName = getValueParameterByName('filter');
+
+export function setActiveButton(filterName) {
+  switch (filterName) {
+    case 'Muscles':
+      toggleActiveStatus(musclesFilterBtn);
+      break;
+    case 'Body parts':
+      toggleActiveStatus(bodyFilterBtn);
+      break;
+    case 'Equipment':
+      toggleActiveStatus(equipmentFilterBtn);
+      break;
+
+    default:
+      toggleActiveStatus(musclesFilterBtn);
+      break;
+  }
+}
+setActiveButton(filterName);
+
+if (filterName) setFilteredCategoryList(filterName);
 
 function setFilteredCategoryList(filter, page = 1) {
   getFilters({ filter: filter, page: page, limit: itemsOnPage }).then(
@@ -27,6 +62,8 @@ function setFilteredCategoryList(filter, page = 1) {
       exercisesContainer?.classList?.add('visually-hidden');
       inputRef?.classList?.add('visually-hidden-ext');
       titleAdditionalRef?.classList?.add('visually-hidden');
+      sortedSelectInstance.setSelected('default');
+      sortedSelectRef.classList.add('visually-hidden-ext');
 
       if (response.results.length) {
         categoryContainer.innerHTML = createCategoryCardListMarkup(response);
@@ -74,7 +111,7 @@ musclesFilterBtn?.addEventListener('click', onMusclesFilterClick);
 bodyFilterBtn?.addEventListener('click', onBodyFilterClick);
 equipmentFilterBtn?.addEventListener('click', onEquipmentFilterClick);
 
-function toggleActiveStatus(btn) {
+export function toggleActiveStatus(btn) {
   const activeBtn = document.querySelector('.active');
   activeBtn.classList.remove('active');
   if (btn.classList.contains('active')) {
