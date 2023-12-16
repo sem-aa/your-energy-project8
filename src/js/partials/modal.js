@@ -17,9 +17,14 @@ if (exercisesListRef) {
 }
 
 export function onExerciseListClick(event) {
+  if (event.target.matches('.changable-icon-use')) {
+    return;
+  }
+
   if (!event.target.closest('[data-id]')) {
     return;
   }
+
   const id = event.target.closest('[data-id]').dataset.id;
   setSearchParams('modalOpen', id);
   modalExercises(id);

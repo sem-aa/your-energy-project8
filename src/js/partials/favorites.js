@@ -44,11 +44,11 @@ export const createShortTitle = (title = '') => {
   return title;
 };
 
-async function createCardsMarkupList(list) {
+function createCardsMarkupList(list) {
   const containerForList = document.querySelector('.scrollbar-container');
   const noCardsText = document.querySelector('.text-nocard-container');
   try {
-    const results = await getFromLocal('favorites');
+    const results = getFromLocal('favorites');
 
     if (!results) {
       containerForList?.classList.add('hidden');
