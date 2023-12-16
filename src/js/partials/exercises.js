@@ -57,13 +57,11 @@ function onLoadPage() {
     sortedSelectRef.classList.remove('visually-hidden-ext');
     setActiveButton('Body parts');
     query.filter = 'Body parts';
-    console.log(getValueParameterByName('bodyparts'));
     query.category = getValueParameterByName('bodyparts');
   }
 
   if (exercisesName.keyword) {
     searchInput.value = query.keyword = getValueParameterByName('keyword');
-    console.log(exercisesName);
     const { keyword, modalOpen, ...category } = exercisesName;
     query.category = Object.values(category)[0];
     query.keywordsQuery = keyword;
