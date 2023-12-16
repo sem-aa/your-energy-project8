@@ -1,6 +1,6 @@
 .section {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 80px;
 }
 
 .exercises_title-row-container {
@@ -153,6 +153,10 @@
 .row-accent.active:hover::after,
 .row-accent.active:focus::after {
   opacity: 1;
+}
+
+.exercises_category-set {
+  margin-bottom: 40px;
 }
 
 .exercises_category-list {
@@ -335,6 +339,10 @@
     line-height: 1.5;
   }
 
+  .exercises_category-set {
+    margin-bottom: 0;
+  }
+
   .exercises_category-list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -368,8 +376,8 @@
 
 @media screen and (min-width: 1440px) {
   .section {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 32px;
+    padding-bottom: 132px;
   }
 
   .exercises_title-row-container {
@@ -395,6 +403,10 @@
   .exercises_category-set {
     width: 900px;
     margin-left: auto;
+  }
+
+  .exercises_category-list .favorite-info-card {
+    width: calc((100% - 1 * 16px) / 2);
   }
 
   .exercises_category-list {
