@@ -46,28 +46,24 @@ export function modal() {
 
     if (closeButton) {
       elements.modalExercises.classList.add('visually-hidden');
-// <<<<<<< features-create-modal-exercise
       elements.body.classList.remove('modal-open');
     } else if (event.target === elements.modalExercises) {
       elements.modalExercises.classList.add('visually-hidden');
       elements.body.classList.remove('modal-open');
-// =======
-//       removeSearchParamsByName('modalOpen');
-//     } else if (event.target === elements.modalExercises) {
-//       elements.modalExercises.classList.add('visually-hidden');
-//       removeSearchParamsByName('modalOpen');
-// >>>>>>> main
+
+      removeSearchParamsByName('modalOpen');
+    } else if (event.target === elements.modalExercises) {
+      elements.modalExercises.classList.add('visually-hidden');
+      removeSearchParamsByName('modalOpen');
     }
   }
 
   function handleKeyDown(event) {
     if (event.key === 'Escape') {
       elements.modalExercises.classList.add('visually-hidden');
-// <<<<<<< features-create-modal-exercise
       elements.body.classList.remove('modal-open');
-// =======
-//       removeSearchParamsByName('modalOpen');
-// >>>>>>> main
+
+      removeSearchParamsByName('modalOpen');
     }
   }
 
