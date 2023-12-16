@@ -8,15 +8,20 @@ import {
   createInfoCardMarkup,
   createPaginationMarkup,
 } from '../../helpers/markup';
-import { removeAllSearchParams, setSearchParams } from './search-params';
+import {
+  getAllParameters,
+  getValueParameterByName,
+  removeAllSearchParams,
+  setSearchParams,
+} from './search-params';
 import {
   getSortedArrayInfoCards,
   sortedSelectInstance,
 } from './sorted-selected';
+import { setActiveButton } from './categories';
 
-const inputBoxRef = document.querySelector('.search-box');
+const searchFormRef = document.querySelector('.search-box');
 const searchInput = document.querySelector('.search-input');
-const searchBtn = document.querySelector('#search-button');
 const titleAdditionalRef = document.querySelector('.section-title_additional');
 const titleCategoryRef = document.querySelector('#title-category');
 const categoryContainer = document.querySelector('#category-list-container');
@@ -29,33 +34,66 @@ const itemsOnPage = 10;
 
 let query = {};
 
-inputBoxRef.addEventListener('keydown', e => {
-  if (e.key === 'Enter') {
-    if (validateSearchInpul() == false) {
-      return;
-    }
-    renderExercises({
-      filter: query.filter,
-      category: query.category,
-      pageNum: 1,
-      keywordsQuery: searchInput.value,
-    });
+const exercisesName = getAllParameters();
+function onLoadPage() {
+  if (exercisesName.equipment) {
+    searchFormRef.classList.remove('visually-hidden-ext');
+    sortedSelectRef.classList.remove('visually-hidden-ext');
+    setActiveButton('Equipment');
+    query.filter = 'Equipment';
+    query.category = getValueParameterByName('equipment');
   }
-});
 
-searchBtn.addEventListener('click', () => {
-  if (validateSearchInpul() == false) {
+  if (exercisesName.muscles) {
+    searchFormRef.classList.remove('visually-hidden-ext');
+    sortedSelectRef.classList.remove('visually-hidden-ext');
+    setActiveButton('Muscles');
+    query.filter = 'Muscles';
+    query.category = getValueParameterByName('muscles');
+  }
+
+  if (exercisesName.bodyparts) {
+    searchFormRef.classList.remove('visually-hidden-ext');
+    sortedSelectRef.classList.remove('visually-hidden-ext');
+    setActiveButton('Body parts');
+    query.filter = 'Body parts';
+    console.log(getValueParameterByName('bodyparts'));
+    query.category = getValueParameterByName('bodyparts');
+  }
+
+  if (exercisesName.keyword) {
+    searchInput.value = query.keyword = getValueParameterByName('keyword');
+    console.log(exercisesName);
+    const { keyword, modalOpen, ...category } = exercisesName;
+    query.category = Object.values(category)[0];
+  }
+
+  renderExercises({
+    filter: query.filter,
+    category: query.category,
+    pageNum: 1,
+    keyword: searchInput.value,
+  });
+}
+onLoadPage();
+
+searchFormRef.addEventListener('submit', onSearchFormSubmit);
+
+function onSearchFormSubmit(e) {
+  e.preventDefault();
+  if (!validateSearchInput()) {
     return;
   }
+  setSearchParams('keyword', searchInput.value);
   renderExercises({
     filter: query.filter,
     category: query.category,
     pageNum: 1,
     keywordsQuery: searchInput.value,
   });
-});
+}
 
-function validateSearchInpul() {
+function validateSearchInput() {
   if (searchInput.value.trim() === '') {
     iziToast.show({
       title: 'Warning',
@@ -84,7 +122,7 @@ async function onCategoryCardClick(e) {
 
   categoryContainer.classList.add('visually-hidden');
   exercisesContainer.classList.remove('visually-hidden');
-  inputBoxRef.classList.remove('visually-hidden-ext');
+  searchFormRef.classList.remove('visually-hidden-ext');
   sortedSelectRef.classList.remove('visually-hidden-ext');
   titleAdditionalRef.classList.remove('visually-hidden');
 
@@ -94,6 +132,7 @@ async function onCategoryCardClick(e) {
     filter: categoryItem.dataset.filter,
     category: categoryItem.dataset.category,
   });
+
   removeAllSearchParams();
   setSearchParams(
     `${categoryItem.dataset.filter.toLowerCase().split(' ').join('')}`,

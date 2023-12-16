@@ -3,7 +3,11 @@ import {
   createCategoryCardListMarkup,
   createPaginationMarkup,
 } from '../../helpers/markup';
-import { removeAllSearchParams, setSearchParams } from './search-params';
+import {
+  getValueParameterByName,
+  removeAllSearchParams,
+  setSearchParams,
+} from './search-params';
 import { sortedSelectInstance } from './sorted-selected';
 //import { showLoader, hideLoader } from './loader';
 
@@ -20,7 +24,28 @@ const paginationContainer = document.querySelector('.exercises_pagination');
 const topOfSectionExercises = document.querySelector('#exercises');
 const sortedSelectRef = document.querySelector('#sorted-select');
 
-setFilteredCategoryList('Muscles');
+const filterName = getValueParameterByName('filter');
+
+export function setActiveButton(filterName) {
+  switch (filterName) {
+    case 'Muscles':
+      toggleActiveStatus(musclesFilterBtn);
+      break;
+    case 'Body parts':
+      toggleActiveStatus(bodyFilterBtn);
+      break;
+    case 'Equipment':
+      toggleActiveStatus(equipmentFilterBtn);
+      break;
+
+    default:
+      toggleActiveStatus(musclesFilterBtn);
+      break;
+  }
+}
+setActiveButton(filterName);
+
+if (filterName) setFilteredCategoryList(filterName);
 
 function setFilteredCategoryList(filter, page = 1) {
   getFilters({ filter: filter, page: page, limit: itemsOnPage }).then(
@@ -78,7 +103,7 @@ musclesFilterBtn?.addEventListener('click', onMusclesFilterClick);
 bodyFilterBtn?.addEventListener('click', onBodyFilterClick);
 equipmentFilterBtn?.addEventListener('click', onEquipmentFilterClick);
 
-function toggleActiveStatus(btn) {
+export function toggleActiveStatus(btn) {
   const activeBtn = document.querySelector('.active');
   activeBtn.classList.remove('active');
   if (btn.classList.contains('active')) {
