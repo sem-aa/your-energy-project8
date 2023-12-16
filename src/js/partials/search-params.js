@@ -39,34 +39,34 @@ export function removeAllSearchParams() {
   allParamsKeys.forEach(removeSearchParamsByName);
 }
 
-export function onLoadHomePage() {
-  const allParams = getAllParameters();
-  const { filter, keyword, ...params } = allParams;
+// export function onLoadHomePage() {
+//   const allParams = getAllParameters();
+//   const { filter, keyword, ...params } = allParams;
 
-  if (!Object.keys(allParams).length) return;
+//   if (!Object.keys(allParams).length) return;
 
-  const nameSearchParams = Object.keys(params)[0];
+//   const nameSearchParams = Object.keys(params)[0];
 
-  if (filter) {
-    const nameActiveButton = getValueParameterByName('filter');
-    console.log(
-      `Зроби запит з параметром '${nameActiveButton}', відмалюй картки з відповіді та встанови на кнопках активний фільтр ${nameActiveButton}`
-    );
-    return;
-  }
+//   if (filter) {
+//     const nameActiveButton = getValueParameterByName('filter');
+//     console.log(
+//       `Зроби запит з параметром '${nameActiveButton}', відмалюй картки з відповіді та встанови на кнопках активний фільтр ${nameActiveButton}`
+//     );
+//     return;
+//   }
 
-  if (keyword) {
-    console.log(
-      `Заповни інпут форми словом "${keyword}" та зроби запит з параметрами "${nameSearchParams}=${params[nameSearchParams]}&keyword=${keyword}" та відмалюй картки з відповіді`
-    );
-    return;
-  }
+//   if (keyword) {
+//     console.log(
+//       `Заповни інпут форми словом "${keyword}" та зроби запит з параметрами "${nameSearchParams}=${params[nameSearchParams]}&keyword=${keyword}" та відмалюй картки з відповіді`
+//     );
+//     return;
+//   }
 
-  console.log(
-    `Зроби запит з параметром "${nameSearchParams}=${params[nameSearchParams]}" та відмалюй картки з відповіді`
-  );
-  return;
-}
+//   console.log(
+//     `Зроби запит з параметром "${nameSearchParams}=${params[nameSearchParams]}" та відмалюй картки з відповіді`
+//   );
+//   return;
+// }
 
 // onLoadHomePage();
 
