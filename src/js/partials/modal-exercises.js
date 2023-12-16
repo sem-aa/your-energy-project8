@@ -177,7 +177,7 @@ export function createModalExercisesMarkup(cardData) {
           ? `<button 
           type="button"
           class="modal-exercises__button-favourites unfavorite-btn"
-          style='background-color=#242424'>
+          >
           Unfavorite
           <svg
             class="modal-exercises__button-favourites_icon"
