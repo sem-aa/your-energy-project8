@@ -1,6 +1,7 @@
 import { getPhraseDay } from '../../services/api';
 import { getFromLocal, saveToLocal } from '../../services/local-storage';
 import { KEY_STORAGE } from '../../helpers/constant';
+import spriteUrl from '../../images/svg.icons/symbol-defs.svg';
 
 const quoteSectionRef = document.querySelector('.quote');
 
@@ -8,12 +9,12 @@ function createQuoteMarkup(quote) {
   return `<div class="quote-container container">
     <div class="quote-of-the-day">
       <svg class="quote-icon" width="34" height="32">
-        <use href="./images/svg.icons/symbol-defs.svg#icon-runing-man"></use>
+        <use href=${spriteUrl}#icon-runing-man></use>
       </svg>
       <h3 class="quote-heading">Quote of the day</h3>
       <svg class="invert-coma-icon" width="20" height="20">
         <use
-          href="./images/svg.icons/symbol-defs.svg#icon-inverted-commas"
+          href=${spriteUrl}#icon-inverted-commas"
         ></use>
       </svg>
       <p class="quote-text">${quote.quote}</p>

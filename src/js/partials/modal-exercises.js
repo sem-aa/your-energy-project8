@@ -8,6 +8,10 @@ import {
   removeFavoriteCardFromLocal,
 } from '../../helpers/functions';
 
+import spriteUrl from '../../images/svg.icons/icons.svg';
+import noImageUrl from '../../images/no-image.png';
+import spriteWithShareUrl from '../../images/valkoSprite.svg';
+
 const card = document.querySelector('.modal-exercises');
 
 const checkLocation = window.location.href
@@ -34,7 +38,7 @@ export const handleClickFavoritesBtn = cardData => {
             width="20"
             height="20"
           >
-            <use href="./images/svg.icons/icons.svg#icon-trash"></use>
+            <use href=${spriteUrl}#icon-trash></use>
           </svg>`;
 
     return;
@@ -48,7 +52,7 @@ export const handleClickFavoritesBtn = cardData => {
             width="20"
             height="20"
           >
-            <use href="./images/svg.icons/icons.svg#icon-heart"></use>
+            <use href=${spriteUrl}#icon-heart></use>
           </svg>`;
 
   return;
@@ -116,18 +120,18 @@ export function createModalExercisesMarkup(cardData) {
   return `<div class="modal-exercises__card">
     <button type="button" class="modal-exercises__button-close">
       <svg class="modal-exercises__button-icon" width="12" height="12">
-        <use href="./images/svg.icons/icons.svg#icon-button-close"></use>
+        <use href=${spriteUrl}#icon-button-close></use>
       </svg>
     </button>
     <div class="modal-exercises__image-wrapper">
       <img class="modal-exercises__image" src="${
-        gifUrl !== null ? gifUrl : './images/no-image.png'
+        gifUrl !== null ? gifUrl : noImageUrl
       }" alt="${name}" />
     </div>
     <div class="modal-exercises__description">
       <button class="share-button-modal" type="button">
         <svg class="share-icon">
-          <use href="./images/valkoSprite.svg#icon-share-light"></use>
+          <use href=${spriteWithShareUrl}#icon-share-light></use>
         </svg>
         <span class="share-button-hint-modal">Share exercises</span>
       </button>
@@ -181,7 +185,7 @@ export function createModalExercisesMarkup(cardData) {
             width="20"
             height="20"
           >
-            <use href="./images/svg.icons/icons.svg#icon-trash"></use>
+            <use href=${spriteUrl}#icon-trash></use>
           </svg>`
           : `<button 
           type="button"
@@ -194,7 +198,7 @@ export function createModalExercisesMarkup(cardData) {
             width="20"
             height="20"
           >
-            <use href="./images/svg.icons/icons.svg#icon-heart"></use>
+            <use href=${spriteUrl}#icon-heart></use>
           </svg>`
       }
         </button>
