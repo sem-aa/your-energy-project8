@@ -13,6 +13,23 @@
   color: #242424;
 }
 
+.share-button-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 18px;
+  border: 1px solid #d4d4d4;
+  /* border: none; */
+  color: #d4d4d4;
+}
+
 .share-button-hint {
   position: absolute;
   display: block;
@@ -29,7 +46,24 @@
   pointer-events: none;
 }
 
-.share-button:hover .share-button-hint {
+.share-button-hint-modal {
+  position: absolute;
+  display: block;
+  padding: 5px 10px;
+  bottom: 46px;
+  right: 0px;
+  width: 110px;
+  font-size: 12px;
+  border-radius: 5px;
+  transition: opacity 250ms linear;
+  opacity: 0;
+  pointer-events: none;
+  color: #242424;
+  background-color: #d4d4d4;
+}
+
+.share-button:hover .share-button-hint,
+.share-button-modal:hover .share-button-hint-modal {
   opacity: 1;
 }
 
@@ -40,9 +74,15 @@
 }
 
 @media screen and (min-width: 768px) {
-  .share-button {
+  .share-button-modal {
+    top: 26px;
+    right: 10px;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .share-button-modal {
+    top: 280px;
+    right: 375px;
+  }
 }

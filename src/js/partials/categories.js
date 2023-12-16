@@ -4,6 +4,7 @@ import {
   createPaginationMarkup,
 } from '../../helpers/markup';
 import {
+  getAllParameters,
   getValueParameterByName,
   removeAllSearchParams,
   setSearchParams,
@@ -24,7 +25,14 @@ const paginationContainer = document.querySelector('.exercises_pagination');
 const topOfSectionExercises = document.querySelector('#exercises');
 const sortedSelectRef = document.querySelector('#sorted-select');
 
-const filterName = getValueParameterByName('filter');
+const allParams = getAllParameters();
+let filterName;
+if (!Object.keys(allParams).length) {
+  filterName = 'Muscles';
+  setSearchParams('filter', 'Muscles');
+}
+
+filterName = getValueParameterByName('filter');
 
 export function setActiveButton(filterName) {
   switch (filterName) {
