@@ -1,4 +1,4 @@
-export function updateRating(value) {
+export function updateRatingStar(value) {
   const stars = document.querySelectorAll(
     '#rating .modal-exercises__rating-star'
   );

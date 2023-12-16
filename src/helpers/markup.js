@@ -1,15 +1,18 @@
-import { createShortStringFavorites, createShortTitle } from '../js/partials/favorites';
+import {
+  createShortStringFavorites,
+  createShortTitle,
+} from '../js/partials/favorites';
 
-const createMarkupForChangableIcon = isFavorite => {
+const createMarkupForChangableIcon = (isFavorite, rating) => {
   const markupForIcon = isFavorite
-    ? '<button type="button" class="remove-btn" id="remove-favorite-btn"><svg class="changeble-icon" width="16" height="16"><use href="/oleksii-symbol-defs.svg#icon-trash"></use></svg></button>'
-    : '<div class="icon-rating-container"><p class="rating-info-card">4.0</p><svg class="changeble-icon" width="18" height="18"><use href="/oleksii-symbol-defs.svg#icon-star"></use></svg></div>';
+    ? '<button type="button" class="remove-btn" id="remove-favorite-btn"><svg class="changeble-icon" width="16" height="16"><use href="./oleksii-symbol-defs.svg#icon-trash"></use></svg></button>'
+    : `<div class="icon-rating-container"><p class="rating-info-card">${rating}</p><svg class="changeble-icon" width="18" height="18"><use href="./oleksii-symbol-defs.svg#icon-star"></use></svg></div>`;
 
   return markupForIcon;
 };
 
 export const createInfoCardMarkup = (cardData, isFavorite = false) => {
-  const { name, burnedCalories, bodyPart, target, _id, time, gifUrl } =
+  const { name, burnedCalories, bodyPart, target, _id, time, gifUrl, rating } =
     cardData;
 
   return `<li class="favorite-info-card" data-id=${_id}>
@@ -17,20 +20,20 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
       <div class="card-header">
         <div class="category-and-icon">
           <div class="category-tag"><p>Workout</p></div>
-          ${createMarkupForChangableIcon(isFavorite)}
+          ${createMarkupForChangableIcon(isFavorite, rating)}
         </div>
         <div>
           <button type="button" class="start-btn">
             <p>Start</p>
             <svg width="16" height="16">
-              <use href="/oleksii-symbol-defs.svg#icon-arrow"></use>
+              <use href="./oleksii-symbol-defs.svg#icon-arrow"></use>
             </svg>
           </button>
         </div>
       </div>
       <div class="card-title-container">
          <svg width="24" height="24">
-          <use href="/oleksii-symbol-defs.svg#icon-man"></use>
+          <use href="./oleksii-symbol-defs.svg#icon-man"></use>
         </svg>
         <h3 class="card-title">${createShortTitle(`${name}`)}</h3>
       </div>
@@ -41,7 +44,7 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
           <p class="item-text">
             Burned kcal: <em class="hidden-overflow-text">${createShortStringFavorites(
               `${burnedCalories}/${time}`
-            )}<strong>min</strong></em>
+            )}<strong>&nbspmin</strong></em>
           </p>
         </li>
         <li>
@@ -61,6 +64,9 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
 export const createCategoryCardListMarkup = data => {
   return data.results
     .map(({ imgURL, name, filter }) => {
+      if (!imgURL) {
+        imgURL = '/images/no-image.png';
+      }
       return `            
         <li class="exercises_category-item" data-category="${name}" data-filter="${filter}"
         style="

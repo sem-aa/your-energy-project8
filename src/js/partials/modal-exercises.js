@@ -1,38 +1,75 @@
 import { getExerciseId } from '../../services/api';
 import { modal } from './modal';
-import { updateRating } from '../../helpers/update-rating';
-import { getFromLocal } from '../../services/local-storage';
+import { updateRatingStar } from '../../helpers/update-rating';
+import { getFromLocal, saveToLocal } from '../../services/local-storage';
 import {
   addFavoriteCardToLocal,
   removeFavoriteCardFromLocal,
 } from '../../helpers/functions';
 
-modal();
-
 const card = document.querySelector('.modal-exercises');
+
+const checkLocation = window.location.href
+  .split('/')
+  .includes('favorites.html');
 
 let cardData;
 
-function handleClickFavoritesBtn() {
-  if (!getFromLocal('favorites')) {
+const checkIsFavourite = (data = getFromLocal('favorites') || []) => {
+  return data.find(item => item?._id === cardData._id);
+};
+
+export const handleClickFavoritesBtn = cardData => {
+  const favoriteButton = document.querySelector(
+    '.modal-exercises__button-favourites'
+  );
+  console.log(cardData);
+
+  if (!checkIsFavourite()) {
     addFavoriteCardToLocal(cardData);
+    favoriteButton.innerHTML = `Unfavorite
+    <svg
+            class="modal-exercises__button-favourites_icon unfavorite-btn"
+            aria-label='heart'
+            width="20"
+            height="20"
+          >
+            <use href="./oleksii-symbol-defs.svg#icon-trash-dark"></use>
+          </svg>`;
+
     return;
   }
+
   removeFavoriteCardFromLocal(cardData._id);
+  favoriteButton.innerHTML = `Add to favorites
+          <svg
+            class="modal-exercises__button-favourites_icon add-to-favorites-btn"
+            aria-label='heart'
+            width="20"
+            height="20"
+
+          >
+            <use href="./images/icons.svg#icon-heart"></use>
+          </svg>`;
+
   return;
-}
+};
 
-export async function modalExercises() {
+export async function modalExercises(id) {
   try {
-    cardData = await getExerciseId('64f389465ae26083f39b17a2');
+    cardData = await getExerciseId(id);
     card.innerHTML = createModalExercisesMarkup(cardData);
-    updateRating(cardData.rating);
 
-    document.addEventListener('click', event => {
-      if (event.target.matches('.modal-exercises__button-favourites')) {
+    updateRatingStar(cardData.rating);
+    modal();
+
+    const modalRef = document.querySelector('.modal-exercises__card');
+    modalRef.addEventListener('click', event => {
+      if (event.target.closest('.modal-exercises__button-favourites')) {
         console.log('Button clicked!');
         handleClickFavoritesBtn(cardData);
       }
+
     });
   } catch (error) {
     console.error(error);
@@ -102,21 +139,32 @@ export function createModalExercisesMarkup(cardData) {
       <p class="modal-exercises__text">
         ${description}
       </p>
-      <div class="modal-exercises__buttons">
-        <button type="button" class="modal-exercises__button-favourites">
+      <div class="modal-exercises__buttons">${
+        checkLocation || checkIsFavourite()
+          ? `<button type="button" class="modal-exercises__button-favourites unfavorite-btn" style='background-color=#242424'>Unfavorite
+    <svg
+            class="modal-exercises__button-favourites_icon"
+            aria-label='heart'
+            width="20"
+            height="20"
+          >
+            <use href="./oleksii-symbol-defs.svg#icon-trash-dark"></use>
+          </svg>`
+          : `<button type="button" class="modal-exercises__button-favourites add-to-favorites-btn">
           Add to favorites
           <svg
             class="modal-exercises__button-favourites_icon"
+            aria-label='heart'
             width="20"
             height="20"
           >
             <use href="./images/icons.svg#icon-heart"></use>
-          </svg>
+          </svg>`
+      }
+        
         </button>
         <button class="modal-exercises__button-rating">Give a rating</button>
       </div>
     </div>
   </div>`;
 }
-
-modalExercises();

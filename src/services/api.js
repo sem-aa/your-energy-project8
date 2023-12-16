@@ -54,7 +54,7 @@ export const updateRaring = async (exerciseId, obj) => {
     const res = await axios.patch(`exercises/${exerciseId}/rating`, obj);
     return res.data;
   } catch (error) {
-    console.error('Error in getExerciseId:', error);
+    console.error('Error in updateRaring:', error);
   }
 };
 
