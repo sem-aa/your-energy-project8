@@ -5,7 +5,7 @@ import {
 
 const createMarkupForChangableIcon = (isFavorite, rating) => {
   const markupForIcon = isFavorite
-    ? '<button type="button" class="remove-btn" id="remove-favorite-btn"><svg class="changeble-icon" width="16" height="16"><use href="./oleksii-symbol-defs.svg#icon-trash" class="changable-icon-use"></use></svg></button>'
+    ? '<button type="button" class="remove-btn" data-remove id="remove-favorite-btn"><svg class="changeble-icon" width="16" height="16"><use href="./oleksii-symbol-defs.svg#icon-trash" class="changable-icon-use"></use></svg></button>'
     : `<div class="icon-rating-container"><p class="rating-info-card">${rating}</p><svg class="changeble-icon" width="18" height="18"><use href="./oleksii-symbol-defs.svg#icon-star"></use></svg></div>`;
 
   return markupForIcon;
@@ -53,7 +53,7 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
           )}</em></p>
         </li>
         <li>
-          <p class="item-text" id="exercise-info-text">Target: <em class="hidden-overflow-text">${createShortStringFavorites(
+          <p class="item-text">Target: <em class="hidden-overflow-text">${createShortStringFavorites(
             `${target}`
           )}</em></p>
         </li>
