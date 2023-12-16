@@ -112,6 +112,7 @@ export function createModalExercisesMarkup(cardData) {
     popularity,
     rating,
     time,
+    _id,
   } = cardData;
 
   return `<div class="modal-exercises__card">
