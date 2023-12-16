@@ -47,6 +47,7 @@ export function modal() {
     if (closeButton) {
       elements.modalExercises.classList.add('visually-hidden');
       elements.body.classList.remove('modal-open');
+      removeSearchParamsByName('modalOpen');
     } else if (event.target === elements.modalExercises) {
       elements.modalExercises.classList.add('visually-hidden');
       elements.body.classList.remove('modal-open');
