@@ -15,13 +15,13 @@ const onCloseModal = event => {
   toggleModal();
 };
 
-refs.openModalBtn.addEventListener('click', event => {
+refs.openModalBtn?.addEventListener('click', event => {
   toggleModal();
   window.addEventListener('keydown', onCloseModal);
   refs.body.style.overflow = 'hidden';
 });
 
-refs.closeModalBtn.addEventListener('click', toggleModal);
+refs.closeModalBtn?.addEventListener('click', toggleModal);
 
 refs.modal.addEventListener('click', event => {
   if (event.target !== event.currentTarget) return;

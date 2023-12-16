@@ -361,6 +361,12 @@
     justify-content: space-between;
   }
 
+  .exercises_container-page {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 32px;
+  }
+
   .exercises_tab-wrapper {
     width: 566px;
     justify-content: flex-end;

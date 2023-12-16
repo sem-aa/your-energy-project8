@@ -6,9 +6,12 @@ const elements = {
 };
 
 const exercisesListRef = document.getElementById('exercises-list-container');
-exercisesListRef.addEventListener('click', onExerciseListClick);
 
-function onExerciseListClick(event) {
+if (exercisesListRef) {
+  exercisesListRef.addEventListener('click', onExerciseListClick);
+}
+
+export function onExerciseListClick(event) {
   if (!event.target.closest('[data-id]')) {
     return;
   }

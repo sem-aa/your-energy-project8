@@ -1,6 +1,6 @@
 import './partials/to-top';
 import './partials/loader';
-import './partials/modal-terms';
+
 import './partials/categories';
 import './partials/exercises';
 import './partials/favorites';
@@ -13,3 +13,4 @@ import './partials/header';
 import './partials/modal-rating';
 import './partials/hero';
 import './partials/quote';
+import './partials/modal-terms';
