@@ -189,31 +189,27 @@
   }
 
   .hero-side-img-descktop {
-    .hero-side-img-descktop {
-      .hero-side-img-descktop {
-        display: block;
-        width: 168px;
-        border-radius: 20px;
-        overflow: hidden;
-        margin-bottom: 32px;
-        margin-left: auto;
-      }
+    display: block;
+    width: 168px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 32px;
+    margin-left: auto;
+  }
 
-      .hero-hashtags-desktop {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        justify-content: space-between;
-        width: 100%;
-      }
+  .hero-hashtags-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-      .hero-desktop {
-        padding: 4px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
+  .hero-desktop {
+    padding: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
   }
 }

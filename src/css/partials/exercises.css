@@ -354,10 +354,6 @@
     margin-bottom: 32px;
   }
 
-  #exercises-list-container {
-    justify-content: flex-end;
-  }
-
   .exercises_category-item {
     height: 225px;
     width: calc((100% - 2 * 15px) / 3);
@@ -407,6 +403,10 @@
   .exercises_category-set {
     width: 900px;
     margin-left: auto;
+  }
+
+  .exercises_category-list .favorite-info-card {
+    width: calc((100% - 1 * 16px) / 2);
   }
 
   .exercises_category-list {
