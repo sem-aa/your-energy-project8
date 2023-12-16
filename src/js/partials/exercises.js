@@ -129,7 +129,7 @@ async function renderExercises(
 
   titleCategoryRef.innerHTML = category;
 
-  const favFromLocalArr = getFromLocal('favorites').map(fav => fav._id);
+  const favFromLocalArr = (getFromLocal('favorites') || []).map(fav => fav._id);
 
   getExercises(query).then(response => {
     if (response.results.length) {
