@@ -11,7 +11,6 @@ let itemsPerPage = window.innerWidth < 768 ? 8 : 10;
 const handleDeleteFavoriteCard = ({ target }) => {
   if (!target.closest('#remove-favorite-btn')) return;
   const id = target.closest('[data-id]').dataset.id;
-  console.log(id);
   removeFavoriteCardFromLocal(id);
   createCardsMarkupList(favoritesList);
 };

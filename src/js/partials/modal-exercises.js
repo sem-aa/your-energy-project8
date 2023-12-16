@@ -68,8 +68,6 @@ export async function modalExercises(id) {
         handleClickFavoritesBtn(cardData);
       }
       if (event.target.closest('.modal-exercises__button-rating')) {
-        console.log('Button cliced!', id);
-
         const ratingModal = document.querySelector('#ratingModal');
 
         ratingModal.style.display = 'block';
