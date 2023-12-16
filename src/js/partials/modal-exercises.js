@@ -123,13 +123,13 @@ export function createModalExercisesMarkup(cardData) {
     </button>
     <div class="modal-exercises__image-wrapper">
       <img class="modal-exercises__image" src="${
-        gifUrl !== null ? gifUrl : '../images/no-image.png'
+        gifUrl !== null ? gifUrl : './images/no-image.png'
       }" alt="${name}" />
     </div>
     <div class="modal-exercises__description">
       <button class="share-button-modal" type="button">
         <svg class="share-icon">
-          <use href="../images/valkoSprite.svg#icon-share-light"></use>
+          <use href="./images/valkoSprite.svg#icon-share-light"></use>
         </svg>
         <span class="share-button-hint-modal">Share exercises</span>
       </button>
