@@ -42,7 +42,7 @@ function createQuoteMarkup(quote) {
     </div>
     <div class="recomendation-container">
       <svg class="recoendation-icon" width="34" height="32">
-        <use href=${spriteUrl}#icon-dumb-bell"></use>
+        <use href=${spriteUrl}#icon-dumb-bell></use>
       </svg>
       <h3 class="recomendation-heading">110 min</h3>
       <h4 class="recomendation-subheading">Daily norm of sports</h4>
