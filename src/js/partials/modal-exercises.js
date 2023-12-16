@@ -23,7 +23,6 @@ export const handleClickFavoritesBtn = cardData => {
   const favoriteButton = document.querySelector(
     '.modal-exercises__button-favourites'
   );
-  console.log(cardData);
 
   if (!checkIsFavourite()) {
     addFavoriteCardToLocal(cardData);
