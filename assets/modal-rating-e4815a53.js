@@ -189,7 +189,7 @@ import{a as u,i as q}from"./vendor-916d32b4.js";(function(){const t=document.cre
     </div>
     <div class="recomendation-container">
       <svg class="recoendation-icon" width="34" height="32">
-        <use href=${$}#icon-dumb-bell"></use>
+        <use href=${$}#icon-dumb-bell></use>
       </svg>
       <h3 class="recomendation-heading">110 min</h3>
       <h4 class="recomendation-subheading">Daily norm of sports</h4>
@@ -206,4 +206,4 @@ import{a as u,i as q}from"./vendor-916d32b4.js";(function(){const t=document.cre
       </div>
     </div>
   </div>`}const b=new Date;function pe(e){return e?b.getDate()===e.getDate()&&b.getMonth()===e.getMonth()&&b.getFullYear()===e.getFullYear():!1}async function he(){const e=d(p.phrase);if(!e||!pe(new Date(e.date))){const s=await K();k(p.phrase,{...s,date:b})}const t=d(p.phrase);me.innerHTML=ge(t)}he();document.querySelector(".js-loader");const D=document.querySelector("#ratingForm"),ve=document.querySelector(".close-rating"),fe=document.querySelector("#ratingModal");async function ye(e){e.preventDefault();const s=document.querySelector(".modal-exercises__button-rating").getAttribute("data-value"),a=new FormData(D),r={};a.forEach((o,i)=>{i==="rate"?r[i]=Number(o):r[i]=o});try{await V(s,r)?q.success({title:"OK",message:"Successfully sent rating!"}):q.error({title:"Error",message:"There was an error"})}catch{}}D.addEventListener("submit",ye);ve.addEventListener("click",()=>{const e=document.querySelector(".modal-exercises");document.querySelector(".modal-exercises__card"),e.classList.remove("visually-hidden"),fe.style.display="none"});export{J as a,we as b,_e as c,xe as d,d as e,$e as f,G as g,M as h,F as i,Le as j,ke as r,Q as s};
-//# sourceMappingURL=modal-rating-ca973d35.js.map
+//# sourceMappingURL=modal-rating-e4815a53.js.map
