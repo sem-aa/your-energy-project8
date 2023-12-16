@@ -158,12 +158,12 @@ import{a as u,i as $}from"./vendor-916d32b4.js";(function(){const t=document.cre
                     </li>`;y&&(y.innerHTML=s)};y&&y.addEventListener("click",e=>{e.target.classList.contains("page-number")&&(e.preventDefault(),L=parseInt(e.target.dataset.page,10),k(l))});k(l);l==null||l.addEventListener("click",I);l==null||l.addEventListener("click",ee);const F=document.getElementById("myModal"),re=document.getElementById("openModalBtn"),oe=document.getElementById("closeModalBtn"),R=document.querySelector("body"),m=document.querySelector(".nav_link_favorites"),g=document.querySelector(".nav_link_home");re.addEventListener("click",function(){F.style.display="block",R.classList.add("modal-open")});oe.addEventListener("click",function(){F.style.display="none",R.classList.remove("modal-open")});P().includes("favorites")?(g==null||g.classList.remove("nav_item_active"),m==null||m.classList.add("nav_item_active")):(g==null||g.classList.add("nav_item_active"),m==null||m.classList.remove("nav_item_active"));const ie=document.querySelector(".quote");function ne(e){return`<div class="quote-container container">
     <div class="quote-of-the-day">
       <svg class="quote-icon" width="34" height="32">
-        <use href="../images/svg.icons/symbol-defs.svg#icon-runing-man"></use>
+        <use href="./images/svg.icons/symbol-defs.svg#icon-runing-man"></use>
       </svg>
       <h3 class="quote-heading">Quote of the day</h3>
       <svg class="invert-coma-icon" width="20" height="20">
         <use
-          href="../images/svg.icons/symbol-defs.svg#icon-inverted-commas"
+          href="./images/svg.icons/symbol-defs.svg#icon-inverted-commas"
         ></use>
       </svg>
       <p class="quote-text">${e.quote}</p>
@@ -172,24 +172,24 @@ import{a as u,i as $}from"./vendor-916d32b4.js";(function(){const t=document.cre
     <div class="quote-image">
       <picture>
         <source
-          srcset="../images/quote-home-desk@1x.jpg"
+          srcset="./images/quote-home-desk@1x.jpg"
           media="(max-width: 767px)"
         />
         <source
-          srcset="../images/quote-home-desk@2x.jpg"
+          srcset="./images/quote-home-desk@2x.jpg"
           media="(min-width: 768px)"
         />
 
         <img
           class="hero-img cropped-image"
-          src="../images/quote-home-desk@1x.jpg"
+          src="./images/quote-home-desk@1x.jpg"
           alt="women-sportswear-taking-break-from-workout"
         />
       </picture>
     </div>
     <div class="recomendation-container">
       <svg class="recoendation-icon" width="34" height="32">
-        <use href="../images/svg.icons/symbol-defs.svg#icon-dumb-bell"></use>
+        <use href="./images/svg.icons/symbol-defs.svg#icon-dumb-bell"></use>
       </svg>
       <h3 class="recomendation-heading">110 min</h3>
       <h4 class="recomendation-subheading">Daily norm of sports</h4>
@@ -206,4 +206,4 @@ import{a as u,i as $}from"./vendor-916d32b4.js";(function(){const t=document.cre
       </div>
     </div>
   </div>`}const f=new Date;function ce(e){return e?f.getDate()===e.getDate()&&f.getMonth()===e.getMonth()&&f.getFullYear()===e.getFullYear():!1}async function le(){const e=d(p.phrase);if(!e||!ce(new Date(e.date))){const s=await A();w(p.phrase,{...s,date:f})}const t=d(p.phrase);ie.innerHTML=ne(t)}le();document.querySelector(".js-loader");const O=document.querySelector("#ratingForm"),de=document.querySelector(".close-rating"),ue=document.querySelector("#ratingModal");async function me(e){e.preventDefault();const s=document.querySelector(".modal-exercises__button-rating").getAttribute("data-value"),a=new FormData(O),r={};a.forEach((o,i)=>{i==="rate"?r[i]=Number(o):r[i]=o});try{await W(s,r)?$.success({title:"OK",message:"Successfully sent rating!"}):$.error({title:"Error",message:"There was an error"})}catch{}}O.addEventListener("submit",me);de.addEventListener("click",()=>{const e=document.querySelector(".modal-exercises");document.querySelector(".modal-exercises__card"),e.classList.remove("visually-hidden"),ue.style.display="none"});export{z as a,ve as b,pe as c,he as d,d as e,fe as f,K as g,S as h,P as i,ye as j,_e as r,V as s};
-//# sourceMappingURL=modal-rating-6cc11f5b.js.map
+//# sourceMappingURL=modal-rating-c4f5601c.js.map
