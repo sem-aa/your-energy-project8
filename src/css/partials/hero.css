@@ -3,17 +3,18 @@
 /* MOBILE */
 .hero-container {
   background-color: transparent;
-  max-width: 355px;
+  max-width: 375px;
   margin: 0 auto;
 
   padding-top: 80px;
   padding-bottom: 20px;
-
-  .hero-side-img-descktop,
-  .hero-hashtags-desktop {
-    display: none;
-  }
 }
+
+.hero-side-img-descktop,
+.hero-hashtags-desktop {
+  display: none;
+}
+
 .hero-logo {
   fill: var(--primary-dark);
   vertical-align: middle;
@@ -91,7 +92,7 @@
   }
 
   .hero-container {
-    max-width: 704px;
+    max-width: 768px;
     padding-top: 100px;
     padding-bottom: 32px;
   }
