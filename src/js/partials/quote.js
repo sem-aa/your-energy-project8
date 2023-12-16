@@ -5,7 +5,7 @@ import { KEY_STORAGE } from '../../helpers/constant';
 const quoteSectionRef = document.querySelector('.quote');
 
 function createQuoteMarkup(quote) {
-    return `<div class="quote-container container">
+  return `<div class="quote-container container">
     <div class="quote-of-the-day">
       <svg class="quote-icon" width="34" height="32">
         <use href="../images/svg.icons/symbol-defs.svg#icon-runing-man"></use>
@@ -55,25 +55,30 @@ function createQuoteMarkup(quote) {
         </p>
       </div>
     </div>
-  </div>`
-} 
+  </div>`;
+}
 
-const today = Date.now();
+const today = new Date();
+
 function checkDateIsNow(checkedDate) {
-    if (!checkedDate) return false
-    return today.getDate() === checkedDate.getDate() && 
-    today.getMonth() === checkedDate.getMonth() && 
+  console.log('checkedDate:', checkedDate);
+  if (!checkedDate) return false;
+  console.log('123', today.getDate());
+  return (
+    today.getDate() === checkedDate.getDate() &&
+    today.getMonth() === checkedDate.getMonth() &&
     today.getFullYear() === checkedDate.getFullYear()
-    }
+  );
+}
 
 async function onLoadPage() {
-    const phraseFromLS = getFromLocal(KEY_STORAGE.phrase);
-if (!phraseFromLS || !checkDateIsNow(phraseFromLS.date)) {
-    const data = await getPhraseDay()
-  saveToLocal(KEY_STORAGE.phrase, data) 
-    }
-    const acctualPhrase = getFromLocal(KEY_STORAGE.phrase);
-    quoteSectionRef.innerHTML = createQuoteMarkup(acctualPhrase);
-};
+  const phraseFromLS = getFromLocal(KEY_STORAGE.phrase);
+  if (!phraseFromLS || !checkDateIsNow(new Date(phraseFromLS.date))) {
+    const data = await getPhraseDay();
+    saveToLocal(KEY_STORAGE.phrase, { ...data, date: today });
+  }
+  const acctualPhrase = getFromLocal(KEY_STORAGE.phrase);
+  quoteSectionRef.innerHTML = createQuoteMarkup(acctualPhrase);
+}
 
 onLoadPage();
