@@ -166,3 +166,12 @@
   align-items: center;
   gap: 8px;
 }
+.conditions-button {
+  padding: 0;
+  background-color: inherit;
+  color: inherit;
+  border: none;
+}
+.conditions-button:focus {
+  outline: none;
+}
