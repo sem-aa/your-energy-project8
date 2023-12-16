@@ -4,6 +4,7 @@ import {
   createPaginationMarkup,
 } from '../../helpers/markup';
 import { removeAllSearchParams, setSearchParams } from './search-params';
+import { sortedSelectInstance } from './sorted-selected';
 //import { showLoader, hideLoader } from './loader';
 
 const itemsOnPage = 12;
@@ -17,6 +18,7 @@ const categoryContainer = document.querySelector('#category-list-container');
 const exercisesContainer = document.querySelector('#exercises-list-container');
 const paginationContainer = document.querySelector('.exercises_pagination');
 const topOfSectionExercises = document.querySelector('#exercises');
+const sortedSelectRef = document.querySelector('#sorted-select');
 
 setFilteredCategoryList('Muscles');
 
@@ -27,6 +29,8 @@ function setFilteredCategoryList(filter, page = 1) {
       exercisesContainer?.classList?.add('visually-hidden');
       inputRef?.classList?.add('visually-hidden-ext');
       titleAdditionalRef?.classList?.add('visually-hidden');
+      sortedSelectInstance.setSelected('default');
+      sortedSelectRef.classList.add('visually-hidden-ext');
 
       if (response.results.length) {
         categoryContainer.innerHTML = createCategoryCardListMarkup(response);
