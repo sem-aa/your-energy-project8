@@ -8,6 +8,10 @@ body {
   color: var(--primary-dark);
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

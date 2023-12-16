@@ -48,7 +48,7 @@
 
 .modal-exercises__rating-star {
   color: var(--bg-color-20);
-  cursor: pointer;
+  pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,7 +96,8 @@
   gap: 9px;
 }
 
-.modal-exercises__button-favourites {
+.modal-exercises__button-favourites,
+.modal-exercises__button-favourites.unfavorite-btn {
   border: none;
   width: 194px;
   padding: 12px 0;
@@ -122,6 +123,7 @@
 .modal-exercises__button-favourites:hover
   .modal-exercises__button-favourites_icon {
   stroke: var(--bg-color);
+  fill: var(--primary-dark);
 }
 
 .modal-exercises__button-rating {
@@ -167,6 +169,7 @@
 .modal-exercises__button-favourites_icon {
   margin-left: 8px;
   stroke: var(--primary-dark);
+  fill: var(--bg-color);
 }
 
 @media screen and (min-width: 768px) {
