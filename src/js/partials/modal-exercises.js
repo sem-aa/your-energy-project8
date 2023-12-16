@@ -65,8 +65,16 @@ export async function modalExercises(id) {
     const modalRef = document.querySelector('.modal-exercises__card');
     modalRef.addEventListener('click', event => {
       if (event.target.closest('.modal-exercises__button-favourites')) {
-
         handleClickFavoritesBtn(cardData);
+      }
+      if (event.target.closest('.modal-exercises__button-rating')) {
+        console.log('Button cliced!', id);
+
+        const ratingModal = document.querySelector('#ratingModal');
+
+        ratingModal.style.display = 'block';
+
+        card.classList.add('visually-hidden');
       }
     });
     const shareButtonModalRef = document.querySelector('.share-button-modal');
@@ -104,6 +112,7 @@ export function createModalExercisesMarkup(cardData) {
     popularity,
     rating,
     time,
+    _id,
   } = cardData;
 
   return `<div class="modal-exercises__card">
@@ -191,7 +200,7 @@ export function createModalExercisesMarkup(cardData) {
           </svg>`
       }
         </button>
-        <button class="modal-exercises__button-rating">Give a rating</button>
+        <button class="modal-exercises__button-rating" data-value="${_id}">Give a rating</button>
       </div>
     </div>
   </div>`;
