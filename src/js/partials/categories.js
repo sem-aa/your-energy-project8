@@ -111,14 +111,23 @@ musclesFilterBtn?.addEventListener('click', onMusclesFilterClick);
 bodyFilterBtn?.addEventListener('click', onBodyFilterClick);
 equipmentFilterBtn?.addEventListener('click', onEquipmentFilterClick);
 
-export function toggleActiveStatus(btn) {
-  const activeBtn = document.querySelector('.active');
-  activeBtn.classList.remove('active');
-  if (btn.classList.contains('active')) {
-    btn.classList.remove('active');
-  } else {
-    btn.classList.add('active');
+export function toggleActiveStatus(filterBtn) {
+  // const activeBtn = document.querySelector('.active');
+  // activeBtn.classList.remove('active');
+  // if (btn.classList.contains('active')) {
+  //   btn.classList.remove('active');
+  // } else {
+  //   btn.classList.add('active');
+  // }
+  const activeBtn = document.querySelectorAll('.active');
+
+  if (activeBtn.length) {
+    activeBtn.forEach(btn => {
+      btn.classList.remove('active');
+    });
   }
+
+  filterBtn.classList.add('active');
 }
 
 function handlePagination() {
