@@ -8,6 +8,7 @@ import {
   createInfoCardMarkup,
   createPaginationMarkup,
 } from '../../helpers/markup';
+import { removeAllSearchParams, setSearchParams } from './search-params';
 
 const inputBoxRef = document.querySelector('.search-box');
 const searchInput = document.querySelector('.search-input');
@@ -74,6 +75,11 @@ async function onCategoryCardClick(e) {
   searchInput.value = '';
 
   renderExercises(categoryItem.dataset.filter, categoryItem.dataset.category);
+  removeAllSearchParams();
+  setSearchParams(
+    `${categoryItem.dataset.filter.toLowerCase().split(' ').join('')}`,
+    `${categoryItem.dataset.category}`
+  );
 }
 
 async function renderExercises(
@@ -123,7 +129,7 @@ async function renderExercises(
 
   titleCategoryRef.innerHTML = category;
 
-  const favFromLocalArr = getFromLocal('favorites').map(fav => fav._id);
+  const favFromLocalArr = (getFromLocal('favorites') || []).map(fav => fav._id);
 
   getExercises(query).then(response => {
     if (response.results.length) {
