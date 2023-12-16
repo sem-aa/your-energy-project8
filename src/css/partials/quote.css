@@ -1,11 +1,13 @@
 /* QUOTE 0F THE DAY SECTION */
 
 /* MOBILE */
+
 .quote-container {
   max-width: 355px;
   margin: 0 auto;
+  padding-left: 0;
   /* padding: 80px 0; */
-  padding: 0 0 40px 0;
+  /* padding: 0 0 40px 0; */
 }
 
 .quote-of-the-day {
