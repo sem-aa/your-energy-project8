@@ -1,6 +1,6 @@
 .section {
   padding-top: 20px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .exercises_title-row-container {
@@ -156,7 +156,7 @@
 }
 
 .exercises_category-set {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .exercises_category-list {
@@ -285,7 +285,7 @@
 @media screen and (min-width: 768px) {
   .section {
     padding-top: 32px;
-    padding-bottom: 32px;
+    padding-bottom: 36px;
   }
 
   .section-title {
@@ -338,7 +338,7 @@
   }
 
   .exercises_category-set {
-    margin-bottom: 0;
+    margin-bottom: 64px;
   }
 
   .exercises_category-list {
@@ -400,6 +400,7 @@
   .exercises_category-set {
     width: 900px;
     margin-left: auto;
+    margin-bottom: 0;
   }
 
   .exercises_category-list .favorite-info-card {
