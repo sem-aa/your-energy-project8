@@ -1,7 +1,6 @@
 import SlimSelect from 'slim-select';
 
-const sortedSelectRef = document.querySelector('#sorted-select');
-new SlimSelect({
+export const sortedSelectInstance = new SlimSelect({
   select: '#sorted-select',
   settings: {
     showSearch: false,
@@ -22,28 +21,27 @@ new SlimSelect({
   ],
 });
 
-const renderInfoCardItems = array => {
-  const markup = array.map(createInfoCardMarkup).join('');
-  favoritesList.innerHTML = markup;
-};
-
-sortedSelectRef.addEventListener('change', onSortedSelectChange);
-
-function onSortedSelectChange(e) {
+export function onSortedSelectChange(e, array) {
   const sortType = e.target.value;
-  const sortedArray = getSortedArrayInfoCards({
+
+  const sortedResults = getSortedArrayInfoCards({
     sortType,
-    array: arrayCardsForTest,
+    array,
   });
 
-  // here you need to call a function that renders cards with information, passing it with the sortedArray argument.
-  // renderInfoCardItems for test
-  renderInfoCardItems(sortedArray); //
+  exercisesContainer.innerHTML = sortedResults
+    .map(result => {
+      let isFavorite = false;
+      if (favFromLocalArr.includes(result._id)) {
+        isFavorite = true;
+      }
+      return createInfoCardMarkup(result, isFavorite);
+    })
+    .join(''); //
 }
 
-function getSortedArrayInfoCards({ sortType, array }) {
+export function getSortedArrayInfoCards({ sortType, array }) {
   let sortedArray;
-
   switch (sortType) {
     case 'default':
       sortedArray = array.toSorted((a, b) => a.name.localeCompare(b.name));
@@ -69,5 +67,6 @@ function getSortedArrayInfoCards({ sortType, array }) {
       sortedArray = array.toSorted((a, b) => a.name.localeCompare(b.name));
       break;
   }
+
   return sortedArray;
 }

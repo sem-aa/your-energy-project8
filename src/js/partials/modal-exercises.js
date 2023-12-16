@@ -1,6 +1,7 @@
 import { getExerciseId } from '../../services/api';
 import { modal } from './modal';
 import { updateRatingStar } from '../../helpers/update-rating';
+import { getFullUrl } from './search-params';
 import { getFromLocal, saveToLocal } from '../../services/local-storage';
 import {
   addFavoriteCardToLocal,
@@ -64,9 +65,28 @@ export async function modalExercises(id) {
     const modalRef = document.querySelector('.modal-exercises__card');
     modalRef.addEventListener('click', event => {
       if (event.target.closest('.modal-exercises__button-favourites')) {
+
         handleClickFavoritesBtn(cardData);
       }
     });
+    const shareButtonModalRef = document.querySelector('.share-button-modal');
+    const shareButtonHintModalRef = document.querySelector(
+      '.share-button-hint-modal'
+    );
+    shareButtonModalRef.addEventListener('click', onShareButtonModalClick);
+    function onShareButtonModalClick(e) {
+      const fullUrl = getFullUrl();
+      const tempInput = document.createElement('input');
+      tempInput.value = fullUrl;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      shareButtonHintModalRef.textContent = 'Link copy!';
+      setTimeout(() => {
+        shareButtonHintModalRef.textContent = 'Share exercises';
+      }, 1000);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -98,6 +118,12 @@ export function createModalExercisesMarkup(cardData) {
       }" alt="${name}" />
     </div>
     <div class="modal-exercises__description">
+      <button class="share-button-modal" type="button">
+        <svg class="share-icon">
+          <use href="../images/valkoSprite.svg#icon-share-light"></use>
+        </svg>
+        <span class="share-button-hint-modal">Share exercises</span>
+      </button>
       <p class="modal-exercises__name">${name}</p>
       <div id="rating" class="modal-exercises__rating">
         <div class="modal-exercises__rating-value">${rating}</div>

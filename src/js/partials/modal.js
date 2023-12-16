@@ -1,4 +1,9 @@
 import { modalExercises } from './modal-exercises';
+import {
+  getValueParameterByName,
+  removeSearchParamsByName,
+  setSearchParams,
+} from './search-params';
 
 const elements = {
   openModalButton: document.querySelector('.open-modal'),
@@ -13,11 +18,16 @@ if (exercisesListRef) {
 }
 
 export function onExerciseListClick(event) {
+  if (event.target.matches('.changable-icon-use')) {
+    return;
+  }
+
   if (!event.target.closest('[data-id]')) {
     return;
   }
-  const id = event.target.closest('[data-id]').dataset.id;
 
+  const id = event.target.closest('[data-id]').dataset.id;
+  setSearchParams('modalOpen', id);
   modalExercises(id);
 }
 
@@ -36,17 +46,28 @@ export function modal() {
 
     if (closeButton) {
       elements.modalExercises.classList.add('visually-hidden');
+// <<<<<<< features-create-modal-exercise
       elements.body.classList.remove('modal-open');
     } else if (event.target === elements.modalExercises) {
       elements.modalExercises.classList.add('visually-hidden');
       elements.body.classList.remove('modal-open');
+// =======
+//       removeSearchParamsByName('modalOpen');
+//     } else if (event.target === elements.modalExercises) {
+//       elements.modalExercises.classList.add('visually-hidden');
+//       removeSearchParamsByName('modalOpen');
+// >>>>>>> main
     }
   }
 
   function handleKeyDown(event) {
     if (event.key === 'Escape') {
       elements.modalExercises.classList.add('visually-hidden');
+// <<<<<<< features-create-modal-exercise
       elements.body.classList.remove('modal-open');
+// =======
+//       removeSearchParamsByName('modalOpen');
+// >>>>>>> main
     }
   }
 
@@ -58,3 +79,10 @@ export function modal() {
 
   return removeListeners;
 }
+
+function onLoadPage() {
+  const id = getValueParameterByName('modalOpen');
+  if (!id) return;
+  modalExercises(id);
+}
+onLoadPage();

@@ -3,7 +3,7 @@ export function getFullUrl() {
   return fullUrl;
 }
 
-function getAllParameters() {
+export function getAllParameters() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const allParametrs = {};

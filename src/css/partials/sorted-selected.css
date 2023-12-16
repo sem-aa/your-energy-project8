@@ -1,5 +1,5 @@
 .sorted-select-wrapper {
-  width: 100%;
+  width: 200px;
 }
 
 div .sorted-select {
@@ -11,6 +11,8 @@ div .sorted-select {
   border: 1px solid #242424;
   color: #242424;
   background-color: #f4f4f4;
+  font-size: 14px;
+  line-height: 1.3;
 }
 
 div .sorted-option {
@@ -19,6 +21,8 @@ div .sorted-option {
   align-items: center;
   color: #242424;
   background-color: #f4f4f4;
+  font-size: 14px;
+  line-height: 1.3;
 }
 
 :root {
@@ -510,3 +514,20 @@ div .sorted-option {
 .ss-content .ss-list .ss-option .ss-search-highlight {
   background-color: var(--ss-highlight-color);
 } /*# sourceMappingURL=slimselect.css.map */
+
+@media screen and (min-width: 768px) {
+  .sorted-select-wrapper {
+    width: 220px;
+  }
+
+  div .sorted-select {
+    font-size: 16px;
+  }
+
+  div .sorted-option {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}

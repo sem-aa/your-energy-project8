@@ -6,52 +6,61 @@
         <span class="section-title">/</span><span id="title-category"></span>
       </p>
     </div>
-    <div class="exercises_tab-wrapper">
-      <div class="search-box visually-hidden-ext">
-        <input type="text" class="search-input" placeholder="Search" />
-        <button type="button" class="search-btn" id="search-button">
-          <svg class="search-icon" width="18" height="18">
-            <use href="./images/searchIcon.svg#icon-search"></use>
-          </svg>
-        </button>
+    <div class="exercises_filter-box">
+      <div class="exercises_tab-wrapper">
+        <form class="search-box visually-hidden-ext">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search"
+            name="search"
+          />
+          <button type="submit" class="search-btn" id="search-button">
+            <svg class="search-icon" width="18" height="18">
+              <use href="./images/searchIcon.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+        <ul class="exercises_filter-list">
+          <li class="exercises_filter-item">
+            <button
+              class="exercises_filter-btn row-accent active"
+              type="button"
+              data-exercises
+              data-muscles
+            >
+              Muscles
+            </button>
+          </li>
+          <li class="exercises_filter-item">
+            <button
+              class="exercises_filter-btn row-accent"
+              type="button"
+              data-exercises
+              data-body
+            >
+              Body parts
+            </button>
+          </li>
+          <li class="exercises_filter-item">
+            <button
+              class="exercises_filter-btn row-accent"
+              type="button"
+              data-exercises
+              data-equipment
+            >
+              Equipment
+            </button>
+          </li>
+        </ul>
       </div>
-      <ul class="exercises_filter-list">
-        <li class="exercises_filter-item">
-          <button
-            class="exercises_filter-btn row-accent active"
-            type="button"
-            data-exercises
-            data-muscles
-          >
-            Muscles
-          </button>
-        </li>
-        <li class="exercises_filter-item">
-          <button
-            class="exercises_filter-btn row-accent"
-            type="button"
-            data-exercises
-            data-body
-          >
-            Body parts
-          </button>
-        </li>
-        <li class="exercises_filter-item">
-          <button
-            class="exercises_filter-btn row-accent"
-            type="button"
-            data-exercises
-            data-equipment
-          >
-            Equipment
-          </button>
-        </li>
-      </ul>
+      <div class="exercises_sorted-box">
+        <load ="partials/sorted-select.html" />
+        <load ="partials/share-button.html" />
+      </div>
     </div>
   </div>
   <div class="exercises_container-page">
- 
-
     <div class="exercises_category-set">
       <ul class="exercises_category-list" id="category-list-container">
         <!-- createCategoryCardListMarkup(data) -->

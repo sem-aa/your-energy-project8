@@ -205,7 +205,7 @@
 .scrollbar-container {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   margin-bottom: 20px;
   width: 100%;
@@ -244,12 +244,11 @@
   background-color: rgb(186, 186, 186);
 }
 
-
 @media screen and (min-width: 1440px) {
   .favorites-container {
     display: flex;
     gap: 32px;
-    
+
     height: 100vh;
   }
 }

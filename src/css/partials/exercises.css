@@ -266,6 +266,17 @@
   font-weight: 500;
   line-height: 1.33;
 }
+.exercises_filter-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.exercises_sorted-box {
+  margin-bottom: 16px;
+  margin-left: auto;
+  display: flex;
+  gap: 24px;
+}
 
 @media screen and (min-width: 768px) {
   .section {
@@ -347,6 +358,11 @@
     font-size: 20px;
     line-height: 1.33;
     letter-spacing: 0.06em;
+  }
+
+  .exercises_sorted-box {
+    margin-bottom: 16px;
+    gap: 32px;
   }
 }
 
