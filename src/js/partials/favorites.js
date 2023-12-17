@@ -5,9 +5,13 @@ import { onExerciseListClick } from './modal';
 
 const favoritesList = document.getElementById('favorite-cards-list');
 const paginationContainer = document.getElementById('pagination-container');
+const quoteContainer = document.querySelector('.quote-container');
 
 let currentPage = 1;
 let itemsPerPage = window.innerWidth < 768 ? 8 : 10;
+const checkLocation = window.location.href
+  .split('/')
+  .includes('favorites.html');
 
 const handleDeleteFavoriteCard = ({ target }) => {
   if (!target.closest('[data-remove]')) return;
@@ -15,6 +19,19 @@ const handleDeleteFavoriteCard = ({ target }) => {
   removeFavoriteCardFromLocal(id);
   createCardsMarkupList(favoritesList);
 };
+
+function reloadOnResize() {
+  let resized = false;
+
+  function handleResize() {
+    if (!resized) {
+      window.location.reload();
+      resized = true;
+    }
+  }
+
+  window.addEventListener('resize', handleResize);
+}
 
 const createListOfCards = (array, page = 1) => {
   if (window.innerWidth < 1440) {
@@ -66,6 +83,13 @@ export function createCardsMarkupList(list) {
 
     if (window.innerWidth < 1440) {
       createPaginationMarkup(results.length);
+    }
+
+    const cards = document.querySelectorAll('.favorite-info-card');
+
+    if (cards && checkLocation && window.innerWidth >= 1440) {
+      cards.forEach(card => (card.style.width = '405px'));
+      quoteContainer.style.maxWidth = '494px';
     }
   } catch (error) {
     console.log(error.message);
@@ -120,3 +144,5 @@ if (favoritesList) {
 
   favoritesList.addEventListener('click', handleDeleteFavoriteCard);
 }
+
+reloadOnResize();
