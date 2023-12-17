@@ -91,8 +91,8 @@ async function onLoadPage() {
   const acctualPhrase = getFromLocal(KEY_STORAGE.phrase);
   if (quoteSectionRef) {
     quoteSectionRef.innerHTML = createQuoteMarkup(acctualPhrase);
+    addPaddingForQuoteSection();
   }
 }
 
 onLoadPage();
-addPaddingForQuoteSection();
