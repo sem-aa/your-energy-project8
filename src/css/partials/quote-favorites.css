@@ -22,9 +22,11 @@
 @media (min-width: 1440px) {
   .quote-recomendation-fav {
     flex: 0.5;
+    height: 100%;
   }
 
   .quote-image-fav {
     flex: 0.5;
   }
+
 }
