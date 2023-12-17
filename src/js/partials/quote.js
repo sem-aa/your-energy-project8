@@ -6,9 +6,6 @@ import quoteHomeDesk1xUrl from '../../images/quote-home-desk@1x.jpg';
 import quoteHomeDesk2xUrl from '../../images/quote-home-desk@2x.jpg';
 
 const quoteSectionRef = document.querySelector('.quote');
-const checkLocation = window.location.href
-  .split('/')
-  .includes('favorites.html');
 
 const addPaddingForQuoteSection = () => {
   if (window.innerWidth < 768) {
@@ -92,7 +89,9 @@ async function onLoadPage() {
     saveToLocal(KEY_STORAGE.phrase, { ...data, date: today });
   }
   const acctualPhrase = getFromLocal(KEY_STORAGE.phrase);
-  quoteSectionRef.innerHTML = createQuoteMarkup(acctualPhrase);
+  if (quoteSectionRef) {
+    quoteSectionRef.innerHTML = createQuoteMarkup(acctualPhrase);
+  }
 }
 
 onLoadPage();

@@ -1,0 +1,30 @@
+.quote-recomendation-fav {
+  margin-bottom: 20px;
+}
+
+.quote-of-the-day-fav {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .quote-recomendation-fav {
+    margin-bottom: 0;
+  }
+
+  .quote-container-fav {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1440px) {
+  .quote-recomendation-fav {
+    flex: 0.5;
+  }
+
+  .quote-image-fav {
+    flex: 0.5;
+  }
+}
