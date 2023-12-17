@@ -50,7 +50,7 @@ export function createCardsMarkupList(list) {
   try {
     const results = getFromLocal('favorites');
 
-    if (!results) {
+    if (!results || results.length === 0) {
       containerForList?.classList.add('hidden');
       noCardsText?.classList.remove('hidden');
 

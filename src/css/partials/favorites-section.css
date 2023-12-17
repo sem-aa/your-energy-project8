@@ -283,20 +283,21 @@
   height: auto;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 20px;
   padding-bottom: 46px;
 }
 
 @media screen and (min-width: 768px) {
   .text-nocard-container {
     max-width: 554px;
-    padding-top: 136px;
+    padding-top: 68px;
     padding-bottom: 188px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .text-nocard-container {
-    height: 100vh;
+    height: 334px;
     padding: 0;
   }
 }
