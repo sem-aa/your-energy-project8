@@ -53,7 +53,7 @@
   background-size: cover;
   background-position: center;
   max-width: 100%;
-  background-image: url('../../images/hero@1x.jpg');
+  background-image: url('../../images/hero@1x.webp');
   border-radius: 30px;
   margin: 20px auto 20px;
 }
@@ -62,7 +62,7 @@
   screen and (min-resolution: 192dpi),
   screen and (min-resolution: 2dppx) {
   .hero-img-container {
-    background-image: url('../../images/hero@2x.jpg');
+    background-image: url('../../images/hero@2x.webp');
   }
 }
 

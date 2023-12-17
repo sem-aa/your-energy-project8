@@ -2,8 +2,8 @@ import { getPhraseDay } from '../../services/api';
 import { getFromLocal, saveToLocal } from '../../services/local-storage';
 import { KEY_STORAGE } from '../../helpers/constant';
 import spriteUrl from '../../images/svg.icons/symbol-defs.svg';
-import quoteHomeDesk1xUrl from '../../images/quote-home-desk@1x.jpg';
-import quoteHomeDesk2xUrl from '../../images/quote-home-desk@2x.jpg';
+import quoteHomeDesk1xUrl from '../../images/quote-home-desk@1x.webp';
+import quoteHomeDesk2xUrl from '../../images/quote-home-desk@2x.webp';
 
 const quoteSectionRef = document.querySelector('.quote');
 

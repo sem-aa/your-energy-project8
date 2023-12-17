@@ -10,7 +10,7 @@ import {
 import { createCardsMarkupList } from './favorites';
 
 import spriteUrl from '../../images/svg.icons/icons.svg';
-import noImageUrl from '../../images/no-image.png';
+import noImageUrl from '../../images/no-image.webp';
 import spriteWithShareUrl from '../../images/valkoSprite.svg';
 
 const card = document.querySelector('.modal-exercises');
