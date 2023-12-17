@@ -168,7 +168,7 @@
 }
 
 .modal-exercises__button-icon {
-  z-index: -1;
+  pointer-events: none;
 }
 
 .modal-exercises__button-favourites_icon {
