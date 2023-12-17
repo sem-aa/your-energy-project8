@@ -1,2 +1,2 @@
-import{g as e,K as o}from"./assets/modal-rating-52fe8bc6.js";import"./assets/vendor-916d32b4.js";const r=document.querySelector(".quote-text-fav"),u=document.querySelector(".quote-author-fav"),t=e(o.phrase);r.textContent=t.quote;u.textContent=t.author;
+import{g as e,K as o}from"./assets/modal-rating-641cc742.js";import"./assets/vendor-c8b745b6.js";const r=document.querySelector(".quote-text-fav"),u=document.querySelector(".quote-author-fav"),t=e(o.phrase);r.textContent=t.quote;u.textContent=t.author;
 //# sourceMappingURL=commonHelpers.js.map
