@@ -97,7 +97,7 @@ export const createPaginationMarkup = (data, filter) => {
     let current = page.toString() === data.page.toString() ? 'current' : '';
 
     pagesArray.push(` <li class="exercises_pagination-item ${current}">
-        <a href="#" class="page-num" data-page="${page}" data-filter="${filter}">${page}</a>
+        <a class="page-num" data-page="${page}" data-filter="${filter}">${page}</a>
       </li>`);
   }
 
