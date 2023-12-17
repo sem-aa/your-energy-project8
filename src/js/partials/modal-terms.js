@@ -1,5 +1,5 @@
 const refs = {
-  openModalBtns: document.querySelectorAll('[data-modal-license-open]'),
+  openModalBtn: document.querySelector('[data-modal-license-open]'),
   closeModalBtn: document.querySelector('[data-modal-license-close]'),
   modal: document.querySelector('[data-modal-license]'),
   body: document.querySelector('body'),
@@ -15,11 +15,11 @@ const onCloseModal = event => {
   toggleModal();
 };
 
-refs.openModalBtns.forEach((btn)=> btn?.addEventListener('click', event => {
+refs.openModalBtn?.addEventListener('click', event => {
   toggleModal();
   window.addEventListener('keydown', onCloseModal);
   refs.body.style.overflow = 'hidden';
-}))
+});
 
 
 refs.closeModalBtn?.addEventListener('click', toggleModal);
