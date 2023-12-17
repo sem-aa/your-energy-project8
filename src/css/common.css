@@ -8,10 +8,6 @@ body {
   color: var(--primary-dark);
 }
 
-body.modal-open {
-  overflow: hidden;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -35,6 +31,7 @@ body.modal-open {
   background-color: var(--bg-modal);
   transition: opacity var(--transition-dur-func),
     visibility var(--transition-dur-func);
+  overflow: scroll;
 }
 
 .is-hidden {

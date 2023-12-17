@@ -13,7 +13,7 @@ export function updateRatingStar(value) {
     }
 
     star.style.background = `linear-gradient(to right, gold ${percentFilled}%, gray ${percentFilled}%)`;
-    star.style.webkitBackgroundClip = 'text';
+    star.style.backgroundClip = 'text';
     star.style.color = 'transparent';
   });
 }
