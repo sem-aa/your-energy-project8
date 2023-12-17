@@ -3,6 +3,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 import { getExercises } from '../../services/api';
 import { getFromLocal } from '../../services/local-storage';
+import { FILTER_EXERCISES, ITEMS_PER_PAGE } from '../../helpers/constant';
 //import { showLoader, hideLoader } from './loader';
 import {
   createInfoCardMarkup,
@@ -30,8 +31,6 @@ const paginationContainer = document.querySelector('.exercises_pagination');
 const topOfSectionExercises = document.querySelector('#exercises');
 const sortedSelectRef = document.querySelector('#sorted-select');
 
-const itemsOnPage = 10;
-
 let query = {};
 
 const exercisesName = getAllParameters();
@@ -39,24 +38,24 @@ function onLoadPage() {
   if (exercisesName.equipment) {
     searchFormRef.classList.remove('visually-hidden-ext');
     sortedSelectRef.classList.remove('visually-hidden-ext');
-    setActiveButton('Equipment');
-    query.filter = 'Equipment';
+    setActiveButton(FILTER_EXERCISES.equipment);
+    query.filter = FILTER_EXERCISES.equipment;
     query.category = getValueParameterByName('equipment');
   }
 
   if (exercisesName.muscles) {
     searchFormRef.classList.remove('visually-hidden-ext');
     sortedSelectRef.classList.remove('visually-hidden-ext');
-    setActiveButton('Muscles');
-    query.filter = 'Muscles';
+    setActiveButton(FILTER_EXERCISES.muscles);
+    query.filter = FILTER_EXERCISES.muscles;
     query.category = getValueParameterByName('muscles');
   }
 
   if (exercisesName.bodyparts) {
     searchFormRef.classList.remove('visually-hidden-ext');
     sortedSelectRef.classList.remove('visually-hidden-ext');
-    setActiveButton('Body parts');
-    query.filter = 'Body parts';
+    setActiveButton(FILTER_EXERCISES.body);
+    query.filter = FILTER_EXERCISES.body;
     query.category = getValueParameterByName('bodyparts');
   }
 
@@ -152,35 +151,35 @@ async function renderExercises({
 
   let keywords = keywordsQuery.trim().toLowerCase();
   switch (filter) {
-    case 'Muscles':
+    case FILTER_EXERCISES.muscles:
       query = {
         muscles: category,
         category: category,
         filter: filter,
         keyword: keywords,
-        limit: itemsOnPage,
+        limit: ITEMS_PER_PAGE.exercises,
         page: pageNum,
       };
       break;
 
-    case 'Equipment':
+    case FILTER_EXERCISES.equipment:
       query = {
         equipment: category,
         category: category,
         filter: filter,
         keyword: keywords,
-        limit: itemsOnPage,
+        limit: ITEMS_PER_PAGE.exercises,
         page: pageNum,
       };
       break;
 
-    case 'Body parts':
+    case FILTER_EXERCISES.body:
       query = {
         bodypart: category,
         category: category,
         filter: filter,
         keyword: keywords,
-        limit: itemsOnPage,
+        limit: ITEMS_PER_PAGE.exercises,
         page: pageNum,
       };
       break;
@@ -244,7 +243,7 @@ function onSortedSelectChange(e, array) {
       }
       return createInfoCardMarkup(result, isFavorite);
     })
-    .join(''); //
+    .join(''); 
 }
 
 function handlePagination() {

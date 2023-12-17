@@ -3,6 +3,7 @@ import {
   createCategoryCardListMarkup,
   createPaginationMarkup,
 } from '../../helpers/markup';
+import { FILTER_EXERCISES, ITEMS_PER_PAGE } from '../../helpers/constant';
 import {
   getAllParameters,
   getValueParameterByName,
@@ -11,8 +12,6 @@ import {
 } from './search-params';
 import { sortedSelectInstance } from './sorted-selected';
 //import { showLoader, hideLoader } from './loader';
-
-const itemsOnPage = 12;
 
 const inputRef = document.querySelector('.search-box');
 const titleAdditionalRef = document.querySelector('.section-title_additional');
@@ -28,21 +27,21 @@ const sortedSelectRef = document.querySelector('#sorted-select');
 const allParams = getAllParameters();
 let filterName;
 if (!Object.keys(allParams).length) {
-  filterName = 'Muscles';
-  setSearchParams('filter', 'Muscles');
+  filterName = FILTER_EXERCISES.muscles;
+  setSearchParams('filter', FILTER_EXERCISES.muscles);
 }
 
 filterName = getValueParameterByName('filter');
 
 export function setActiveButton(filterName) {
   switch (filterName) {
-    case 'Muscles':
+    case FILTER_EXERCISES.muscles:
       toggleActiveStatus(musclesFilterBtn);
       break;
-    case 'Body parts':
+    case FILTER_EXERCISES.body:
       toggleActiveStatus(bodyFilterBtn);
       break;
-    case 'Equipment':
+    case FILTER_EXERCISES.equipment:
       toggleActiveStatus(equipmentFilterBtn);
       break;
 
@@ -56,55 +55,57 @@ setActiveButton(filterName);
 if (filterName) setFilteredCategoryList(filterName);
 
 function setFilteredCategoryList(filter, page = 1) {
-  getFilters({ filter: filter, page: page, limit: itemsOnPage }).then(
-    response => {
-      categoryContainer?.classList?.remove('visually-hidden');
-      exercisesContainer?.classList?.add('visually-hidden');
-      inputRef?.classList?.add('visually-hidden-ext');
-      titleAdditionalRef?.classList?.add('visually-hidden');
-      sortedSelectInstance.setSelected('default');
-      sortedSelectRef.classList.add('visually-hidden-ext');
+  getFilters({
+    filter: filter,
+    page: page,
+    limit: ITEMS_PER_PAGE.equipmcategoriesent,
+  }).then(response => {
+    categoryContainer?.classList?.remove('visually-hidden');
+    exercisesContainer?.classList?.add('visually-hidden');
+    inputRef?.classList?.add('visually-hidden-ext');
+    titleAdditionalRef?.classList?.add('visually-hidden');
+    sortedSelectInstance.setSelected('default');
+    sortedSelectRef.classList.add('visually-hidden-ext');
 
-      if (response.results.length) {
-        categoryContainer.innerHTML = createCategoryCardListMarkup(response);
+    if (response.results.length) {
+      categoryContainer.innerHTML = createCategoryCardListMarkup(response);
 
-        if (response.totalPages > 1) {
-          paginationContainer.innerHTML = createPaginationMarkup(
-            response,
-            filter
-          );
-          handlePagination();
-        } else {
-          paginationContainer.innerHTML = '';
-        }
+      if (response.totalPages > 1) {
+        paginationContainer.innerHTML = createPaginationMarkup(
+          response,
+          filter
+        );
+        handlePagination();
       } else {
-        categoryContainer.innerHTML = `<li class="sorry-message"><p>Sorry, there are no exercises by your request.</p></li>`;
+        paginationContainer.innerHTML = '';
       }
+    } else {
+      categoryContainer.innerHTML = `<li class="sorry-message"><p>Sorry, there are no exercises by your request.</p></li>`;
     }
-  );
+  });
 }
 
 const onMusclesFilterClick = () => {
   removeAllSearchParams();
-  setSearchParams('filter', 'Muscles');
+  setSearchParams('filter', FILTER_EXERCISES.muscles);
 
   toggleActiveStatus(musclesFilterBtn);
-  setFilteredCategoryList('Muscles');
+  setFilteredCategoryList(FILTER_EXERCISES.muscles);
 };
 
 const onBodyFilterClick = () => {
   removeAllSearchParams();
-  setSearchParams('filter', 'Body parts');
+  setSearchParams('filter', FILTER_EXERCISES.body);
   toggleActiveStatus(bodyFilterBtn);
 
-  setFilteredCategoryList('Body parts');
+  setFilteredCategoryList(FILTER_EXERCISES.body);
 };
 
 const onEquipmentFilterClick = () => {
   removeAllSearchParams();
-  setSearchParams('filter', 'Equipment');
+  setSearchParams('filter', FILTER_EXERCISES.equipment);
   toggleActiveStatus(equipmentFilterBtn);
-  setFilteredCategoryList('Equipment');
+  setFilteredCategoryList(FILTER_EXERCISES.equipment);
 };
 
 musclesFilterBtn?.addEventListener('click', onMusclesFilterClick);

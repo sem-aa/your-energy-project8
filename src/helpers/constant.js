@@ -8,3 +8,8 @@ export const FILTER_EXERCISES = {
   body: 'Body parts',
   equipment: 'Equipment',
 };
+
+export const ITEMS_PER_PAGE = {
+  categories: 12,
+  exercises: 10,
+};
