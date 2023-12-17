@@ -26,7 +26,7 @@ function createQuoteMarkup(quote) {
       <svg class="quote-icon" width="34" height="32">
         <use href=${spriteUrl}#icon-runing-man></use>
       </svg>
-      <h3 class="quote-heading">Quote of the day</h3>
+      <h2 class="quote-heading">Quote of the day</h2>
       <svg class="invert-coma-icon" width="20" height="20">
         <use
           href=${spriteUrl}#icon-inverted-commas
