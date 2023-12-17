@@ -1,4 +1,4 @@
-const loader = document.querySelector('.js-loader');
+const loader = document.querySelector('.loader');
 
 export function showLoader() {
   loader.classList.remove('.is-hidden');
