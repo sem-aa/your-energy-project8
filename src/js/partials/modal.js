@@ -18,7 +18,7 @@ if (exercisesListRef) {
 }
 
 export function onExerciseListClick(event) {
-  if (event.target.matches('.changable-icon-use')) {
+  if (event.target.matches('[data-remove]')) {
     return;
   }
 
