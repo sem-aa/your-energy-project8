@@ -67,8 +67,12 @@ export const handleClickFavoritesBtn = cardData => {
 export async function modalExercises(id) {
   try {
     cardData = await getExerciseId(id);
-    card.innerHTML = createModalExercisesMarkup(cardData);
+    console.log(Number(cardData.rating).toFixed(1));
 
+    card.innerHTML = createModalExercisesMarkup({
+      ...cardData,
+      rating: Number(cardData.rating).toFixed(1),
+    });
     updateRatingStar(cardData.rating);
     modal();
 

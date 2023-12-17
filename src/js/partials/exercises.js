@@ -243,11 +243,11 @@ function onSortedSelectChange(e, array) {
       }
       return createInfoCardMarkup(result, isFavorite);
     })
-    .join(''); 
+    .join('');
 }
 
 function handlePagination() {
-  let elementsArray = document.querySelectorAll('a.page-num');
+  let elementsArray = document.querySelectorAll('button.page-num');
 
   elementsArray.forEach(function (elem) {
     elem.addEventListener('click', function (e) {

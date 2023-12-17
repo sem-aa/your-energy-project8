@@ -139,3 +139,14 @@
 .rating:not(:checked) > label:hover ~ label:before {
   color: var(--orange);
 }
+
+.modal-exercises__rating-star::before {
+  content: '★';
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+  width: var(--percent-filled);
+  overflow: hidden;
+  color: gold;
+}

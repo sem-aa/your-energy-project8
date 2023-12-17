@@ -132,7 +132,7 @@ export function toggleActiveStatus(filterBtn) {
 }
 
 function handlePagination() {
-  let elementsArray = document.querySelectorAll('a.page-num');
+  let elementsArray = document.querySelectorAll('button.page-num');
 
   elementsArray.forEach(function (elem) {
     elem?.addEventListener('click', function (e) {
