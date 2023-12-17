@@ -4,3 +4,4 @@ import './partials/quote';
 import './partials/loader';
 import './partials/modal-exercises';
 import './partials/modal-rating';
+import './partials/quote-fav';
