@@ -5,6 +5,7 @@ import { onExerciseListClick } from './modal';
 
 const favoritesList = document.getElementById('favorite-cards-list');
 const paginationContainer = document.getElementById('pagination-container');
+
 let currentPage = 1;
 let itemsPerPage = window.innerWidth < 768 ? 8 : 10;
 
@@ -43,7 +44,7 @@ export const createShortTitle = (title = '') => {
   return title;
 };
 
-function createCardsMarkupList(list) {
+export function createCardsMarkupList(list) {
   const containerForList = document.querySelector('.scrollbar-container');
   const noCardsText = document.querySelector('.text-nocard-container');
   try {
@@ -92,26 +93,30 @@ const createPaginationMarkup = cards => {
   }
 };
 
-if (paginationContainer) {
-  paginationContainer.addEventListener('click', event => {
-    if (event.target.classList.contains('page-number')) {
-      event.preventDefault();
-      currentPage = parseInt(event.target.dataset.page, 10);
+const handlePagination = event => {
+  if (event.target.classList.contains('page-number')) {
+    event.preventDefault();
+    currentPage = parseInt(event.target.dataset.page, 10);
 
-      createCardsMarkupList(favoritesList);
-    }
-    if (favoritesList) {
-      favoritesList.scrollTop = 0;
-      favoritesList.scrollIntoView({
-        block: 'start',
-        behavior: 'smooth',
-      });
-    }
-  });
+    createCardsMarkupList(favoritesList);
+  }
+  if (favoritesList) {
+    favoritesList.scrollTop = 0;
+    favoritesList.scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+    });
+  }
+};
+
+if (paginationContainer) {
+  paginationContainer.addEventListener('click', handlePagination);
 }
 
 createCardsMarkupList(favoritesList);
 
-favoritesList?.addEventListener('click', onExerciseListClick);
+if (favoritesList) {
+  favoritesList.addEventListener('click', onExerciseListClick);
 
-favoritesList?.addEventListener('click', handleDeleteFavoriteCard);
+  favoritesList.addEventListener('click', handleDeleteFavoriteCard);
+}

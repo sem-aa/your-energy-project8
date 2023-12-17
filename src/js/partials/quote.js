@@ -6,6 +6,19 @@ import quoteHomeDesk1xUrl from '../../images/quote-home-desk@1x.jpg';
 import quoteHomeDesk2xUrl from '../../images/quote-home-desk@2x.jpg';
 
 const quoteSectionRef = document.querySelector('.quote');
+const checkLocation = window.location.href
+  .split('/')
+  .includes('favorites.html');
+
+const addPaddingForQuoteSection = () => {
+  if (window.innerWidth < 768) {
+    quoteSectionRef.style.paddingBottom = '40px';
+  }
+
+  if (window.innerWidth > 768 && window.innerWidth < 1440) {
+    quoteSectionRef.style.paddingBottom = '0';
+  }
+};
 
 function createQuoteMarkup(quote) {
   return `<div class="quote-container container">
@@ -83,3 +96,4 @@ async function onLoadPage() {
 }
 
 onLoadPage();
+addPaddingForQuoteSection();

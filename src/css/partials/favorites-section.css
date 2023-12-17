@@ -19,6 +19,7 @@
   .favorites-section {
     padding-top: 90px;
     padding-bottom: 63px;
+    padding-right: 0;
   }
 }
 
@@ -29,7 +30,8 @@
   height: 141px;
 
   border-radius: 15px;
-  background: #fff;
+  background: var(--white);
+
   cursor: pointer;
 }
 
@@ -62,12 +64,14 @@
   padding: 5px 8px;
 
   font-size: 12px;
-  font-weight: 500;
+  /* font-weight: 500; */
+  font-weight: var(--font-weight-medium);
+
   text-transform: uppercase;
   line-height: normal;
 
   border-radius: 15px;
-  border: 1px solid #242424;
+  border: 1px solid var(--primary-dark);
 }
 
 .icon-rating-container {
@@ -80,7 +84,7 @@
 .rating-info-card {
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: var(--font-weight-reg);
   line-height: 18px;
 }
 
@@ -112,7 +116,7 @@
 .card-title {
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: var(--font-weight-reg);
   line-height: 20px;
 
   text-wrap: nowrap;
@@ -137,7 +141,7 @@
 .item-text {
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: var(--font-weight-reg);
   line-height: 18px;
 
   color: rgba(36, 36, 36, 0.4);
@@ -146,7 +150,7 @@
 .item-text > em {
   display: inline-flex;
 
-  color: #242424;
+  color: var(--primary-dark);
   font-style: normal;
 }
 
@@ -196,9 +200,7 @@
 
 @media screen and (min-width: 1440px) {
   .favorite-cards-list {
-    /* width: calc(100% + 16px); */
     align-self: flex-start;
-    /* overflow-y: scroll; */
   }
 }
 
@@ -233,7 +235,7 @@
   height: 153px;
 
   border-radius: 12px;
-  background: #242424;
+  background: var(--primary-dark);
 }
 
 .quotation-container {
@@ -257,8 +259,8 @@
   margin-bottom: 20px;
 
   font-size: 28px;
-  font-weight: 400;
-  line-height: 38px; /* 135.714% */
+  font-weight: var(--font-weight-reg);
+  line-height: 38px;
   letter-spacing: -0.56px;
 }
 
@@ -267,7 +269,7 @@
     margin-bottom: 32px;
 
     font-size: 44px;
-    line-height: 48px; /* 109.091% */
+    line-height: 48px;
     letter-spacing: -0.88px;
   }
 }
@@ -307,7 +309,7 @@
   height: auto;
 
   font-size: 14px;
-  font-weight: 400;
+  font-weight: var(--font-weight-reg);
   line-height: 18px;
 }
 
@@ -365,7 +367,7 @@
 }
 
 .page-number {
-  color: #d4d4d4;
+  color: var(--grey-page-num);
 }
 
 .current a {
