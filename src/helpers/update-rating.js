@@ -2,18 +2,20 @@ export function updateRatingStar(value) {
   const stars = document.querySelectorAll(
     '#rating .modal-exercises__rating-star'
   );
+
   stars.forEach(star => {
     const starValue = parseInt(star.dataset.value, 10);
+
     let percentFilled = 0;
 
     if (starValue <= value) {
       percentFilled = 100;
-    } else if (starValue - value < 1) {
+    } else if (starValue - 1 < value) {
+      console.log(value, starValue);
       percentFilled = (value - starValue + 1) * 100;
     }
-
-    star.style.background = `linear-gradient(to right, gold ${percentFilled}%, gray ${percentFilled}%)`;
-    star.style.backgroundClip = 'text';
-    star.style.color = 'transparent';
+    console.log(percentFilled);
+    console.log(star);
+    star.style.setProperty('--percent-filled', `${percentFilled}%`);
   });
 }
