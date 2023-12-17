@@ -18,7 +18,7 @@ if (exercisesListRef) {
 }
 
 export function onExerciseListClick(event) {
-  if (event.target.matches('[data-remove]')) {
+  if (event.target.closest('[data-remove]')) {
     return;
   }
 
