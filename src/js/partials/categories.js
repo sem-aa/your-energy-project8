@@ -23,6 +23,9 @@ const paginationContainer = document.querySelector('.exercises_pagination');
 const topOfSectionExercises = document.querySelector('#exercises');
 const sortedSelectRef = document.querySelector('#sorted-select');
 
+const hidden = 'visually-hidden';
+const hiddenExt = 'visually-hidden-ext';
+
 const allParams = getAllParameters();
 let filterName;
 if (!Object.keys(allParams).length) {
@@ -59,12 +62,12 @@ function setFilteredCategoryList(filter, page = 1) {
     page: page,
     limit: ITEMS_PER_PAGE.equipmcategoriesent,
   }).then(response => {
-    categoryContainer?.classList?.remove('visually-hidden');
-    exercisesContainer?.classList?.add('visually-hidden');
-    inputRef?.classList?.add('visually-hidden-ext');
-    titleAdditionalRef?.classList?.add('visually-hidden');
+    categoryContainer?.classList?.remove(hidden);
+    exercisesContainer?.classList?.add(hidden);
+    inputRef?.classList?.add(hiddenExt);
+    titleAdditionalRef?.classList?.add(hidden);
     sortedSelectInstance.setSelected('default');
-    sortedSelectRef.classList.add('visually-hidden-ext');
+    sortedSelectRef.classList.add(hiddenExt);
 
     if (response.results.length) {
       categoryContainer.innerHTML = createCategoryCardListMarkup(response);

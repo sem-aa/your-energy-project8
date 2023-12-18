@@ -30,29 +30,32 @@ const paginationContainer = document.querySelector('.exercises_pagination');
 const topOfSectionExercises = document.querySelector('#exercises');
 const sortedSelectRef = document.querySelector('#sorted-select');
 
+const hidden = 'visually-hidden';
+const hiddenExt = 'visually-hidden-ext';
+
 let query = {};
 
 const exercisesName = getAllParameters();
 function onLoadPage() {
   if (exercisesName.equipment) {
-    searchFormRef.classList.remove('visually-hidden-ext');
-    sortedSelectRef.classList.remove('visually-hidden-ext');
+    searchFormRef.classList.remove(hiddenExt);
+    sortedSelectRef.classList.remove(hiddenExt);
     setActiveButton(FILTER_EXERCISES.equipment);
     query.filter = FILTER_EXERCISES.equipment;
     query.category = getValueParameterByName('equipment');
   }
 
   if (exercisesName.muscles) {
-    searchFormRef.classList.remove('visually-hidden-ext');
-    sortedSelectRef.classList.remove('visually-hidden-ext');
+    searchFormRef.classList.remove(hiddenExt);
+    sortedSelectRef.classList.remove(hiddenExt);
     setActiveButton(FILTER_EXERCISES.muscles);
     query.filter = FILTER_EXERCISES.muscles;
     query.category = getValueParameterByName('muscles');
   }
 
   if (exercisesName.bodyparts) {
-    searchFormRef.classList.remove('visually-hidden-ext');
-    sortedSelectRef.classList.remove('visually-hidden-ext');
+    searchFormRef.classList.remove(hiddenExt);
+    sortedSelectRef.classList.remove(hiddenExt);
     setActiveButton(FILTER_EXERCISES.body);
     query.filter = FILTER_EXERCISES.body;
     query.category = getValueParameterByName('bodyparts');
@@ -117,11 +120,11 @@ async function onCategoryCardClick(e) {
     return;
   }
 
-  categoryContainer.classList.add('visually-hidden');
-  exercisesContainer.classList.remove('visually-hidden');
-  searchFormRef.classList.remove('visually-hidden-ext');
-  sortedSelectRef.classList.remove('visually-hidden-ext');
-  titleAdditionalRef.classList.remove('visually-hidden');
+  categoryContainer.classList.add(hidden);
+  exercisesContainer.classList.remove(hidden);
+  searchFormRef.classList.remove(hiddenExt);
+  sortedSelectRef.classList.remove(hiddenExt);
+  titleAdditionalRef.classList.remove(hidden);
 
   searchInput.value = '';
 
