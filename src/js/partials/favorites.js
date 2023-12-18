@@ -87,8 +87,6 @@ export function createCardsMarkupList(list) {
       createPaginationMarkup(results.length);
     }
 
-    const cards = document.querySelectorAll('.favorite-info-card');
-
     if (checkLocation && window.innerWidth >= 1440) {
       quoteContainer.style.maxWidth = '494px';
     }
