@@ -42,4 +42,4 @@ refs.openModalBtn?.addEventListener('click', handleOpenPrivacyModal);
 
 refs.closeModalBtn.addEventListener('click', toggleModal);
 
-refs.modal.addEventListener('click', handleBackdropClick);
+refs.modal.addEventListener('click', handleBackdropPrivacyClick);
