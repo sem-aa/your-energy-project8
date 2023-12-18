@@ -27,17 +27,17 @@
   --primary-dark: #242424;
   --white: #ffffff;
   --light-grey: #c6cdd1;
-  --grey-page-num: #d4d4d4;
+  --grey-page-num: #7f7f7f;
   --orange: #eea10c;
   --black: #111111;
 
   --black-50: rgb(17, 17, 17, 0.5);
   --primary-dark-80: rgba(36, 36, 36, 0.8);
-  --primary-dark-60: rgb(36, 36, 36, 0.6);
-  --primary-dark-50: rgb(36, 36, 36, 0.5);
+  --primary-dark-60: rgba(36, 35, 35, 0.8);
+  --primary-dark-50: rgba(36, 36, 36, 0.7);
   --primary-dark-10: rgb(36, 36, 36, 0.1);
   --bg-color-60: rgb(244, 244, 244, 0.6);
-  --bg-color-40: rgb(244, 244, 244, 0.4);
+  --bg-color-40: rgba(244, 244, 244, 0.658);
   --bg-color-20: rgb(244, 244, 244, 0.2);
   --bg-color-10: rgb(244, 244, 244, 0.1);
 
