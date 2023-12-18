@@ -35,11 +35,7 @@ function createQuoteMarkup(quote) {
     <div class="quote-image">
       <picture>
         <source
-          srcset=${quoteHomeDesk1xUrl}
-          media="(max-width: 767px)"
-        />
-        <source
-          srcset=${quoteHomeDesk2xUrl}
+          srcset="${quoteHomeDesk1xUrl} 1x, ${quoteHomeDesk2xUrl} 2x"
           media="(min-width: 768px)"
         />
 
