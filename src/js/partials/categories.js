@@ -11,7 +11,6 @@ import {
   setSearchParams,
 } from './search-params';
 import { sortedSelectInstance } from './sorted-selected';
-//import { showLoader, hideLoader } from './loader';
 
 const inputRef = document.querySelector('.search-box');
 const titleAdditionalRef = document.querySelector('.section-title_additional');
@@ -113,13 +112,6 @@ bodyFilterBtn?.addEventListener('click', onBodyFilterClick);
 equipmentFilterBtn?.addEventListener('click', onEquipmentFilterClick);
 
 export function toggleActiveStatus(filterBtn) {
-  // const activeBtn = document.querySelector('.active');
-  // activeBtn.classList.remove('active');
-  // if (btn.classList.contains('active')) {
-  //   btn.classList.remove('active');
-  // } else {
-  //   btn.classList.add('active');
-  // }
   const activeBtn = document.querySelectorAll('.active');
 
   if (activeBtn.length) {

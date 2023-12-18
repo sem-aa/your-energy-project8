@@ -4,7 +4,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { getExercises } from '../../services/api';
 import { getFromLocal } from '../../services/local-storage';
 import { FILTER_EXERCISES, ITEMS_PER_PAGE } from '../../helpers/constant';
-//import { showLoader, hideLoader } from './loader';
 import {
   createInfoCardMarkup,
   createPaginationMarkup,
