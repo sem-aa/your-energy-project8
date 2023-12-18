@@ -24,6 +24,10 @@
   margin-bottom: 20px;
 }
 
+#title-category {
+  text-transform: capitalize;
+}
+
 .section-title_additional {
   color: var(--primary-dark-50);
   font-size: 20px;
