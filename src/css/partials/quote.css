@@ -120,6 +120,7 @@
   .quote-image img {
     max-width: 100%;
     height: auto;
+    min-height: 106px;
     object-fit: cover;
     border-radius: 20px;
     overflow: hidden;
