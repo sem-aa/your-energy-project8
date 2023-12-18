@@ -87,10 +87,7 @@ export function createCardsMarkupList(list) {
       createPaginationMarkup(results.length);
     }
 
-    const cards = document.querySelectorAll('.favorite-info-card');
-
-    if (cards && checkLocation && window.innerWidth >= 1440) {
-      cards.forEach(card => (card.style.width = '405px'));
+    if (checkLocation && window.innerWidth >= 1440) {
       quoteContainer.style.maxWidth = '494px';
     }
   } catch (error) {

@@ -3,6 +3,16 @@ import {
   createShortTitle,
 } from '../js/partials/favorites';
 
+const checkLocation = window.location.href
+  .split('/')
+  .includes('favorites.html');
+
+const checkAndCreateCardStyle = location => {
+  return location
+    ? 'favorite-info-card'
+    : 'favorite-info-card width-for-fav-card';
+};
+
 const createMarkupForChangableIcon = (isFavorite, rating) => {
   const markupForIcon = isFavorite
     ? '<button type="button" class="remove-btn" data-remove aria-label="Remove"><svg class="changeble-icon" width="16" height="16"><use href="./oleksii-symbol-defs.svg#icon-trash" class="changable-icon-use"></use></svg></button>'
@@ -15,7 +25,7 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
   const { name, burnedCalories, bodyPart, target, _id, time, gifUrl, rating } =
     cardData;
 
-  return `<li class="favorite-info-card" data-id=${_id}>
+  return `<li class=${checkAndCreateCardStyle(checkLocation)} data-id=${_id}>
   
       <div class="card-header">
         <div class="category-and-icon">

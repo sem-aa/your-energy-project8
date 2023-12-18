@@ -397,3 +397,9 @@
   background-color: var(--bg-color);
   color: var(--primary-dark);
 }
+
+@media screen and (min-width: 1440px) {
+  .width-for-fav-card {
+    width: 405px;
+  }
+}
