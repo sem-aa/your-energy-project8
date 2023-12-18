@@ -20,13 +20,15 @@ const handleDeleteFavoriteCard = ({ target }) => {
   createCardsMarkupList(favoritesList);
 };
 
-function reloadOnResize() {
-  let resized = false;
+function reloadOnWidthChange() {
+  let initialWidth = window.innerWidth;
 
   function handleResize() {
-    if (!resized) {
+    let currentWidth = window.innerWidth;
+
+    if (currentWidth !== initialWidth) {
       window.location.reload();
-      resized = true;
+      initialWidth = currentWidth;
     }
   }
 
@@ -145,4 +147,4 @@ if (favoritesList) {
   favoritesList.addEventListener('click', handleDeleteFavoriteCard);
 }
 
-reloadOnResize();
+reloadOnWidthChange();
