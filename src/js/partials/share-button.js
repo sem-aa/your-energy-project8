@@ -2,7 +2,7 @@ import { getFullUrl } from './search-params';
 
 const shareButtonRef = document.querySelector('.share-button');
 
-const shareButtonHintRef = document.querySelector('.share-button-hint-modal');
+const shareButtonHintRef = document.querySelector('.share-button-hint');
 
 shareButtonRef.addEventListener('click', onShareButtonClick);
 
