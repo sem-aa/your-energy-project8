@@ -67,7 +67,7 @@ function onLoadPage() {
     query.category = Object.values(category)[0];
     query.keywordsQuery = keyword;
   }
-  console.log(query.category);
+
   renderExercises({
     filter: query.filter,
     category: query.category,
