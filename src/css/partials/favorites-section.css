@@ -144,7 +144,7 @@
   font-weight: var(--font-weight-reg);
   line-height: 18px;
 
-  color: rgba(36, 36, 36, 0.4);
+  color: rgba(36, 36, 36, 0.75);
 }
 
 .item-text > em {

@@ -2,6 +2,8 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://your-energy.b.goit.study/api/';
 
+axios.defaults.headers.get['Cache-Control'] = 'no-cache';
+
 export const getPhraseDay = async () => {
   const res = await axios.get('quote');
   return res.data;
