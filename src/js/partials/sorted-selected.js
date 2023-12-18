@@ -6,17 +6,29 @@ export const sortedSelectInstance = new SlimSelect({
     showSearch: false,
   },
   data: [
-    { text: 'Default sort', value: 'default', class: 'sorted-option' },
-    { text: 'Best Match', value: 'best', class: 'sorted-option' },
+    {
+      text: 'Default sort',
+      value: 'default',
+      class: 'sorted-option',
+      id: 'sort-type-default',
+    },
+    {
+      text: 'Best Match',
+      value: 'best',
+      class: 'sorted-option',
+      id: 'sort-type-best',
+    },
     {
       text: 'Calories: lowest first',
       value: 'calories-lowest',
       class: 'sorted-option',
+      id: 'sort-type-calories-lowest',
     },
     {
       text: 'Calories: highest first',
       value: 'calories-highest',
       class: 'sorted-option',
+      id: 'sort-type-calories-highest',
     },
   ],
 });
