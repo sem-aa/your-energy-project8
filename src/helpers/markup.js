@@ -7,7 +7,7 @@ const checkLocation = window.location.href
   .split('/')
   .includes('favorites.html');
 
-const checkAndCreateCardWidth = location => {
+const checkAndCreateCardStyle = location => {
   return location
     ? 'favorite-info-card'
     : 'favorite-info-card width-for-fav-card';
@@ -25,7 +25,7 @@ export const createInfoCardMarkup = (cardData, isFavorite = false) => {
   const { name, burnedCalories, bodyPart, target, _id, time, gifUrl, rating } =
     cardData;
 
-  return `<li class=${checkAndCreateCardWidth(checkLocation)} data-id=${_id}>
+  return `<li class=${checkAndCreateCardStyle(checkLocation)} data-id=${_id}>
   
       <div class="card-header">
         <div class="category-and-icon">
