@@ -11,7 +11,6 @@ import {
   setSearchParams,
 } from './search-params';
 import { sortedSelectInstance } from './sorted-selected';
-//import { showLoader, hideLoader } from './loader';
 
 const inputRef = document.querySelector('.search-box');
 const titleAdditionalRef = document.querySelector('.section-title_additional');
@@ -23,6 +22,9 @@ const exercisesContainer = document.querySelector('#exercises-list-container');
 const paginationContainer = document.querySelector('.exercises_pagination');
 const topOfSectionExercises = document.querySelector('#exercises');
 const sortedSelectRef = document.querySelector('#sorted-select');
+
+const hidden = 'visually-hidden';
+const hiddenExt = 'visually-hidden-ext';
 
 const allParams = getAllParameters();
 let filterName;
@@ -60,12 +62,12 @@ function setFilteredCategoryList(filter, page = 1) {
     page: page,
     limit: ITEMS_PER_PAGE.equipmcategoriesent,
   }).then(response => {
-    categoryContainer?.classList?.remove('visually-hidden');
-    exercisesContainer?.classList?.add('visually-hidden');
-    inputRef?.classList?.add('visually-hidden-ext');
-    titleAdditionalRef?.classList?.add('visually-hidden');
+    categoryContainer?.classList?.remove(hidden);
+    exercisesContainer?.classList?.add(hidden);
+    inputRef?.classList?.add(hiddenExt);
+    titleAdditionalRef?.classList?.add(hidden);
     sortedSelectInstance.setSelected('default');
-    sortedSelectRef.classList.add('visually-hidden-ext');
+    sortedSelectRef.classList.add(hiddenExt);
 
     if (response.results.length) {
       categoryContainer.innerHTML = createCategoryCardListMarkup(response);
@@ -113,13 +115,6 @@ bodyFilterBtn?.addEventListener('click', onBodyFilterClick);
 equipmentFilterBtn?.addEventListener('click', onEquipmentFilterClick);
 
 export function toggleActiveStatus(filterBtn) {
-  // const activeBtn = document.querySelector('.active');
-  // activeBtn.classList.remove('active');
-  // if (btn.classList.contains('active')) {
-  //   btn.classList.remove('active');
-  // } else {
-  //   btn.classList.add('active');
-  // }
   const activeBtn = document.querySelectorAll('.active');
 
   if (activeBtn.length) {
