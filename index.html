@@ -10,12 +10,16 @@
       href="https://cdn.jsdelivr.net/npm/izitoast@1/dist/css/iziToast.min.css"
     />
     <title>Your energy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     
     <script type="module" crossorigin src="/your-energy-project8/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/vendor-c8b745b6.js">
-    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/modal-rating-660409d6.js">
-    <link rel="stylesheet" href="/your-energy-project8/assets/modal-rating-33dc6399.css">
-    <link rel="stylesheet" href="/your-energy-project8/assets/vendor-e5212ee8.css">
+    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/vendor-eee4493b.js">
+    <link rel="modulepreload" crossorigin href="/your-energy-project8/assets/modal-rating-f2e9838d.js">
+    <link rel="stylesheet" href="/your-energy-project8/assets/modal-rating-0ff5ad6b.css">
+    <link rel="stylesheet" href="/your-energy-project8/assets/vendor-1fb87061.css">
   </head>
 
   <body>
@@ -182,7 +186,102 @@
       </div>
     </div>
 
-    <div class="hero-img-container"></div>
+    <div class="hero-img-container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <picture>
+              <source
+                srcset="
+                  ../images/hero-1440@1x.jpg 1x,
+                  ../images/hero-1440@2x.jpg 2x
+                "
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="
+                  ../images/hero-768@1x.jpg 1x,
+                  ../images/hero-768@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ../images/hero-375@1x.jpg 1x,
+                  ../images/hero-375@2x.jpg 2x
+                "
+                media="(min-width: 375px)"
+              />
+              <img
+                class="swiper-image"
+                src="../images/hero-375@1x.jpg"
+                alt="people sport"
+              />
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source
+                srcset="
+                  ../images/hero-1440-2@1x.jpg 1x,
+                  ../images/hero-1440-2@2x.jpg 2x
+                "
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="
+                  ../images/hero-768-2@1x.jpg 1x,
+                  ../images/hero-768-2@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ../images/hero-375-2@1x.jpg 1x,
+                  ../images/hero-375-2@2x.jpg 2x
+                "
+                media="(min-width: 375px)"
+              />
+              <img
+                class="swiper-image"
+                src="../images/hero-375-2@1x.jpg"
+                alt="people sport"
+              />
+            </picture>
+          </div>
+          <div class="swiper-slide">
+            <picture>
+              <source
+                srcset="
+                  ../images/hero-1440-3@1x.jpg 1x,
+                  ../images/hero-1440-3@2x.jpg 2x
+                "
+                media="(min-width: 1440px)"
+              />
+              <source
+                srcset="
+                  ../images/hero-768-3@1x.jpg 1x,
+                  ../images/hero-768-3@2x.jpg 2x
+                "
+                media="(min-width: 768px)"
+              />
+              <source
+                srcset="
+                  ../images/hero-375-3@1x.jpg 1x,
+                  ../images/hero-375-3@2x.jpg 2x
+                "
+                media="(min-width: 375px)"
+              />
+              <img
+                class="swiper-image"
+                src="../images/hero-375-3@1x.jpg"
+                alt="people sport"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="hero-hashtags">
       <ul class="hero-hashtags-list">
@@ -678,5 +777,6 @@
 
 
     
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>
