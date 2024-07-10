@@ -1,47 +1,75 @@
-# Your energy project8
+# Your Energy Project
+
+Welcome to the Your Energy Project! This web application allows users to search
+for and explore various exercises based on different filters such as body part,
+muscles, and equipment. Users can easily find the exercises they need to stay
+fit and healthy.
+
+## Presentation
 
 https://oksanadonchuk.github.io/Presentation-your-energy/
 
-<!-- Базовий шрифт може зміню, бо в ТЗ стоїть  NeueMontreal, а в дизайні DM Sabs-->
+![screencapture](./assets/your-energy.png)
 
-# font base body
+## Features
+
+- **Filter Panel**: Use the filter panel to search for exercises by body part,
+  muscles, or equipment.
+- **Exercise List**: View a comprehensive list of exercises based on the
+  selected filters.
+- **Responsive Design**: The site is fully responsive and works well on all
+  devices.
+- **User-Friendly Interface**: Easy-to-navigate interface with clear
+  categorization of exercises.
+
+## Technologies Used
+
+- **HTML5**: For the structure of the web pages.
+- **CSS3**: For styling the web pages, including responsive design.
+- **JavaScript**: For adding interactivity and functionality to the site.
+- **React**: For building the user interface.
+- **react-hook-form**: For form state management.
+- **Yup**: For form validation.
+
+## Project Setup
+
+1. **Clone the repository**:
 
 ```
-font-family: DMSans;
-font-size: 14px;
-line-height: 1.28;
-font-weight:400;
+git clone https://github.com/sem-aa/your-energy-project8.git
+cd cocktail-bar-site
 ```
 
-# font medium
-
-font-weight: 500;
-
-# font italic
-
-font-style: italic;
-
-# colors & style
+2. **Install dependencies**:
 
 ```
-  --bg-color: #f4f4f4;
-  --primary-dark: #242424;
-  --white: #ffffff;
-  --light-grey: #c6cdd1;
-  --grey-page-num: #d4d4d4;
-  --orange: #eea10c;
-  --black: #111111;
-
-  --black-50: rgb(17, 17, 17, 0.5);
-  --primary-dark-60: rgb(36, 36, 36, 0.6);
-  --primary-dark-10: rgb(36, 36, 36, 0.1);
-  --bg-color-60: rgb(244, 244, 244, 0.6);
-  --bg-color-20: rgb(244, 244, 244, 0.2);
-  --bg-color-10: rgb(244, 244, 244, 0.1);
-
-  --bg-modal: rgb(4, 4, 4, 0.4);
-
-  --font-weight-medium: 500;
-  --font-weight-reg: 400;
-  --transition-dur-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+npm install
 ```
+
+3. **Run the application**:
+
+```
+npm start
+```
+
+4. **Build the application for production**:
+
+```
+npm run build
+```
+
+## Contributions
+
+Contributions are welcome! If you would like to contribute to this project,
+please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b my-feature-branch`.
+3. Make your changes and commit them: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin my-feature-branch`.
+5. Create a pull request.
+
+## Acknowledgements
+
+- Thanks to the creators of the APIs used in this project. Special thanks to the
+- team members who contributed to the development of this site.
